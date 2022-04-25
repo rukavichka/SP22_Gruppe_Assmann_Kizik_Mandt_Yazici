@@ -2,6 +2,9 @@
     <string name="app_name">My Application</string>
     <string name="Register">Register</string>
     <string name="Password">Password</string>
+    <string name="new_password">New password</string>
     <string name="Button">Button</string>
     <string name="Name">Name</string>
+    <string name="Welcome">Welcome back</string>
+    <string name="Change">Change password</string>
 </resources>
