@@ -4,4 +4,5 @@
     <string name="Password">Password</string>
     <string name="Button">Button</string>
     <string name="Name">Name</string>
+    <string name="login_refused">Login refused</string>
 </resources>
