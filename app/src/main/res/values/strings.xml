@@ -8,4 +8,5 @@
     <string name="login_refused">Login refused</string>
     <string name="Welcome">Welcome back</string>
     <string name="Change">Change password</string>
+    <string name="enter_code">Enter Code</string>
 </resources>

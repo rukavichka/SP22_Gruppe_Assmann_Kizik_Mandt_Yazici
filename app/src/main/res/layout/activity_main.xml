@@ -75,7 +75,8 @@
             android:layout_marginHorizontal="140sp"
             android:layout_marginTop="50sp"
             android:background="@drawable/rounded_border_button"
-            android:text="REGISTER"
+            android:text="@string/Register"
+            android:textAllCaps="false"
             app:backgroundTint="@color/orange" />
 
     </RelativeLayout>

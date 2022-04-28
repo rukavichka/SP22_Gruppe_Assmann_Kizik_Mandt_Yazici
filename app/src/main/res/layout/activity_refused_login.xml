@@ -40,7 +40,8 @@
             android:importantForAutofill="no"
             android:inputType="text"
             android:minHeight="35dp"
-            android:text="Enter code"
+            android:hint="@string/enter_code"
+            android:selectAllOnFocus="true"
             tools:ignore="LabelFor" />
 
         <Button
@@ -52,6 +53,8 @@
             android:layout_marginTop="56dp"
             android:background="@drawable/rounded_border_button"
             android:text="Try again"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
             app:backgroundTint="@color/lightOrange" />
 
         <TextView

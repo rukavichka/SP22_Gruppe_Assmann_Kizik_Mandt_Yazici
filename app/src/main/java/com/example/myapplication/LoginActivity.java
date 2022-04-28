@@ -31,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 else {
                     // Change MainActivity.class with failed login page
-                    intent = new Intent(LoginActivity.this, LoginActivity.class);
+                    intent = new Intent(LoginActivity.this, RefusedLoginActivity.class);
                 }
                 startActivity(intent);
                 finish();

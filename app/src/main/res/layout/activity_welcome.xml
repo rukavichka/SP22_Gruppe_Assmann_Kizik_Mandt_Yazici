@@ -39,7 +39,7 @@
             android:importantForAutofill="no"
             android:inputType="textPersonName"
             android:minHeight="35dp"
-            android:text="@string/new_password"
+            android:hint="@string/new_password"
             android:selectAllOnFocus="true"
             tools:ignore="LabelFor" />
 

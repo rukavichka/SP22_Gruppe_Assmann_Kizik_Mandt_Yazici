@@ -39,7 +39,7 @@ public class RefusedLoginActivity extends AppCompatActivity {
     }
 
     private void openActivityLogin() {
-        Intent intent = new Intent(this, MainActivity.class); //Tenho que mudar ainda
+        Intent intent = new Intent(this, LoginActivity.class); //Tenho que mudar ainda
         startActivity(intent);
     }
 }
