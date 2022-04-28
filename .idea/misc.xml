@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidProjects/app/src/main/res/drawable/edittext_bg.xml" value="0.14" />
+        <entry key="..\:/AndroidProjects/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/AndroidProjects/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.14" />
         <entry key="..\:/Studium/Sowtwarepraktikum/MyApplication/app/src/main/res/drawable/border.xml" value="0.11" />
         <entry key="..\:/Studium/Sowtwarepraktikum/MyApplication/app/src/main/res/drawable/edittext_bg.xml" value="0.1" />
         <entry key="..\:/Studium/Sowtwarepraktikum/MyApplication/app/src/main/res/drawable/ic_launcher_background.xml" value="0.164" />
