@@ -22,16 +22,16 @@
             android:layout_marginTop="50sp"
             android:background="@color/orange"
             android:fontFamily="sans-serif"
-            android:paddingStart="10sp"
-            android:text="@string/Register"
-            android:textColor="@android:color/white"
             android:gravity="center_vertical"
+            android:paddingStart="10sp"
+            android:text="Login"
+            android:textColor="@android:color/white"
             android:textSize="20sp"
-            tools:ignore="RtlSymmetry"
-            app:layout_constraintBottom_toTopOf="@+id/register_name" />
+            app:layout_constraintBottom_toTopOf="@+id/login_name"
+            tools:ignore="RtlSymmetry" />
 
         <EditText
-            android:id="@+id/register_name"
+            android:id="@+id/login_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView"
@@ -45,10 +45,10 @@
             tools:ignore="LabelFor" />
 
         <EditText
-            android:id="@+id/register_password"
+            android:id="@+id/login_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/register_name"
+            android:layout_below="@+id/login_name"
             android:layout_marginHorizontal="120sp"
             android:layout_marginTop="26dp"
             android:background="@drawable/edittext_bg"
@@ -66,14 +66,14 @@
             app:layout_constraintGuide_begin="-111dp" />
 
         <Button
-            android:id="@+id/register_button"
+            android:id="@+id/login_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/register_password"
+            android:layout_below="@+id/login_password"
             android:layout_marginHorizontal="140sp"
             android:layout_marginTop="50sp"
             android:background="@drawable/rounded_border_button"
-            android:text="REGISTER"
+            android:text="LOGIN"
             app:backgroundTint="@color/orange" />
 
     </RelativeLayout>
