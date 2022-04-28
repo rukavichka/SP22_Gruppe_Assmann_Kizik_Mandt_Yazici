@@ -11,26 +11,26 @@ import android.widget.TextView;
 
 public class RefusedLoginActivity extends AppCompatActivity {
 
-    private Button buttonRefusedLogin;
-    private EditText textFieldRefusedLogin;
-    private TextView textViewRefusedLoginCode;
+    private Button buttonTryAgain;
+    private EditText editTextRefusedLogin;
+    private TextView textViewCode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_refused_login);
 
-        buttonRefusedLogin = findViewById(R.id.buttonRefusedLogin);
-        textFieldRefusedLogin = findViewById(R.id.textFieldRefusedLogin);
-        textViewRefusedLoginCode = findViewById(R.id.textViewRefusedLoginCode);
+        buttonTryAgain = findViewById(R.id.buttonRefusedLogin);
+        editTextRefusedLogin = findViewById(R.id.textFieldRefusedLogin);
+        textViewCode = findViewById(R.id.textViewRefusedLoginCode);
 
         String code = "1337";
-        textViewRefusedLoginCode.setText(code);
+        textViewCode.setText(code);
 
-        buttonRefusedLogin.setOnClickListener(new View.OnClickListener() {
+        buttonTryAgain.setOnClickListener(new View.OnClickListener() {
                                                   @Override
                                                   public void onClick(View view) {
-                                                      if(textFieldRefusedLogin.getText().toString().equals(code)){
+                                                      if(editTextRefusedLogin.getText().toString().equals(code)){
                                                           openActivityLogin();
                                                       }
                                                   }
