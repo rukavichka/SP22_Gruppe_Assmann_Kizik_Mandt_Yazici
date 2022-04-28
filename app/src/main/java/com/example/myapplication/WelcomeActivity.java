@@ -38,7 +38,7 @@ public class WelcomeActivity extends AppCompatActivity {
         logout_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(WelcomeActivity.this, MainActivity.class);
+                Intent i = new Intent(WelcomeActivity.this, LoginActivity.class);
                 startActivity(i);
             }
         });

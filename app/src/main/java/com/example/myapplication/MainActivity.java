@@ -10,33 +10,25 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button login_btn;
-    private EditText name;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        // checking how change password is working
-        Database db = Database.getInstance();
-        db.add("Nik", "12345");
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Database database = Database.getInstance();
 
-
-        // add this to login activity
-        login_btn = findViewById(R.id.button2);
-        name = findViewById(R.id.editName);
-
-        login_btn.setOnClickListener(new View.OnClickListener() {
+        Button registerButton = findViewById(R.id.register_button);
+        registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String username = name.getText().toString();
-                Intent i = new Intent(MainActivity.this, WelcomeActivity.class);
-                i.putExtra("username",username);
-                startActivity(i);
+                String username = ((EditText) findViewById(R.id.register_name)).getText().toString();
+                String password = ((EditText) findViewById(R.id.register_password)).getText().toString();
+                if(!username.isEmpty() && !password.isEmpty()) {
+                    database.add(username, password);
+                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
         });
-
     }
 }
