@@ -5,6 +5,7 @@
     <string name="new_password">New password</string>
     <string name="Button">Button</string>
     <string name="Name">Name</string>
+    <string name="login_refused">Login refused</string>
     <string name="Welcome">Welcome back</string>
     <string name="Change">Change password</string>
 </resources>
