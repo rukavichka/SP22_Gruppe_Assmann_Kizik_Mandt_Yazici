@@ -1,78 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black">
+    android:background="@color/white">
 
-    <RelativeLayout
+    <EditText
+        android:id="@+id/newPassword"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:background="@drawable/rounded_border"
-        tools:context=".MainActivity"
-        tools:ignore="MissingClass">
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="120sp"
+        android:layout_marginTop="300sp"
+        android:background="@drawable/edittext_bg"
+        android:hint="@string/new_password"
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:selectAllOnFocus="true"
+        tools:ignore="LabelFor" />
 
-        <TextView
-            android:id="@+id/welcomeText"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginTop="50sp"
-            android:background="@color/orange"
-            android:fontFamily="sans-serif"
-            android:gravity="center_vertical"
-            android:paddingStart="10sp"
-            android:text="@string/Welcome"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            tools:ignore="RtlSymmetry" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="-111dp" />
 
-        <EditText
-            android:id="@+id/newPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/welcomeText"
-            android:layout_marginHorizontal="120sp"
-            android:layout_marginTop="160sp"
-            android:background="@drawable/edittext_bg"
-            android:importantForAutofill="no"
-            android:inputType="textPersonName"
-            android:minHeight="35dp"
-            android:hint="@string/new_password"
-            android:selectAllOnFocus="true"
-            tools:ignore="LabelFor" />
+    <Button
+        android:id="@+id/buttonChangePassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/newPassword"
+        android:layout_marginHorizontal="140sp"
+        android:layout_marginTop="50sp"
+        android:background="@drawable/rounded_border_button"
+        android:text="@string/Change"
+        android:textAllCaps="false"
+        app:backgroundTint="@color/orange" />
 
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="-111dp" />
-
-        <Button
-            android:id="@+id/buttonChangePassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/newPassword"
-            android:layout_marginHorizontal="140sp"
-            android:layout_marginTop="50sp"
-            android:background="@drawable/rounded_border_button"
-            android:text="@string/Change"
-            android:textAllCaps="false"
-            app:backgroundTint="@color/orange" />
-
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="370sp"
-            android:layout_marginTop="60sp"
-            android:background="#0000"
-            app:srcCompat="@drawable/logout"
-            app:tint="@android:color/white" />
-
-
-    </RelativeLayout>
-</LinearLayout>
+</RelativeLayout>

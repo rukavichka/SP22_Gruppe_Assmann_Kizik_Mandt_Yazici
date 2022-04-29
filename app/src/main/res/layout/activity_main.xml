@@ -1,83 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black" >
+    android:background="@color/white"
+    android:orientation="vertical">
 
-    <RelativeLayout
+    <EditText
+        android:id="@+id/register_name"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:background="@drawable/rounded_border"
-        tools:context=".MainActivity"
-        tools:ignore="MissingClass">
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="120sp"
+        android:layout_marginTop="160sp"
+        android:background="@drawable/edittext_bg"
+        android:hint="@string/Name"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:selectAllOnFocus="true"
+        tools:ignore="LabelFor" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginTop="50sp"
-            android:background="@color/orange"
-            android:fontFamily="sans-serif"
-            android:paddingStart="10sp"
-            android:text="@string/Register"
-            android:textColor="@android:color/white"
-            android:gravity="center_vertical"
-            android:textSize="20sp"
-            tools:ignore="RtlSymmetry"
-            app:layout_constraintBottom_toTopOf="@+id/register_name" />
+    <EditText
+        android:id="@+id/register_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="120sp"
+        android:layout_marginTop="26dp"
+        android:background="@drawable/edittext_bg"
+        android:hint="@string/Password"
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:selectAllOnFocus="true"
+        tools:ignore="LabelFor" />
 
-        <EditText
-            android:id="@+id/register_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView"
-            android:layout_marginHorizontal="120sp"
-            android:layout_marginTop="160sp"
-            android:background="@drawable/edittext_bg"
-            android:hint="@string/Name"
-            android:importantForAutofill="no"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:selectAllOnFocus="true"
-            tools:ignore="LabelFor" />
+    <Button
+        android:id="@+id/register_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="140sp"
+        android:layout_marginTop="50sp"
+        android:background="@drawable/rounded_border_button"
+        android:text="@string/Register"
+        android:textAllCaps="false"
+        app:backgroundTint="@color/orange"
+        tools:ignore="TextContrastCheck" />
 
-        <EditText
-            android:id="@+id/register_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/register_name"
-            android:layout_marginHorizontal="120sp"
-            android:layout_marginTop="26dp"
-            android:background="@drawable/edittext_bg"
-            android:hint="@string/Password"
-            android:selectAllOnFocus="true"
-            android:importantForAutofill="no"
-            android:inputType ="textPassword"
-            android:minHeight="48dp"
-            tools:ignore="LabelFor" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="-111dp" />
-
-        <Button
-            android:id="@+id/register_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/register_password"
-            android:layout_marginHorizontal="140sp"
-            android:layout_marginTop="50sp"
-            android:background="@drawable/rounded_border_button"
-            android:text="@string/Register"
-            android:textAllCaps="false"
-            app:backgroundTint="@color/orange" />
-
-    </RelativeLayout>
 </LinearLayout>
