@@ -31,12 +31,13 @@ public class WelcomeActivity extends AppCompatActivity {
                 Database db = Database.getInstance();                        // getting Database instance
                 Bundle extras = getIntent().getExtras();
                 String username = extras.getString("username");
-                db.setPassword(username, new_pswd.getText().toString());     // setting new passwort
-                new_pswd.setText(R.string.new_password);
+                db.setPassword(username, new_pswd.getText().toString());// setting new passwort
+                new_pswd.setHint(("New Password"));
+                new_pswd.setText("");
 
                 // checking, how change password is working
                 // name and new password will be printed
-                System.out.println(db.users.get(0).getUsername() + " "+ db.users.get(0).getPassword());
+                //ystem.out.println(db.users.get(0).getUsername() + " "+ db.users.get(0).getPassword());
             }
         });
     }
