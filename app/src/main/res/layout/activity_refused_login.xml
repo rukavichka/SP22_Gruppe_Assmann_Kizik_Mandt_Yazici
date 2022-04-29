@@ -1,95 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black" >
+    android:background="@color/white"
+    android:orientation="vertical">
 
-    <RelativeLayout
+    <EditText
+        android:id="@+id/textFieldRefusedLogin"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:background="@drawable/rounded_border"
-        tools:context=".MainActivity"
-        tools:ignore="MissingClass">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewRefusedLoginCode"
+        android:layout_marginHorizontal="120sp"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/edittext_bg"
+        android:hint="@string/enter_code"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:selectAllOnFocus="true" />
 
-        <TextView
-            android:id="@+id/textViewRefusedLoginHeader"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginTop="50sp"
-            android:background="@color/orange"
-            android:fontFamily="sans-serif"
-            android:gravity="center_vertical"
-            android:paddingStart="10sp"
-            android:text="@string/login_refused"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            tools:ignore="RtlSymmetry" />
+    <TextView
+        android:id="@+id/textViewRefusedLoginCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginEnd="150dp"
+        android:minHeight="45dp"
+        android:text="@string/test"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/textFieldRefusedLogin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textViewRefusedLoginCode"
-            android:layout_marginHorizontal="120sp"
-            android:layout_marginTop="35dp"
-            android:background="@drawable/edittext_bg"
-            android:importantForAutofill="no"
-            android:inputType="text"
-            android:minHeight="35dp"
-            android:hint="@string/enter_code"
-            android:selectAllOnFocus="true"
-            tools:ignore="LabelFor" />
+    <TextView
+        android:id="@+id/textViewRefusedLoginText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="109dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="109dp"
+        android:minHeight="50dp"
+        android:text="@string/incorrect_username_or_password"
+        android:textAlignment="gravity"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
 
-        <Button
-            android:id="@+id/buttonRefusedLogin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textFieldRefusedLogin"
-            android:layout_marginHorizontal="140sp"
-            android:layout_marginTop="56dp"
-            android:background="@drawable/rounded_border_button"
-            android:text="Try again"
-            android:textAllCaps="false"
-            android:textColor="@color/black"
-            app:backgroundTint="@color/lightOrange" />
+    <Button
+        android:id="@+id/buttonRefusedLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textFieldRefusedLogin"
+        android:layout_marginHorizontal="140sp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/rounded_border_button"
+        android:text="@string/try_again"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        tools:ignore="TextContrastCheck" />
 
-        <TextView
-            android:id="@+id/textViewRefusedLoginCode"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textViewRefusedLoginHeader"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="220dp"
-            android:layout_marginEnd="100dp"
-            android:minHeight="45dp"
-            android:text="Test"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="34sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textViewRefusedLoginText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textViewRefusedLoginHeader"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="109dp"
-            android:layout_marginTop="100dp"
-            android:layout_marginEnd="109dp"
-            android:minHeight="50dp"
-            android:text="Incorrect username or password"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
-
-
-    </RelativeLayout>
-</LinearLayout>
+</RelativeLayout>

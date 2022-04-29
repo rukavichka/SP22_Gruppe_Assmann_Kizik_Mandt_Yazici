@@ -2,6 +2,9 @@
     <string name="app_name">My Application</string>
     <string name="Register">Register</string>
     <string name="Password">Password</string>
+    <string name="Login">Login</string>
+    <string name="Sign_Up">Sign Up</string>
+    <string name="log_out">Log Out</string>
     <string name="new_password">New password</string>
     <string name="Button">Button</string>
     <string name="Name">Name</string>
@@ -9,4 +12,7 @@
     <string name="Welcome">Welcome back</string>
     <string name="Change">Change password</string>
     <string name="enter_code">Enter Code</string>
+    <string name="test">Test</string>
+    <string name="incorrect_username_or_password">Incorrect username or password</string>
+    <string name="try_again">Try again</string>
 </resources>

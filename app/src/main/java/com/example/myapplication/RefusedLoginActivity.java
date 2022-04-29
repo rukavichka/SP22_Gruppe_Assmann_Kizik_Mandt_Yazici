@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.Random;
+
 public class RefusedLoginActivity extends AppCompatActivity {
 
     private Button buttonTryAgain;
@@ -19,18 +21,25 @@ public class RefusedLoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_refused_login);
+        this.setTitle(R.string.login_refused);
 
         buttonTryAgain = findViewById(R.id.buttonRefusedLogin);
         editTextRefusedLogin = findViewById(R.id.textFieldRefusedLogin);
         textViewCode = findViewById(R.id.textViewRefusedLoginCode);
 
-        String code = "1337";
-        textViewCode.setText(code);
+        // Generating random number
+        StringBuilder code = new StringBuilder();
+        Random rand = new Random();
+        for(int i=0; i < 4; i++) {
+            code.append(rand.nextInt(10));
+        }
+        textViewCode.setText(code.toString());
 
+        String finalCode = code.toString();
         buttonTryAgain.setOnClickListener(new View.OnClickListener() {
                                                   @Override
                                                   public void onClick(View view) {
-                                                      if(editTextRefusedLogin.getText().toString().equals(code)){
+                                                      if(editTextRefusedLogin.getText().toString().equals(finalCode)){
                                                           openActivityLogin();
                                                       }
                                                   }
