@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">ReadDatabase</string>
+    <string name="DozentTutor">Dozent/Tutor</string>
+    <string name="Semester">Semester</string>
+    <string name="Raum">Raum</string>
+    <string name="Datum">Zeit</string>
+    <string name="Veranstaltungsname">Name</string>
+    <string name="MehrInformationen">Mehr Informationen</string>
+    <string name="Gebäude">Gebäude</string>
+
 </resources>
