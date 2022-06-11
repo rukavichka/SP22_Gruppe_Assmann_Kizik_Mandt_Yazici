@@ -5,14 +5,29 @@
       <map>
         <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/drawable/border.xml" value="0.2545" />
         <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/activity_login.xml" value="0.21557971014492755" />
+        <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/card_roomlist.xml" value="0.4" />
         <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/card_roomlistelement.xml" value="0.4" />
+        <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/card_scrolllist.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/card_veranstaltung.xml" value="0.4" />
         <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/card_veranstaltung2.xml" value="0.4" />
+        <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/drawer_layout.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/fragment_veranstaltung_pre_view.xml" value="0.17572463768115942" />
+        <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/navigation_view.xml" value="0.19281744335185977" />
+        <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/read_db_layout.xml" value="0.4" />
+        <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/read_layout.xml" value="0.1" />
+        <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/standard_toolbar.xml" value="0.2" />
+        <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/standard_toolbar2.xml" value="0.536" />
+        <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/standard_toolbar_layout.xml" value="0.2" />
+        <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/toolbar_hauptseite.xml" value="0.20436083796494228" />
+        <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/toolbar_login.xml" value="0.20436083796494228" />
+        <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/toolbar_standard.xml" value="0.2860215053763441" />
+        <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/menu/navigation_menu.xml" value="0.264" />
+        <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/menu/standard_menu.xml" value="0.20521590423257802" />
+        <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/menu/test_menu.xml" value="0.20427350427350427" />
       </map>
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>

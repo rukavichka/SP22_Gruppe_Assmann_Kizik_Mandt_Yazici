@@ -7,5 +7,8 @@
     <string name="Veranstaltungsname">Name</string>
     <string name="MehrInformationen">Mehr Informationen</string>
     <string name="Gebäude">Gebäude</string>
+    <string name="Hauptseite">Hauptseite</string>
+    <string name="Login">Login</string>
+
 
 </resources>

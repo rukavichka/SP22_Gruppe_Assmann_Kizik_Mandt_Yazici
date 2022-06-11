@@ -1,21 +1,21 @@
-package com.example.readdatabase;
+package view;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+
+import com.example.readdatabase.R;
 
 public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
 
-    public void onClickRead(View view) {
-        Intent i = new Intent(MainActivity.this, ReadDBActivity.class);
-        startActivity(i);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.standard_toolbar);
+        setSupportActionBar(toolbar);
     }
 }

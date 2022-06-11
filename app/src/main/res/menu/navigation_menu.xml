@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Meine Veranstaltungen"
+        android:id="@+id/meineVeranstaltungen"
+        android:icon="@drawable/ic_assignment"/>
+
+    <item android:title="Alle Veranstaltungen"
+        android:id="@+id/alleVeranstaltungen"
+        android:icon="@drawable/ic_list"/>
+
+    <item android:title="Raum suchen"
+        android:id="@+id/RaumSuchen"
+        android:icon="@drawable/ic_room"/>
+
+    <item android:title="Einstellungen"
+        android:id="@+id/Settings"
+        android:icon="@drawable/ic_settings"/>
+
+
+
+</menu>
