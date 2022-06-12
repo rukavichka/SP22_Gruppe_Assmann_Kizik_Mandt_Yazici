@@ -7,5 +7,4 @@ public abstract class Room {
     protected double longitudeGEO;
     protected double latitudeGEO;
     protected String building;
-    protected List<>
 }
