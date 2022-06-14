@@ -115,5 +115,25 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
 
+    <string name="news">News</string>
+    <string name="new_activities">New Activities</string>
+    <string name="news_title">News Title</string>
+    <string name="news_date">News Date</string>
+    <string name="news_content">News Content...</string>
+    <string name="className">Name</string>
+    <string name="zeiten">Zeiten:</string>
+    <string name="dozent">Dozent:</string>
+    <string name="semester">Semester:</string>
+    <string name="timeExample">00:00</string>
+    <string name="dozentExample">Emre Yazici</string>
+    <string name="roomExample">03CXV</string>
+    <string name="semesterExample">WS 2021/2022</string>
+    <string name="contentText">Inhalt:</string>
+    <string name="examText">Klausur:</string>
+    <string name="joinText">Beitreten</string>
+    <string name="participantText">Teilnehmer</string>
+    <string name="moreInfoText">More Information</string>
+    <string name="roomText">Raum:</string>
+
 
 </resources>
