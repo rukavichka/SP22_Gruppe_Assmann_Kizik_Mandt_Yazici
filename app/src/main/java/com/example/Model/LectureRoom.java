@@ -1,4 +1,4 @@
-package Model;
+package com.example.Model;
 
 public class LectureRoom extends Room{
 }

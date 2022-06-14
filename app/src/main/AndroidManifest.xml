@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ReadDatabase">
         <activity
-            android:name="view.MainActivity"
+            android:name="com.example.view.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +22,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ReadActivity" />
+
+        <activity
+            android:name="com.example.view.MainActivity"
+            android:exported="true">
+        </activity>
     </application>
 
 </manifest>

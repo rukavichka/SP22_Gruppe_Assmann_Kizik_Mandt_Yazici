@@ -1,11 +1,10 @@
-package Model;
+package com.example.Model;
 
 import java.util.List;
 
-public class Lecture extends Course{
+public class Tutorial extends Course{
 
-
-
+    private List<Person> tutorList;
 
     @Override
     public String getLecture_ID() {
