@@ -9,6 +9,20 @@
     <string name="Gebäude">Gebäude</string>
     <string name="Hauptseite">Hauptseite</string>
     <string name="Login">Login</string>
+    <string name="prompt_username">Username</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_ENTER">ENTEr</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="UniLogo">UniLogo</string>
+    <string name="search">Search</string>
+    <string name="string_search">Search</string>
+    <string name="filtericon">Filtericon</string>
+    <string name="searchicon">SearchIcon</string>
+    <string name="generictextfield">GenericTextField</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="large_text">

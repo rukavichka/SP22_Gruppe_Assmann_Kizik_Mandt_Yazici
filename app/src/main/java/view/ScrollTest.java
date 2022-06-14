@@ -15,12 +15,12 @@ import com.example.readdatabase.R;
  * Use the {@link ScrollTest#} factory method to
  * create an instance of this fragment.
  */
-public class ScrollFragment extends Fragment {
+public class ScrollTest extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_scroll, container, false);
+        return inflater.inflate(R.layout.fragment_test, container, false);
     }
 }
