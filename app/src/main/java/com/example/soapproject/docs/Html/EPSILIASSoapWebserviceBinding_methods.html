@@ -1,0 +1,4712 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>EPSILIASSoapWebserviceBinding methods</title>
+
+<link rel='stylesheet' type='text/css' href='../Styles/Blueprint_Styles/Style.css' />
+<link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.5.0/styles/default.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.5.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<style type="text/css">
+    .syntaxhighlighter {
+        overflow-y: hidden !important;
+        overflow-x: auto !important;
+    }
+</style></head>
+<body>
+        <h2 id="login">login</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.login(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.loginAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="loginCAS">loginCAS</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.loginCAS(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.loginCASAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="loginLDAP">loginLDAP</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.loginLDAP(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.loginLDAPAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="loginStudipUser">loginStudipUser</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.loginStudipUser(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.loginStudipUserAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="logout">logout</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+Boolean res = service.logout(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.logoutAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="lookupUser">lookupUser</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+Integer res = service.lookupUser(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Integer res = (Integer)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.lookupUserAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getUser">getUser</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+EPSilUserData res = service.getUser(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        EPSilUserData res = (EPSilUserData)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getUserAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="deleteUser">deleteUser</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+Boolean res = service.deleteUser(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.deleteUserAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="addCourse">addCourse</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+Integer res = service.addCourse(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+String param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Integer res = (Integer)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.addCourseAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="deleteCourse">deleteCourse</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+Boolean res = service.deleteCourse(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.deleteCourseAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="startBackgroundTaskWorker">startBackgroundTaskWorker</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+Boolean res = service.startBackgroundTaskWorker(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.startBackgroundTaskWorkerAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="assignCourseMember">assignCourseMember</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+String param3 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+Boolean res = service.assignCourseMember(param0,param1,param2,param3);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+String param3 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.assignCourseMemberAsync (param0,param1,param2,param3);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="excludeCourseMember">excludeCourseMember</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+Boolean res = service.excludeCourseMember(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.excludeCourseMemberAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="isAssignedToCourse">isAssignedToCourse</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+Integer res = service.isAssignedToCourse(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Integer res = (Integer)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.isAssignedToCourseAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getCourseXML">getCourseXML</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getCourseXML(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getCourseXMLAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="updateCourse">updateCourse</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+Boolean res = service.updateCourse(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+String param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.updateCourseAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getObjIdByImportId">getObjIdByImportId</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+Integer res = service.getObjIdByImportId(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Integer res = (Integer)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getObjIdByImportIdAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getRefIdsByImportId">getRefIdsByImportId</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+EPSintArray res = service.getRefIdsByImportId(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        EPSintArray res = (EPSintArray)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getRefIdsByImportIdAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getRefIdsByObjId">getRefIdsByObjId</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+EPSintArray res = service.getRefIdsByObjId(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        EPSintArray res = (EPSintArray)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getRefIdsByObjIdAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getObjectByReference">getObjectByReference</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getObjectByReference(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getObjectByReferenceAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getObjectsByTitle">getObjectsByTitle</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getObjectsByTitle(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getObjectsByTitleAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="searchObjects">searchObjects</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+EPSstringArray param1 = new EPSstringArray();
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+Integer param4 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.searchObjects(param0,param1,param2,param3,param4);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+EPSstringArray param1 = new EPSstringArray();
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+Integer param4 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.searchObjectsAsync (param0,param1,param2,param3,param4);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getTreeChilds">getTreeChilds</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+EPSstringArray param2 = new EPSstringArray();
+Integer param3 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getTreeChilds(param0,param1,param2,param3);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+EPSstringArray param2 = new EPSstringArray();
+Integer param3 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getTreeChildsAsync (param0,param1,param2,param3);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getXMLTree">getXMLTree</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+EPSstringArray param2 = new EPSstringArray();
+Integer param3 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getXMLTree(param0,param1,param2,param3);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+EPSstringArray param2 = new EPSstringArray();
+Integer param3 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getXMLTreeAsync (param0,param1,param2,param3);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="addObject">addObject</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+Integer res = service.addObject(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+String param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Integer res = (Integer)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.addObjectAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="updateObjects">updateObjects</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+Boolean res = service.updateObjects(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.updateObjectsAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="addReference">addReference</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+Integer res = service.addReference(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Integer res = (Integer)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.addReferenceAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="deleteObject">deleteObject</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+Boolean res = service.deleteObject(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.deleteObjectAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="removeFromSystemByImportId">removeFromSystemByImportId</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+Boolean res = service.removeFromSystemByImportId(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.removeFromSystemByImportIdAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="addUserRoleEntry">addUserRoleEntry</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+Boolean res = service.addUserRoleEntry(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.addUserRoleEntryAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="deleteUserRoleEntry">deleteUserRoleEntry</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+Boolean res = service.deleteUserRoleEntry(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.deleteUserRoleEntryAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getOperations">getOperations</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+EPSilOperations res = service.getOperations(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        EPSilOperations res = (EPSilOperations)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getOperationsAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="revokePermissions">revokePermissions</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+Boolean res = service.revokePermissions(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.revokePermissionsAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="grantPermissions">grantPermissions</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+EPSintArray param3 = new EPSintArray();
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+Boolean res = service.grantPermissions(param0,param1,param2,param3);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+EPSintArray param3 = new EPSintArray();
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.grantPermissionsAsync (param0,param1,param2,param3);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getLocalRoles">getLocalRoles</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getLocalRoles(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getLocalRolesAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getUserRoles">getUserRoles</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getUserRoles(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getUserRolesAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="addRole">addRole</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+EPSintArray res = service.addRole(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+String param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        EPSintArray res = (EPSintArray)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.addRoleAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="deleteRole">deleteRole</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+Boolean res = service.deleteRole(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.deleteRoleAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="addRoleFromTemplate">addRoleFromTemplate</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+String param2 = ...;//initialization code
+Integer param3 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+EPSintArray res = service.addRoleFromTemplate(param0,param1,param2,param3);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+String param2 = ...;//initialization code
+Integer param3 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        EPSintArray res = (EPSintArray)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.addRoleFromTemplateAsync (param0,param1,param2,param3);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getObjectTreeOperations">getObjectTreeOperations</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+EPSilOperations res = service.getObjectTreeOperations(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        EPSilOperations res = (EPSilOperations)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getObjectTreeOperationsAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="addGroup">addGroup</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+Integer res = service.addGroup(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+String param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Integer res = (Integer)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.addGroupAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="groupExists">groupExists</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+Boolean res = service.groupExists(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.groupExistsAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getGroup">getGroup</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getGroup(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getGroupAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="assignGroupMember">assignGroupMember</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+String param3 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+Boolean res = service.assignGroupMember(param0,param1,param2,param3);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+String param3 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.assignGroupMemberAsync (param0,param1,param2,param3);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="excludeGroupMember">excludeGroupMember</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+Boolean res = service.excludeGroupMember(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.excludeGroupMemberAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="isAssignedToGroup">isAssignedToGroup</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+Integer res = service.isAssignedToGroup(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Integer res = (Integer)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.isAssignedToGroupAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="distributeMails">distributeMails</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+Boolean res = service.distributeMails(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.distributeMailsAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="ilClone">ilClone</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+Integer res = service.ilClone(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Integer res = (Integer)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.ilCloneAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="handleECSTasks">handleECSTasks</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+Boolean res = service.handleECSTasks(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.handleECSTasksAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="ilCloneDependencies">ilCloneDependencies</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+Boolean res = service.ilCloneDependencies(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.ilCloneDependenciesAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="saveQuestionResult">saveQuestionResult</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+Integer param3 = ...;//initialization code
+Integer param4 = ...;//initialization code
+EPSstringArray param5 = new EPSstringArray();
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+Boolean res = service.saveQuestionResult(param0,param1,param2,param3,param4,param5);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Integer param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+Integer param3 = ...;//initialization code
+Integer param4 = ...;//initialization code
+EPSstringArray param5 = new EPSstringArray();
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.saveQuestionResultAsync (param0,param1,param2,param3,param4,param5);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="saveQuestion">saveQuestion</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Long param1 = ...;//initialization code
+Long param2 = ...;//initialization code
+Integer param3 = ...;//initialization code
+EPSstringArray param4 = new EPSstringArray();
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+Boolean res = service.saveQuestion(param0,param1,param2,param3,param4);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Long param1 = ...;//initialization code
+Long param2 = ...;//initialization code
+Integer param3 = ...;//initialization code
+EPSstringArray param4 = new EPSstringArray();
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.saveQuestionAsync (param0,param1,param2,param3,param4);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="saveQuestionSolution">saveQuestionSolution</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Long param1 = ...;//initialization code
+Long param2 = ...;//initialization code
+Integer param3 = ...;//initialization code
+String param4 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.saveQuestionSolution(param0,param1,param2,param3,param4);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Long param1 = ...;//initialization code
+Long param2 = ...;//initialization code
+Integer param3 = ...;//initialization code
+String param4 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.saveQuestionSolutionAsync (param0,param1,param2,param3,param4);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getQuestionSolution">getQuestionSolution</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Long param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+Integer param3 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+EPSstringArray res = service.getQuestionSolution(param0,param1,param2,param3);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Long param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+Integer param3 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        EPSstringArray res = (EPSstringArray)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getQuestionSolutionAsync (param0,param1,param2,param3);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getTestUserData">getTestUserData</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Long param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+EPSstringArray res = service.getTestUserData(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Long param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        EPSstringArray res = (EPSstringArray)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getTestUserDataAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getPositionOfQuestion">getPositionOfQuestion</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Long param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+Integer param3 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+Integer res = service.getPositionOfQuestion(param0,param1,param2,param3);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Long param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+Integer param3 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Integer res = (Integer)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getPositionOfQuestionAsync (param0,param1,param2,param3);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getPreviousReachedPoints">getPreviousReachedPoints</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Long param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+Integer param3 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+EPSdoubleArray res = service.getPreviousReachedPoints(param0,param1,param2,param3);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+Long param1 = ...;//initialization code
+Integer param2 = ...;//initialization code
+Integer param3 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        EPSdoubleArray res = (EPSdoubleArray)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getPreviousReachedPointsAsync (param0,param1,param2,param3);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getNrOfQuestionsInPass">getNrOfQuestionsInPass</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getNrOfQuestionsInPass(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getNrOfQuestionsInPassAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getStructureObjects">getStructureObjects</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getStructureObjects(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getStructureObjectsAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="importUsers">importUsers</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+String param4 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.importUsers(param0,param1,param2,param3,param4);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+String param4 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.importUsersAsync (param0,param1,param2,param3,param4);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getRoles">getRoles</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getRoles(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getRolesAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getUsersForContainer">getUsersForContainer</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getUsersForContainer(param0,param1,param2,param3);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getUsersForContainerAsync (param0,param1,param2,param3);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getUsersForRole">getUsersForRole</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getUsersForRole(param0,param1,param2,param3);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getUsersForRoleAsync (param0,param1,param2,param3);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="searchUser">searchUser</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+String param4 = ...;//initialization code
+String param5 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.searchUser(param0,param1,param2,param3,param4,param5);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+String param4 = ...;//initialization code
+String param5 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.searchUserAsync (param0,param1,param2,param3,param4,param5);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="hasNewMail">hasNewMail</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.hasNewMail(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.hasNewMailAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getNIC">getNIC</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getNIC(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getNICAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getExerciseXML">getExerciseXML</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getExerciseXML(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getExerciseXMLAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="addExercise">addExercise</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.addExercise(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.addExerciseAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="updateExercise">updateExercise</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.updateExercise(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.updateExerciseAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getFileXML">getFileXML</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getFileXML(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getFileXMLAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="addFile">addFile</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.addFile(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.addFileAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="updateFile">updateFile</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.updateFile(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.updateFileAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getUserXML">getUserXML</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getUserXML(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getUserXMLAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getObjIdsByRefIds">getObjIdsByRefIds</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getObjIdsByRefIds(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getObjIdsByRefIdsAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="updateGroup">updateGroup</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.updateGroup(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.updateGroupAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getIMSManifestXML">getIMSManifestXML</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getIMSManifestXML(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getIMSManifestXMLAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="hasSCORMCertificate">hasSCORMCertificate</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.hasSCORMCertificate(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.hasSCORMCertificateAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getSCORMCompletionStatus">getSCORMCompletionStatus</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getSCORMCompletionStatus(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getSCORMCompletionStatusAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="copyObject">copyObject</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.copyObject(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.copyObjectAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="moveObject">moveObject</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.moveObject(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.moveObjectAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getTestResults">getTestResults</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getTestResults(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getTestResultsAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="removeTestResults">removeTestResults</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.removeTestResults(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.removeTestResultsAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getCoursesForUser">getCoursesForUser</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getCoursesForUser(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getCoursesForUserAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getGroupsForUser">getGroupsForUser</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getGroupsForUser(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getGroupsForUserAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getPathForRefId">getPathForRefId</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getPathForRefId(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getPathForRefIdAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="searchRoles">searchRoles</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.searchRoles(param0,param1,param2,param3);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.searchRolesAsync (param0,param1,param2,param3);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getInstallationInfoXML">getInstallationInfoXML</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getInstallationInfoXML();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getInstallationInfoXMLAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getClientInfoXML">getClientInfoXML</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getClientInfoXML(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getClientInfoXMLAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getSkillCompletionDateForTriggerRefId">getSkillCompletionDateForTriggerRefId</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getSkillCompletionDateForTriggerRefId(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getSkillCompletionDateForTriggerRefIdAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="checkSkillUserCertificateForTriggerRefId">checkSkillUserCertificateForTriggerRefId</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.checkSkillUserCertificateForTriggerRefId(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.checkSkillUserCertificateForTriggerRefIdAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getSkillTriggerOfAllCertificates">getSkillTriggerOfAllCertificates</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getSkillTriggerOfAllCertificates(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getSkillTriggerOfAllCertificatesAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getUserIdBySid">getUserIdBySid</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getUserIdBySid(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getUserIdBySidAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="deleteExpiredDualOptInUserObjects">deleteExpiredDualOptInUserObjects</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.deleteExpiredDualOptInUserObjects(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.deleteExpiredDualOptInUserObjectsAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="readWebLink">readWebLink</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.readWebLink(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.readWebLinkAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="createWebLink">createWebLink</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.createWebLink(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.createWebLinkAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="updateWebLink">updateWebLink</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.updateWebLink(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.updateWebLinkAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getLearningProgressChanges">getLearningProgressChanges</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getLearningProgressChanges(param0,param1,param2,param3);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getLearningProgressChangesAsync (param0,param1,param2,param3);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="deleteProgress">deleteProgress</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+String param4 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.deleteProgress(param0,param1,param2,param3,param4);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+String param4 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.deleteProgressAsync (param0,param1,param2,param3,param4);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getProgressInfo">getProgressInfo</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getProgressInfo(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getProgressInfoAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="exportDataCollectionContent">exportDataCollectionContent</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+String param4 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.exportDataCollectionContent(param0,param1,param2,param3,param4);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+String param4 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.exportDataCollectionContentAsync (param0,param1,param2,param3,param4);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="processBackgroundTask">processBackgroundTask</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.processBackgroundTask(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.processBackgroundTaskAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="addDesktopItems">addDesktopItems</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.addDesktopItems(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.addDesktopItemsAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="removeDesktopItems">removeDesktopItems</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.removeDesktopItems(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.removeDesktopItemsAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="addUserToPositionInOrgUnit">addUserToPositionInOrgUnit</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+service.addUserToPositionInOrgUnit(param0,param1,param2,param3);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.addUserToPositionInOrgUnitAsync (param0,param1,param2,param3);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getEmployeePositionId">getEmployeePositionId</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getEmployeePositionId(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getEmployeePositionIdAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="importOrgUnitsSimpleXML">importOrgUnitsSimpleXML</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+service.importOrgUnitsSimpleXML(param0,param1);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.importOrgUnitsSimpleXMLAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getOrgUnitsSimpleXML">getOrgUnitsSimpleXML</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getOrgUnitsSimpleXML(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getOrgUnitsSimpleXMLAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getPositionIds">getPositionIds</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getPositionIds(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getPositionIdsAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getPositionTitle">getPositionTitle</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getPositionTitle(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getPositionTitleAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="removeUserFromPositionInOrgUnit">removeUserFromPositionInOrgUnit</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+service.removeUserFromPositionInOrgUnit(param0,param1,param2,param3);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.removeUserFromPositionInOrgUnitAsync (param0,param1,param2,param3);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getSuperiorPositionId">getSuperiorPositionId</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getSuperiorPositionId(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getSuperiorPositionIdAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getUserIdsOfPosition">getUserIdsOfPosition</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getUserIdsOfPosition(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getUserIdsOfPositionAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="getUserIdsOfPositionAndOrgUnit">getUserIdsOfPositionAndOrgUnit</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding("https://docu.ilias.de:443/webservice/soap/server.php");
+String res = service.getUserIdsOfPositionAndOrgUnit(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.soapproject;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"https://docu.ilias.de:443/webservice/soap/server.php");
+service.getUserIdsOfPositionAndOrgUnitAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+</body>
+</html>
+
