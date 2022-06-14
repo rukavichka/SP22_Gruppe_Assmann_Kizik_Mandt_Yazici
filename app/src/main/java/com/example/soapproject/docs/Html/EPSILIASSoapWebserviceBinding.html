@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>EPSILIASSoapWebserviceBinding class</title>
+
+<link rel='stylesheet' type='text/css' href='../Styles/Blueprint_Styles/Style.css' />
+<link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.5.0/styles/default.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.5.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<style type="text/css">
+    .syntaxhighlighter {
+        overflow-y: hidden !important;
+        overflow-x: auto !important;
+    }
+</style></head>
+    <body>
+        <h2>EPSILIASSoapWebserviceBinding </h2>
+        
+        <p><strong>SOAP Version: 1.1</strong></p>
+        <p>Main class which you can use to connect to your web service</p>
+        
+        <h3>Important settings</h3>
+        <ul>
+            <li>Timeout - the timeout for network operations, in milliseconds. By default: 60 sec.
+                <br />
+                Example:<br />
+                <pre >
+                    <code class="java">
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(null,"https://docu.ilias.de:443/webservice/soap/server.php",30000);
+service.login();
+                    </code>
+        
+</pre>
+            </li>
+            <li>Url - the web service address. By default it is retrieved from the wsdl file
+                <br />
+                Example:<br />
+                <pre >
+                    <code class="java">
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding(null,"https://docu.ilias.de:443/webservice/soap/server.php");
+service.login();
+                    </code>
+        
+</pre>
+            </li>
+            <li>httpHeaders - allows you to add custom headers to the http requests.
+                <br/>
+                Example:<br/>
+                <pre >
+                    <code class="java">
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding();
+service.httpHeaders.add( new HeaderProperty("Authorization","Basic QWxhZGRpbjpPcGVuU2VzYW1l"));
+service.login();
+                    </code>
+</pre>
+
+            </li>
+            <li>
+                Enable logging - if you enable logging, all requests/responses will be write to the console (for debugging purposes)
+                <br />
+                Example:<br />
+                <pre >
+                    <code class="java">
+EPSILIASSoapWebserviceBinding service = new EPSILIASSoapWebserviceBinding();
+service.enableLogging=true;
+service.login();
+                    </code>
+</pre>
+            </li>
+        </ul>
+        
+        <h3>Methods</h3>
+        <ul>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#login">login</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#loginCAS">loginCAS</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#loginLDAP">loginLDAP</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#loginStudipUser">loginStudipUser</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#logout">logout</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#lookupUser">lookupUser</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getUser">getUser</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#deleteUser">deleteUser</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#addCourse">addCourse</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#deleteCourse">deleteCourse</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#startBackgroundTaskWorker">startBackgroundTaskWorker</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#assignCourseMember">assignCourseMember</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#excludeCourseMember">excludeCourseMember</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#isAssignedToCourse">isAssignedToCourse</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getCourseXML">getCourseXML</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#updateCourse">updateCourse</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getObjIdByImportId">getObjIdByImportId</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getRefIdsByImportId">getRefIdsByImportId</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getRefIdsByObjId">getRefIdsByObjId</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getObjectByReference">getObjectByReference</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getObjectsByTitle">getObjectsByTitle</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#searchObjects">searchObjects</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getTreeChilds">getTreeChilds</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getXMLTree">getXMLTree</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#addObject">addObject</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#updateObjects">updateObjects</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#addReference">addReference</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#deleteObject">deleteObject</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#removeFromSystemByImportId">removeFromSystemByImportId</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#addUserRoleEntry">addUserRoleEntry</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#deleteUserRoleEntry">deleteUserRoleEntry</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getOperations">getOperations</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#revokePermissions">revokePermissions</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#grantPermissions">grantPermissions</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getLocalRoles">getLocalRoles</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getUserRoles">getUserRoles</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#addRole">addRole</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#deleteRole">deleteRole</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#addRoleFromTemplate">addRoleFromTemplate</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getObjectTreeOperations">getObjectTreeOperations</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#addGroup">addGroup</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#groupExists">groupExists</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getGroup">getGroup</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#assignGroupMember">assignGroupMember</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#excludeGroupMember">excludeGroupMember</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#isAssignedToGroup">isAssignedToGroup</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#distributeMails">distributeMails</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#ilClone">ilClone</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#handleECSTasks">handleECSTasks</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#ilCloneDependencies">ilCloneDependencies</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#saveQuestionResult">saveQuestionResult</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#saveQuestion">saveQuestion</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#saveQuestionSolution">saveQuestionSolution</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getQuestionSolution">getQuestionSolution</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getTestUserData">getTestUserData</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getPositionOfQuestion">getPositionOfQuestion</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getPreviousReachedPoints">getPreviousReachedPoints</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getNrOfQuestionsInPass">getNrOfQuestionsInPass</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getStructureObjects">getStructureObjects</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#importUsers">importUsers</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getRoles">getRoles</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getUsersForContainer">getUsersForContainer</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getUsersForRole">getUsersForRole</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#searchUser">searchUser</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#hasNewMail">hasNewMail</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getNIC">getNIC</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getExerciseXML">getExerciseXML</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#addExercise">addExercise</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#updateExercise">updateExercise</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getFileXML">getFileXML</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#addFile">addFile</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#updateFile">updateFile</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getUserXML">getUserXML</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getObjIdsByRefIds">getObjIdsByRefIds</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#updateGroup">updateGroup</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getIMSManifestXML">getIMSManifestXML</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#hasSCORMCertificate">hasSCORMCertificate</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getSCORMCompletionStatus">getSCORMCompletionStatus</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#copyObject">copyObject</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#moveObject">moveObject</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getTestResults">getTestResults</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#removeTestResults">removeTestResults</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getCoursesForUser">getCoursesForUser</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getGroupsForUser">getGroupsForUser</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getPathForRefId">getPathForRefId</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#searchRoles">searchRoles</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getInstallationInfoXML">getInstallationInfoXML</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getClientInfoXML">getClientInfoXML</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getSkillCompletionDateForTriggerRefId">getSkillCompletionDateForTriggerRefId</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#checkSkillUserCertificateForTriggerRefId">checkSkillUserCertificateForTriggerRefId</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getSkillTriggerOfAllCertificates">getSkillTriggerOfAllCertificates</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getUserIdBySid">getUserIdBySid</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#deleteExpiredDualOptInUserObjects">deleteExpiredDualOptInUserObjects</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#readWebLink">readWebLink</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#createWebLink">createWebLink</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#updateWebLink">updateWebLink</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getLearningProgressChanges">getLearningProgressChanges</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#deleteProgress">deleteProgress</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getProgressInfo">getProgressInfo</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#exportDataCollectionContent">exportDataCollectionContent</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#processBackgroundTask">processBackgroundTask</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#addDesktopItems">addDesktopItems</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#removeDesktopItems">removeDesktopItems</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#addUserToPositionInOrgUnit">addUserToPositionInOrgUnit</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getEmployeePositionId">getEmployeePositionId</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#importOrgUnitsSimpleXML">importOrgUnitsSimpleXML</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getOrgUnitsSimpleXML">getOrgUnitsSimpleXML</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getPositionIds">getPositionIds</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getPositionTitle">getPositionTitle</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#removeUserFromPositionInOrgUnit">removeUserFromPositionInOrgUnit</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getSuperiorPositionId">getSuperiorPositionId</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getUserIdsOfPosition">getUserIdsOfPosition</a></li>
+                <li><a href="EPSILIASSoapWebserviceBinding_methods.html#getUserIdsOfPositionAndOrgUnit">getUserIdsOfPositionAndOrgUnit</a></li>
+        </ul>
+    </body>
+</html>
+
