@@ -1,4 +1,4 @@
-package com.example.view;
+package com.example.View;
 
 import android.os.Bundle;
 
@@ -12,7 +12,7 @@ import com.example.readdatabase.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ScrollTest#} factory method to
+ * Use the {@link #} factory method to
  * create an instance of this fragment.
  */
 public class ScrollFragment extends Fragment {

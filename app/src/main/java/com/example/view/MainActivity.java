@@ -12,7 +12,6 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.readdatabase.R;
-import com.example.view.ScrollFragment;
 import com.example.view.ScrollTest;
 import com.google.android.material.navigation.NavigationView;
 
