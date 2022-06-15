@@ -11,7 +11,7 @@
 
     <item android:title="Raum suchen"
         android:id="@+id/RaumSuchen"
-        android:icon="@drawable/ic_room"/>
+        android:icon="@drawable/ic_baseline_search_24"/>
 
     <item android:title="Einstellungen"
         android:id="@+id/Settings"

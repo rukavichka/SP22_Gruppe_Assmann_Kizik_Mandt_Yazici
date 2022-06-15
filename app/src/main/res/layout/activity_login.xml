@@ -69,5 +69,18 @@
         app:layout_constraintBottom_toTopOf="@+id/login_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/unilogo"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_button"
+        android:textSize="12dp"
+        android:textColor="@color/light_grey"
+        android:text="@string/credits"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
