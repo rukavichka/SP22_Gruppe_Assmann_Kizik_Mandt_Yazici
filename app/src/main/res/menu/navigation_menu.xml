@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Meine Veranstaltungen"
+    <item android:title="@string/meine_veranstaltungen"
         android:id="@+id/meineVeranstaltungen"
         android:icon="@drawable/ic_assignment"/>
 
-    <item android:title="Alle Veranstaltungen"
+    <item android:title="@string/alle_veranstaltungen"
         android:id="@+id/alleVeranstaltungen"
         android:icon="@drawable/ic_list"/>
 
-    <item android:title="Raum suchen"
+    <item android:title="@string/raum_suchen"
         android:id="@+id/RaumSuchen"
         android:icon="@drawable/ic_baseline_search_24"/>
 
-    <item android:title="Einstellungen"
+    <item android:title="@string/einstellungen"
         android:id="@+id/Settings"
         android:icon="@drawable/ic_settings"/>
 

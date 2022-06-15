@@ -25,10 +25,8 @@
     <string name="generictextfield">GenericTextField</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="credits">Credits: Emre, Valeryia, Adrian, Niklas </string>
-    <string name="large_text">
-
-
-    </string>
-
-
+    <string name="einstellungen">Einstellungen</string>
+    <string name="raum_suchen">Raum suchen</string>
+    <string name="alle_veranstaltungen">Alle Veranstaltungen</string>
+    <string name="meine_veranstaltungen">Meine Veranstaltungen</string>
 </resources>
