@@ -10,7 +10,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.Model.LoginProcess;
-import com.example.View.MainActivity;
 import com.example.readdatabase.R;
 
 import java.util.concurrent.ExecutionException;

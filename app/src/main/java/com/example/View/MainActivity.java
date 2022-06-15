@@ -1,4 +1,4 @@
-package com.example.View;
+package com.example.view;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,8 +12,6 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.readdatabase.R;
-import com.example.view.ScrollFragment;
-import com.example.view.ScrollTest;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity  {
@@ -36,20 +34,21 @@ public class MainActivity extends AppCompatActivity  {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.meineVeranstaltungen:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container, new ScrollFragment()).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
+                                new ScrollFragment()).commit();
                         break;
                     case R.id.alleVeranstaltungen:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container, new ScrollTest()).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
+                                new ScrollTest()).commit();
                         break;
-
                     case R.id.Settings:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container, new ScrollTest()).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
+                                new ScrollTest()).commit();
                         break;
-
                     case R.id.RaumSuchen:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container, new ScrollTest()).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
+                                new ScrollTest()).commit();
                         break;
-
                 }
                 drawer.closeDrawer(GravityCompat.START);
                 return true;
