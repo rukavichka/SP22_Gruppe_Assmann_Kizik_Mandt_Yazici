@@ -47,6 +47,7 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.ViewHo
         TextView activityContent;
         ConstraintLayout mainLayout;
 
+        
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             activityTitle = itemView.findViewById(R.id.activityTitleTextView);

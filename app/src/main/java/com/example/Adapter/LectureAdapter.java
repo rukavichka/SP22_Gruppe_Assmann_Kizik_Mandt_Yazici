@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.Model.Lecture;
 import com.example.readdatabase.R;
 import java.util.ArrayList;
 
