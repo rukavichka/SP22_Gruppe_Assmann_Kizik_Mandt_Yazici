@@ -29,4 +29,23 @@
     <string name="raum_suchen">Raum suchen</string>
     <string name="alle_veranstaltungen">Alle Veranstaltungen</string>
     <string name="meine_veranstaltungen">Meine Veranstaltungen</string>
+    <string name="news_date">12/02/2022</string>
+    <string name="news_title">Headliner</string>
+    <string name="news_content">here is the text for the news</string>
+    <string name="news">news</string>
+    <string name="new_activities">this is a new activity</string>
+    <string name="dozent">dozent</string>
+    <string name="zeiten">zeiten</string>
+    <string name="semester">semester</string>
+    <string name="roomText">roomText</string>
+    <string name="className">Class Name</string>
+    <string name="moreInfoText">More Info Text</string>
+    <string name="contentText">Content Text</string>
+    <string name="examText">Exam Text</string>
+    <string name="participantText">Participant Text</string>
+    <string name="joinText">Join Text</string>
+    <string name="dozentExample">Professor Mustermann</string>
+    <string name="timeExample">12/02/2022</string>
+    <string name="semesterExample">Sommersemester</string>
+    <string name="roomExample">00/0080</string>
 </resources>
