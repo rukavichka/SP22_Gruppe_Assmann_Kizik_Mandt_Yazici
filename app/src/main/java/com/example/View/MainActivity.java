@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity  {
                         break;
                     case R.id.alleVeranstaltungen:
                         getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
-                                new ScrollTest()).commit();
+                                new LectureSearchPageFragment()).commit();
                         break;
                     case R.id.Settings:
                         getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
