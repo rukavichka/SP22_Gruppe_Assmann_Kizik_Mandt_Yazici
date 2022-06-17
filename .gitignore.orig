@@ -1,4 +1,6 @@
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 # Built application files
 *.apk
 *.aar
@@ -85,6 +87,7 @@ lint/outputs/
 lint/tmp/
 # lint/reports/
 =======
+>>>>>>> main
 *.iml
 .gradle
 /local.properties
@@ -100,4 +103,3 @@ lint/tmp/
 .externalNativeBuild
 .cxx
 local.properties
->>>>>>> ms2-kizik-soap3
