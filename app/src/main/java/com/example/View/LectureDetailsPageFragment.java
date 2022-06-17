@@ -28,10 +28,12 @@ public class LectureDetailsPageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_lecture_details_page, container, false);
+        TextView courseName = root.findViewById(R.id.courseNameTextView);
         TextView profName = root.findViewById(R.id.professorEditableTextView);
         TextView time = root.findViewById(R.id.timeEditableTextView);
         TextView semester = root.findViewById(R.id.semesterEditableTextView);
         TextView room = root.findViewById(R.id.roomEditableTextView);
+        courseName.setText(lecture.getLectureName());
         room.setText(lecture.getLectureRoom());
         semester.setText(lecture.getLectureSemester());
         time.setText(lecture.getLectureTime());
