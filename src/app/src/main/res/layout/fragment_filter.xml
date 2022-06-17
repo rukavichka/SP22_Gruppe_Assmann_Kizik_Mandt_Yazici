@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/border"
+            android:contentDescription="@string/Dozent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:hint="@string/dozent"/>
+
+
+        <Spinner
+            android:id="@+id/spinner2"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/border"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+        <Spinner
+            android:id="@+id/spinner3"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner2"
+            android:background="@drawable/border"/>
+
+        <Spinner
+            android:id="@+id/spinner4"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner3"
+            android:background="@drawable/border"/>
+
+        <Spinner
+            android:id="@+id/spinner5"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner4"
+            android:background="@drawable/border" />
+
+        <Button
+            android:id="@+id/filterApplyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="4dp"
+            android:text="Filter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner5"
+            app:layout_constraintVertical_bias="0.0"
+            android:background="@drawable/border"/>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="109dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="1dp"
+            android:text="@string/Dozent"
+            app:layout_constraintBottom_toBottomOf="@+id/spinner"
+            app:layout_constraintEnd_toStartOf="@+id/spinner"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/spinner"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="109dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Semester"
+            app:layout_constraintBottom_toBottomOf="@+id/spinner2"
+            app:layout_constraintEnd_toStartOf="@+id/spinner2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/spinner2"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="109dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Raum"
+            app:layout_constraintBottom_toBottomOf="@+id/spinner3"
+            app:layout_constraintEnd_toStartOf="@+id/spinner3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/spinner3"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="109dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Filter"
+            app:layout_constraintBottom_toBottomOf="@+id/spinner4"
+            app:layout_constraintEnd_toStartOf="@+id/spinner4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/spinner4"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="109dp"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="@+id/spinner5"
+            app:layout_constraintEnd_toStartOf="@+id/spinner5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/spinner5"
+            android:textColor="@color/black"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
