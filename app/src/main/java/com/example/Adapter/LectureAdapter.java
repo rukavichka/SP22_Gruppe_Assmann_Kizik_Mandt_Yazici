@@ -39,6 +39,7 @@ public class LectureAdapter extends RecyclerView.Adapter<LectureAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        holder.lecture = lectures.get(position);
         holder.courseName.setText(lectures.get(position).getLectureName());
         holder.semester.setText(lectures.get(position).getLectureSemester());
         holder.time.setText(lectures.get(position).getLectureTime());
@@ -60,7 +61,7 @@ public class LectureAdapter extends RecyclerView.Adapter<LectureAdapter.ViewHold
         TextView time;
         Button button;
         LinearLayout mainLayout;
-        WeakReference<MainActivity> weakReference;
+        Lecture lecture;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -72,14 +73,13 @@ public class LectureAdapter extends RecyclerView.Adapter<LectureAdapter.ViewHold
             time = itemView.findViewById(R.id.timeTextView2);
             button = itemView.findViewById(R.id.moreInfoButton);
             mainLayout = itemView.findViewById(R.id.roomLayout);
-            weakReference = new WeakReference<>((MainActivity) itemView.getContext());
             button.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View view) {
-            weakReference.get().getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
-                    new LectureDetailsPageFragment()).addToBackStack(null).commit();
+            ((MainActivity)view.getContext()).getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
+                    new LectureDetailsPageFragment(lecture)).addToBackStack(null).commit();
         }
     }
 }

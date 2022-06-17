@@ -7,60 +7,37 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import com.example.Model.Lecture;
 import com.example.readdatabase.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link LectureDetailsPageFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class LectureDetailsPageFragment extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public LectureDetailsPageFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment LectureDetailsPageFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static LectureDetailsPageFragment newInstance(String param1, String param2) {
-        LectureDetailsPageFragment fragment = new LectureDetailsPageFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+    Lecture lecture;
+    public LectureDetailsPageFragment(Lecture lecture) {
+        this.lecture = lecture;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_lecture_details_page, container, false);
+        View root = inflater.inflate(R.layout.fragment_lecture_details_page, container, false);
+        TextView profName = root.findViewById(R.id.professorEditableTextView);
+        TextView time = root.findViewById(R.id.timeEditableTextView);
+        TextView semester = root.findViewById(R.id.semesterEditableTextView);
+        TextView room = root.findViewById(R.id.roomEditableTextView);
+        room.setText(lecture.getLectureRoom());
+        semester.setText(lecture.getLectureSemester());
+        time.setText(lecture.getLectureTime());
+        profName.setText(lecture.getProfessorName());
+//        TextView content = container.findViewById(R.id.content);
+//        TextView inhalt = container.findViewById(R.id.professorEditableTextView);
+        return root;
     }
 }
