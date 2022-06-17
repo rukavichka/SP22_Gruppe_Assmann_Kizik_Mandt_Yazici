@@ -7,24 +7,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.ProgressBar;
-
 import com.example.Adapter.LectureAdapter;
-import com.example.Model.AccessFirebase;
 import com.example.Model.Lecture;
 import com.example.Service.FetchCourses;
-import com.example.SoapAPI.MyCallback;
 import com.example.readdatabase.R;
-
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class  LectureSearchPageFragment extends Fragment {
     private ProgressBar progressBar;
@@ -47,8 +37,9 @@ public class  LectureSearchPageFragment extends Fragment {
         progressBar = root.findViewById(R.id.progress_loader);
         filterButton = root.findViewById(R.id.filterButton);
         filterButton.setOnClickListener(new FilterClickListener());
-        fetchCourses = new FetchCourses(this);
-        fetchCourses.execute();
+        fetchCourses = new FetchCourses();
+        fetchCourses.setWeakReference(this);
+        fetchCourses.execute(0);
         return root;
     }
 
@@ -59,10 +50,11 @@ public class  LectureSearchPageFragment extends Fragment {
         ArrayList<Lecture> courses = new ArrayList<Lecture>();
         for(String key : data.keySet()) {
             String professor = data.get(key).get("prof");
-            String time = data.get(key).get("time");
             String semester = data.get(key).get("semester");
+            String number = data.get(key).get("number");
+            String form = data.get(key).get("form");
             String room = data.get(key).get("room");
-            Lecture temp = new Lecture(key, professor, time, semester, room, "", "", false);
+            Lecture temp = new Lecture(key, professor, "", number, form, semester, room, "", "", "");
             courses.add(temp);
         }
 
@@ -79,7 +71,7 @@ public class  LectureSearchPageFragment extends Fragment {
         @Override
         public void onClick(View v) {
             ((MainActivity)v.getContext()).getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
-                    new FilterFragment()).addToBackStack(null).commit();
+                    new FilterFragment()).addToBackStack("LectureSearchPageFragment").commit();
         }
     }
 }

@@ -4,29 +4,35 @@ import java.util.ArrayList;
 
 public class Lecture {
     private final String lectureName;
+    private final String form;
+    private final String number;
     private final String professorName;
     private final String lectureTime;
-    private final String lectureSemester;
+    private final String semester;
+    private final String lecturePeriod;
     private final String lectureRoom;
     private final String lectureContent;
     private final String lectureExam;
-
-
-    private boolean isJoined; //needs to be adapted
     private final ArrayList<Participant> lectureParticipant;
 
     // Professor Object (Interface/Inheritance)
 
-    public Lecture(String lectureName, String professorName, String lectureTime, String lectureSemester, String lectureRoom, String lectureContent, String lectureExam, boolean isJoined) {
+    public Lecture(String lectureName, String professorName, String lectureTime, String number, String form, String semester, String lectureRoom, String lectureContent, String lectureExam, String lecturePeriod) {
         this.lectureName = lectureName;
         this.professorName = professorName;
         this.lectureTime = lectureTime;
-        this.lectureSemester = lectureSemester;
+        this.lecturePeriod = lecturePeriod;
+        this.semester = semester;
         this.lectureRoom = lectureRoom;
         this.lectureContent = lectureContent;
         this.lectureExam = lectureExam;
-        this.isJoined = isJoined;
         this.lectureParticipant = new ArrayList<>();
+        this.form = form;
+        this.number = number;
+    }
+
+    public String getLecturePeriod() {
+        return lecturePeriod;
     }
 
     public String getLectureName() {
@@ -45,8 +51,8 @@ public class Lecture {
         return "14/06/2022";
     }
 
-    public String getLectureSemester() {
-        return lectureSemester;
+    public String getSemester() {
+        return semester;
     }
 
     public String getLectureRoom() {
@@ -61,16 +67,20 @@ public class Lecture {
         return lectureExam;
     }
 
+    public String getForm() {
+        return form;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
     public ArrayList<Participant> getLectureParticipant() {
         return lectureParticipant;
     }
 
+    // Further implementation needed
     public boolean isJoined() {
-        return isJoined;
+        return true;
     }
-
-    public void setJoined(boolean joined) {
-        isJoined = joined;
-    }
-
 }

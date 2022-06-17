@@ -34,17 +34,16 @@
     <string name="news_content">here is the text for the news</string>
     <string name="news">news</string>
     <string name="new_activities">this is a new activity</string>
-    <string name="dozent">dozent</string>
-    <string name="zeiten">zeiten</string>
-    <string name="semester">semester</string>
-    <string name="roomText">roomText</string>
+    <string name="dozent">Dozent:</string>
+    <string name="zeiten">Zeiten:</string>
+    <string name="semester">Semester:</string>
+    <string name="roomText">Raum:</string>
     <string name="className">Class Name</string>
     <string name="moreInfoText">More Info Text</string>
-    <string name="contentText">Content Text</string>
-    <string name="examText">Exam Text</string>
-    <string name="participantText">Participant Text</string>
-    <string name="joinCourse">Join Course</string>
-    <string name="leaveCourse">Leave Course</string>
+    <string name="contentText">Inhalt:</string>
+    <string name="examText">Klasur:</string>
+    <string name="participantText">Participants</string>
+    <string name="joinText">Join</string>
     <string name="dozentExample">Professor Mustermann</string>
     <string name="timeExample">12/02/2022</string>
     <string name="semesterExample">Sommersemester</string>
@@ -55,6 +54,9 @@
     <string name="Filter">Filter:</string>
     <string name="home">Home</string>
     <string name="sign_out">Sign Out</string>
+    <string name="course_period">Course Period   </string>
+    <string name="course_time">Course Time</string>
+    <string name="uhr">Uhr</string>
 
 
 </resources>

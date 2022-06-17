@@ -5,22 +5,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.TableLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.Model.Activity;
 import com.example.Model.Lecture;
 import com.example.View.LectureDetailsPageFragment;
 import com.example.View.MainActivity;
-import com.example.View.ScrollFragment;
 import com.example.readdatabase.R;
 
-import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 
 public class LectureAdapter extends RecyclerView.Adapter<LectureAdapter.ViewHolder> {
@@ -39,12 +33,11 @@ public class LectureAdapter extends RecyclerView.Adapter<LectureAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.lecture = lectures.get(position);
         holder.courseName.setText(lectures.get(position).getLectureName());
-        holder.semester.setText(lectures.get(position).getLectureSemester());
-        holder.time.setText(lectures.get(position).getLectureTime());
+        holder.semester.setText(lectures.get(position).getSemester());
+        holder.number.setText(lectures.get(position).getNumber());
         holder.professor.setText(lectures.get(position).getProfessorName());
-        holder.room.setText(lectures.get(position).getLectureRoom());
+        holder.form.setText(lectures.get(position).getForm());
     }
 
 
@@ -57,11 +50,10 @@ public class LectureAdapter extends RecyclerView.Adapter<LectureAdapter.ViewHold
         TextView courseName;
         TextView semester;
         TextView professor;
-        TextView room;
-        TextView time;
+        TextView number;
+        TextView form;
         Button button;
         LinearLayout mainLayout;
-        Lecture lecture;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -69,8 +61,8 @@ public class LectureAdapter extends RecyclerView.Adapter<LectureAdapter.ViewHold
             courseName = itemView.findViewById(R.id.courseName2);
             semester = itemView.findViewById(R.id.semesterTextView2);
             professor = itemView.findViewById(R.id.profTextView);
-            room = itemView.findViewById(R.id.dateTextView2);
-            time = itemView.findViewById(R.id.timeTextView2);
+            number = itemView.findViewById(R.id.numberTextView);
+            form = itemView.findViewById(R.id.formTextView);
             button = itemView.findViewById(R.id.moreInfoButton);
             mainLayout = itemView.findViewById(R.id.roomLayout);
             button.setOnClickListener(this);
@@ -79,7 +71,7 @@ public class LectureAdapter extends RecyclerView.Adapter<LectureAdapter.ViewHold
         @Override
         public void onClick(View view) {
             ((MainActivity)view.getContext()).getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
-                    new LectureDetailsPageFragment(lecture)).addToBackStack(null).commit();
+                    new LectureDetailsPageFragment(courseName.getText().toString())).addToBackStack(null).commit();
         }
     }
 }
