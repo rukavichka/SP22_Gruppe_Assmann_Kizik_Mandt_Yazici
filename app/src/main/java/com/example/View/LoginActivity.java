@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 String username = ((EditText) findViewById(R.id.login_name)).getText().toString();
                 String password = ((EditText) findViewById(R.id.login_password)).getText().toString();
-                VerificationProcess loginProcess = VerificationProcess.getInstance();
+//                VerificationProcess loginProcess = VerificationProcess.getInstance();
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
 
 //                try {
