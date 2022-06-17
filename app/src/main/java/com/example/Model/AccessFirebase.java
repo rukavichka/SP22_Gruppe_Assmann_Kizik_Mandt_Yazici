@@ -10,7 +10,7 @@ public class AccessFirebase {
     Firebase fb = new Firebase();
 
     public void showAllCourses(MyCallback callback){
-        fb.showCourses(callback);
+
     }
 
     public void filterCourses(MyCallback callback, HashMap<String, String> filterparameters){
