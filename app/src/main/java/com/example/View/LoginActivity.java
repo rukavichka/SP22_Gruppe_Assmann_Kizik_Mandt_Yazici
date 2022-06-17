@@ -33,15 +33,16 @@ public class LoginActivity extends AppCompatActivity {
                 VerificationProcess loginProcess = VerificationProcess.getInstance();
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
 
-                try {
-                    if (loginProcess.login("mriliastest", username, password) == null) {
-                        Toast.makeText(getApplicationContext(), "Username or Password wrong!", Toast.LENGTH_SHORT).show();
-                    } else {
-                        startActivity(intent);
-                    }
-                } catch (ExecutionException | InterruptedException e) {
-                    e.printStackTrace();
-                }
+//                try {
+//                    if (loginProcess.login("mriliastest", username, password) == null) {
+//                        Toast.makeText(getApplicationContext(), "Username or Password wrong!", Toast.LENGTH_SHORT).show();
+//                    } else {
+//                        startActivity(intent);
+//                    }
+//                } catch (ExecutionException | InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+                startActivity(intent);
                 finish();
             }
         });

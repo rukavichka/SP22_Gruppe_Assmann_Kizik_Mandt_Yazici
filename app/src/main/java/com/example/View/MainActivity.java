@@ -26,9 +26,6 @@ public class MainActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Kizik: added to test
-        Button showCoursesButton = findViewById(R.id.showCoursesButton);
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.standard_toolbar);
         setSupportActionBar(toolbar);
 
@@ -38,6 +35,8 @@ public class MainActivity extends AppCompatActivity  {
         ImageView logoutButton = findViewById(R.id.logout_button);
 
         NavigationView navigationView = findViewById(R.id.nav_view);
+        getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
+                new HomePageFragment()).commit();
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -61,15 +60,6 @@ public class MainActivity extends AppCompatActivity  {
                 }
                 drawer.closeDrawer(GravityCompat.START);
                 return true;
-            }
-        });
-
-        showCoursesButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ShowCoursesActivity.class);
-                startActivity(intent);
-                finish();
             }
         });
 
