@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 
@@ -26,7 +28,7 @@ import java.util.Map;
 
 public class  LectureSearchPageFragment extends Fragment {
     private ProgressBar progressBar;
-    Button filterButton;
+    ImageButton filterButton;
     private View root;
     private RecyclerView.Adapter adapter;
     private RecyclerView recyclerViewList;
