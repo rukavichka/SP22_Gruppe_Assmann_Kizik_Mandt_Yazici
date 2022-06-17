@@ -19,15 +19,14 @@ import java.util.Set;
 
 public class Firebase {
 
-    private DatabaseReference courseDatabase;
-    private String USER_KEY = "veranstaltungen";             // group in Database
+    private FirebaseDatabase courseDatabase;
 
     public Firebase() {
-        courseDatabase = FirebaseDatabase.getInstance().getReference(USER_KEY);
+        courseDatabase = FirebaseDatabase.getInstance();
     }
 
-    public DatabaseReference getCourseDatabase() {
-        return courseDatabase;
+    public DatabaseReference getCourseDatabase(String reference) {
+        return courseDatabase.getReference(reference);
     }
 
 
@@ -73,9 +72,9 @@ public class Firebase {
         };
 
         Query query = null;
-        for (String key : filterparameters.keySet()) {
-            query = courseDatabase.orderByChild(key).equalTo(filterparameters.get(key));
-        }
+//        for (String key : filterparameters.keySet()) {
+//            query = courseDatabase.orderByChild(key).equalTo(filterparameters.get(key));
+//        }
         query.addValueEventListener(vListener);
     }
 
@@ -134,8 +133,8 @@ public class Firebase {
             }
         };
 
-        Query query = courseDatabase.orderByChild("titleSemunabh").equalTo("course");
-        query.addValueEventListener(vListener);
+//        Query query = courseDatabase.orderByChild("titleSemunabh").equalTo("course");
+//        query.addValueEventListener(vListener);
     }
 
     /**

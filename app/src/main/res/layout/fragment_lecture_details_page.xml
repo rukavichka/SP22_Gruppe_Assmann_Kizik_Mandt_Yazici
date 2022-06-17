@@ -8,7 +8,27 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/progress_loader2"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="58dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/detailsConstrain"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="gone"
         tools:context=".LectureDetails">
 
         <TextView
@@ -16,83 +36,78 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="32dp"
+            android:layout_marginTop="64dp"
             android:text="@string/dozent"
-            android:textSize="18sp"
+            android:textAlignment="center"
+            android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/timeTextView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/courseNameTextView" />
 
         <TextView
             android:id="@+id/timeTextView"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="27dp"
             android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
             android:text="@string/zeiten"
-            android:textSize="18sp"
+            android:textAlignment="center"
+            android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/semesterTextView"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.869" />
+            app:layout_constraintTop_toBottomOf="@+id/professorName" />
 
         <TextView
             android:id="@+id/semesterTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
             android:layout_marginBottom="32dp"
             android:text="@string/semester"
-            android:textSize="18sp"
+            android:textAlignment="center"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/roomTextView"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/timeTextView" />
 
         <TextView
             android:id="@+id/roomTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginBottom="100dp"
+            android:layout_marginBottom="32dp"
             android:text="@string/roomText"
-            android:textSize="18sp"
+            android:textAlignment="center"
+            android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/inhaltTextView"
+            app:layout_constraintBottom_toTopOf="@+id/textView10"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/courseNameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="60dp"
             android:text="@string/className"
-            android:textSize="18sp"
+            android:textAlignment="center"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/moreInformationButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="32dp"
-            android:text="@string/moreInfoText"
-            app:layout_constraintBottom_toTopOf="@+id/inhaltTextView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/roomTextView" />
-
         <TextView
             android:id="@+id/inhaltTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginBottom="70dp"
+            android:layout_marginBottom="64dp"
             android:text="@string/contentText"
-            android:textSize="18sp"
+            android:textAlignment="center"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/examTextView"
             app:layout_constraintStart_toStartOf="parent" />
@@ -101,10 +116,11 @@
             android:id="@+id/examTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="36dp"
-            android:layout_marginBottom="84dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="80dp"
             android:text="@string/examText"
-            android:textSize="18sp"
+            android:textAlignment="center"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/studentsButton"
             app:layout_constraintStart_toStartOf="parent" />
@@ -132,47 +148,77 @@
             android:id="@+id/professorEditableTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="32dp"
+            android:layout_marginStart="32dp"
             android:text="@string/dozentExample"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/timeEditableTextView"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/professorName"
             app:layout_constraintStart_toEndOf="@+id/professorName"
-            app:layout_constraintTop_toBottomOf="@+id/courseNameTextView" />
-
-        <TextView
-            android:id="@+id/timeEditableTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:layout_marginBottom="32dp"
-            android:text="@string/timeExample"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/semesterEditableTextView"
-            app:layout_constraintStart_toEndOf="@+id/timeTextView" />
+            app:layout_constraintTop_toTopOf="@+id/professorName" />
 
         <TextView
             android:id="@+id/semesterEditableTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginBottom="32dp"
+            android:layout_marginStart="32dp"
             android:text="@string/semesterExample"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/roomEditableTextView"
-            app:layout_constraintStart_toEndOf="@+id/semesterTextView" />
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/semesterTextView"
+            app:layout_constraintStart_toEndOf="@+id/semesterTextView"
+            app:layout_constraintTop_toTopOf="@+id/semesterTextView" />
 
         <TextView
             android:id="@+id/roomEditableTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginBottom="100dp"
+            android:layout_marginStart="32dp"
             android:text="@string/roomExample"
-            android:textSize="18sp"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/roomTextView"
+            app:layout_constraintStart_toEndOf="@+id/roomTextView"
+            app:layout_constraintTop_toTopOf="@+id/roomTextView" />
+
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="32dp"
+            android:text="@string/uhr"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/inhaltTextView"
-            app:layout_constraintStart_toEndOf="@+id/roomTextView" />
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/courseHoursTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:text="@string/course_time"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView10"
+            app:layout_constraintStart_toEndOf="@+id/textView10"
+            app:layout_constraintTop_toTopOf="@+id/textView10" />
+
+        <TextView
+            android:id="@+id/periodMenuButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:drawablePadding="8dp"
+            android:text="@string/course_period"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:drawableRightCompat="@drawable/ic_drop_down"
+            app:layout_constraintBottom_toBottomOf="@+id/timeTextView"
+            app:layout_constraintStart_toEndOf="@+id/timeTextView"
+            app:layout_constraintTop_toTopOf="@+id/timeTextView" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
