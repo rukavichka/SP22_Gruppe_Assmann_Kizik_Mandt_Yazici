@@ -13,7 +13,7 @@ import com.example.readdatabase.R;
 
 import java.util.ArrayList;
 
-public class LectureSearchPageFragment extends Fragment {
+public class  LectureSearchPageFragment extends Fragment {
     private View root;
     private RecyclerView.Adapter adapter;
     private RecyclerView recyclerViewList;

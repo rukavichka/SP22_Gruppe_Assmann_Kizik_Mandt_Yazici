@@ -13,10 +13,11 @@
             android:id="@+id/searchView"
             android:layout_width="230dp"
             android:layout_height="32dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="24dp"
             android:background="@drawable/border"
             android:queryHint="Search"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.176"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -26,17 +27,19 @@
             android:id="@+id/imageView3"
             android:layout_width="49dp"
             android:layout_height="33dp"
+            android:layout_marginEnd="16dp"
             android:src="@drawable/ic_settings"
             app:layout_constraintBottom_toBottomOf="@+id/searchView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/searchView" />
+            app:layout_constraintTop_toTopOf="@+id/searchView"
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
             android:id="@+id/resultTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="16dp"
             android:text="Alle Veranstaltungen"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/searchView" />
@@ -49,6 +52,17 @@
             app:layout_constraintTop_toBottomOf="@+id/resultTextView">
 
         </androidx.recyclerview.widget.RecyclerView>
+
+        <ImageButton
+            android:id="@+id/filterButton"
+            android:layout_width="49dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="filterButton"
+            android:src="@drawable/ic_baseline_filter_alt_24"
+            app:layout_constraintBottom_toBottomOf="@+id/searchView"
+            app:layout_constraintEnd_toStartOf="@+id/imageView3"
+            app:layout_constraintTop_toTopOf="@+id/searchView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
