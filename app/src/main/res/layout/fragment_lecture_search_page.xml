@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.View.LectureSearchPageFragment">
+    tools:context="com.example.View.LectureSearchPageFragment"
+    android:id="@+id/searchPageView">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

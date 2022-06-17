@@ -5,8 +5,8 @@
     android:id="@+id/roomLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="@dimen/standard"
-    android:layout_marginRight="@dimen/standard"
+    android:layout_marginVertical="10dp"
+    android:layout_marginHorizontal="@dimen/standard"
     android:background="@drawable/border"
     android:orientation="vertical">
 
@@ -80,7 +80,7 @@
                 android:id="@+id/textView11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/Raum"
+                android:text="Nummer"
                 android:textColor="@color/black" />
 
             <TextView
@@ -99,7 +99,7 @@
                 android:id="@+id/textView14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/Datum"
+                android:text="Veranstaltungsart"
                 android:textColor="@color/black" />
 
             <TextView
