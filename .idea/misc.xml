@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Studium/Sowtwarepraktikum/SOAPproject/app/src/main/res/layout/activity_main.xml" value="0.13333333333333333" />
+        <entry key="..\:/Studium/Sowtwarepraktikum/SOAPproject/app/src/main/res/layout/show_courses.xml" value="0.1" />
         <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/drawable/border.xml" value="0.2545" />
         <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/activity_login2.xml" value="0.1" />
@@ -15,7 +17,6 @@
         <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/drawer_layout.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/fragment_blank.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/fragment_lecture_details_page.xml" value="0.20521590423257802" />
-        <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/fragment_scroll.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/fragment_scroll.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/fragment_scrolling.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/fragment_scrolllist.xml" value="0.2" />
