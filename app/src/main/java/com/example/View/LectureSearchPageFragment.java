@@ -62,7 +62,7 @@ public class  LectureSearchPageFragment extends Fragment {
             String time = data.get(key).get("time");
             String semester = data.get(key).get("semester");
             String room = data.get(key).get("room");
-            Lecture temp = new Lecture(key, professor, time, semester, room, "", "");
+            Lecture temp = new Lecture(key, professor, time, semester, room, "", "", false);
             courses.add(temp);
         }
 

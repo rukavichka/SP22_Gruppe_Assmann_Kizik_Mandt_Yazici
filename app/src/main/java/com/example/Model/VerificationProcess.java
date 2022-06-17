@@ -31,7 +31,7 @@ public class VerificationProcess {
             return soap.login(client_id, username, password);
         });
 
-        sid = foo.get();
+        this.sid = foo.get();
         System.out.println("SID" + sid); // Will wait until the value is complete
         executor.shutdown();
         return sid;
@@ -61,6 +61,7 @@ public class VerificationProcess {
     public Integer lookupUser(String sid, String username) throws ExecutionException, InterruptedException {
         SOAP soap = new SOAP();
         ExecutorService executor = Executors.newSingleThreadExecutor();
+        System.out.println("Lookup user sid: "+ sid);
         Future<Integer> foo = executor.submit(() -> {
             return soap.lookupUser(sid, username);
         });

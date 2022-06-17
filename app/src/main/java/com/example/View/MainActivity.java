@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.Model.VerificationProcess;
 import com.example.readdatabase.R;
@@ -73,9 +74,12 @@ public class MainActivity extends AppCompatActivity  {
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                VerificationProcess loginProcess = VerificationProcess.getInstance();
+                VerificationProcess verificationProcess = VerificationProcess.getInstance();
                 try {
-                    loginProcess.logout(loginProcess.getSid());
+                    verificationProcess.logout(verificationProcess.getSid());
+                    Toast.makeText(getApplicationContext(),"logged out",Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+                    startActivity(intent);
                 } catch (ExecutionException | InterruptedException e) {
                     e.printStackTrace();
                 }
