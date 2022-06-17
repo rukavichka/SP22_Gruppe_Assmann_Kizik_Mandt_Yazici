@@ -48,4 +48,10 @@
     <string name="timeExample">12/02/2022</string>
     <string name="semesterExample">Sommersemester</string>
     <string name="roomExample">00/0080</string>
+    <string name="Dozent">Dozent:</string>
+    <string name="Zeit1">Zeit:</string>
+    <string name="Semester1">Semester:</string>
+    <string name="Filter">Filter:</string>
+
+
 </resources>

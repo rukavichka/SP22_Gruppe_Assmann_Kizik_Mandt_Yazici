@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 
@@ -25,6 +26,7 @@ import java.util.Map;
 
 public class  LectureSearchPageFragment extends Fragment {
     private ProgressBar progressBar;
+    Button filterButton;
     private View root;
     private RecyclerView.Adapter adapter;
     private RecyclerView recyclerViewList;
@@ -41,6 +43,8 @@ public class  LectureSearchPageFragment extends Fragment {
         // Inflate the layout for this fragment
         root = inflater.inflate(R.layout.fragment_lecture_search_page, container, false);
         progressBar = root.findViewById(R.id.progress_loader);
+        filterButton = root.findViewById(R.id.filterButton);
+        filterButton.setOnClickListener(new FilterClickListener());
         fetchCourses = new FetchCourses(this);
         fetchCourses.execute();
         return root;
@@ -66,5 +70,14 @@ public class  LectureSearchPageFragment extends Fragment {
 
     public void hideProgressBar() {
         progressBar.setVisibility(View.INVISIBLE);
+    }
+
+    public class FilterClickListener implements View.OnClickListener{
+
+        @Override
+        public void onClick(View v) {
+            ((MainActivity)v.getContext()).getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
+                    new FilterFragment()).addToBackStack(null).commit();
+        }
     }
 }
