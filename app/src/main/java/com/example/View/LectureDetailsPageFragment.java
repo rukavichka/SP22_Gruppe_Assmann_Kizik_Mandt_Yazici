@@ -1,5 +1,6 @@
 package com.example.View;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.Model.Lecture;
@@ -14,6 +16,7 @@ import com.example.readdatabase.R;
 
 public class LectureDetailsPageFragment extends Fragment {
     Lecture lecture;
+    Button joinButton;
     public LectureDetailsPageFragment(Lecture lecture) {
         this.lecture = lecture;
     }
@@ -33,6 +36,14 @@ public class LectureDetailsPageFragment extends Fragment {
         TextView time = root.findViewById(R.id.timeEditableTextView);
         TextView semester = root.findViewById(R.id.semesterEditableTextView);
         TextView room = root.findViewById(R.id.roomEditableTextView);
+        joinButton = root.findViewById(R.id.joinButton);
+        if(lecture.isJoined()){
+            joinButton.setText("Leave Course");
+        }
+        else{
+            joinButton.setText("Join Course");
+        }
+        joinButton.setOnClickListener(new JoinButtonListener());
         courseName.setText(lecture.getLectureName());
         room.setText(lecture.getLectureRoom());
         semester.setText(lecture.getLectureSemester());
@@ -41,5 +52,21 @@ public class LectureDetailsPageFragment extends Fragment {
 //        TextView content = container.findViewById(R.id.content);
 //        TextView inhalt = container.findViewById(R.id.professorEditableTextView);
         return root;
+    }
+
+    public class JoinButtonListener implements View.OnClickListener{
+
+        @Override
+        public void onClick(View v) {
+            if(lecture.isJoined()){
+                joinButton.setText("Join Course");
+                lecture.setJoined(false);
+            }
+            else{
+                joinButton.setText("Leave Course");
+                lecture.setJoined(true);
+            }
+            //Update Firebase about the Join. Save it in List.
+        }
     }
 }

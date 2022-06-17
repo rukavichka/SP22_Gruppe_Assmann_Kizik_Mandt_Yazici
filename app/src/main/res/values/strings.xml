@@ -43,7 +43,8 @@
     <string name="contentText">Content Text</string>
     <string name="examText">Exam Text</string>
     <string name="participantText">Participant Text</string>
-    <string name="joinText">Join Text</string>
+    <string name="joinCourse">Join Course</string>
+    <string name="leaveCourse">Leave Course</string>
     <string name="dozentExample">Professor Mustermann</string>
     <string name="timeExample">12/02/2022</string>
     <string name="semesterExample">Sommersemester</string>

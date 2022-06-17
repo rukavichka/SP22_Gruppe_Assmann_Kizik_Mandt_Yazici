@@ -10,11 +10,14 @@ public class Lecture {
     private final String lectureRoom;
     private final String lectureContent;
     private final String lectureExam;
+
+
+    private boolean isJoined; //needs to be adapted
     private final ArrayList<Participant> lectureParticipant;
 
     // Professor Object (Interface/Inheritance)
 
-    public Lecture(String lectureName, String professorName, String lectureTime, String lectureSemester, String lectureRoom, String lectureContent, String lectureExam) {
+    public Lecture(String lectureName, String professorName, String lectureTime, String lectureSemester, String lectureRoom, String lectureContent, String lectureExam, boolean isJoined) {
         this.lectureName = lectureName;
         this.professorName = professorName;
         this.lectureTime = lectureTime;
@@ -22,6 +25,7 @@ public class Lecture {
         this.lectureRoom = lectureRoom;
         this.lectureContent = lectureContent;
         this.lectureExam = lectureExam;
+        this.isJoined = isJoined;
         this.lectureParticipant = new ArrayList<>();
     }
 
@@ -60,4 +64,13 @@ public class Lecture {
     public ArrayList<Participant> getLectureParticipant() {
         return lectureParticipant;
     }
+
+    public boolean isJoined() {
+        return isJoined;
+    }
+
+    public void setJoined(boolean joined) {
+        isJoined = joined;
+    }
+
 }
