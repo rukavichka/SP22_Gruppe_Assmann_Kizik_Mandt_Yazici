@@ -112,11 +112,12 @@
     </TableLayout>
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="match_parent"
+        android:id="@+id/moreInfoButton"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:background="@drawable/border"
+        android:layout_gravity="right"
         android:text="@string/MehrInformationen" />
 
 </LinearLayout>

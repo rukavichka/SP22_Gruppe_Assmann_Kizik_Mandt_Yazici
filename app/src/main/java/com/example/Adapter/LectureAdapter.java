@@ -3,18 +3,24 @@ package com.example.Adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.Model.Activity;
 import com.example.Model.Lecture;
+import com.example.View.LectureDetailsPageFragment;
+import com.example.View.MainActivity;
+import com.example.View.ScrollFragment;
 import com.example.readdatabase.R;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 
 public class LectureAdapter extends RecyclerView.Adapter<LectureAdapter.ViewHolder> {
@@ -46,13 +52,15 @@ public class LectureAdapter extends RecyclerView.Adapter<LectureAdapter.ViewHold
         return lectures.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView courseName;
         TextView semester;
         TextView professor;
         TextView room;
         TextView time;
+        Button button;
         LinearLayout mainLayout;
+        WeakReference<MainActivity> weakReference;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -62,7 +70,16 @@ public class LectureAdapter extends RecyclerView.Adapter<LectureAdapter.ViewHold
             professor = itemView.findViewById(R.id.profTextView);
             room = itemView.findViewById(R.id.dateTextView2);
             time = itemView.findViewById(R.id.timeTextView2);
+            button = itemView.findViewById(R.id.moreInfoButton);
             mainLayout = itemView.findViewById(R.id.roomLayout);
+            weakReference = new WeakReference<>((MainActivity) itemView.getContext());
+            button.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            weakReference.get().getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
+                    new LectureDetailsPageFragment()).addToBackStack(null).commit();
         }
     }
 }
