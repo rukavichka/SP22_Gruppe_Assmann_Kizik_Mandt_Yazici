@@ -1,9 +1,8 @@
 package com.example.Model;
 
-import com.example.soapproject.Firebase;
-import com.example.soapproject.MyCallback;
+import com.example.SoapAPI.Firebase;
+import com.example.SoapAPI.MyCallback;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class AccessFirebase {

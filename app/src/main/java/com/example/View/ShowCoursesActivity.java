@@ -9,13 +9,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.Model.AccessFirebase;
 import com.example.readdatabase.R;
-import com.example.soapproject.Firebase;
-import com.example.soapproject.MyCallback;
+import com.example.SoapAPI.Firebase;
+import com.example.SoapAPI.MyCallback;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
 public class ShowCoursesActivity extends AppCompatActivity {

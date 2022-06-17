@@ -1,6 +1,6 @@
 package com.example.Model;
 
-import com.example.soapproject.SOAP;
+import com.example.SoapAPI.SOAP;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
