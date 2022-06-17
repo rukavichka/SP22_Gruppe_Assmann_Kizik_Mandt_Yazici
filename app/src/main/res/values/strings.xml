@@ -52,6 +52,8 @@
     <string name="Zeit1">Zeit:</string>
     <string name="Semester1">Semester:</string>
     <string name="Filter">Filter:</string>
+    <string name="home">Home</string>
+    <string name="sign_out">Sign Out</string>
 
 
 </resources>
