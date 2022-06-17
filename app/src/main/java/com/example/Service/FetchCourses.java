@@ -13,9 +13,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class  FetchCourses extends AsyncTask<Void, Void, Void> {
+public final class  FetchCourses extends AsyncTask<Void, Void, Void> {
     private final Firebase firebase;
-    private final HashMap<String, HashMap<String, String>> result = new HashMap<>();
+    private static final HashMap<String, HashMap<String, String>> result = new HashMap<>();
     private WeakReference<LectureSearchPageFragment> weakReference;
 
     public FetchCourses(LectureSearchPageFragment fragment) {
@@ -36,13 +36,11 @@ public class  FetchCourses extends AsyncTask<Void, Void, Void> {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {}
         };
-        firebase.getCourseDatabase().addValueEventListener(vListener);
+        firebase.getCourseDatabase().limitToFirst(10).addValueEventListener(vListener);
         return null;
     }
 
     private void setCourse(DataSnapshot snapshot) {
-        List<String> listData = new ArrayList<>();
-
         for(DataSnapshot ds:snapshot.getChildren()){
             HashMap<String, String> info = new HashMap<>();
             FirebaseItem item = ds.getValue(FirebaseItem.class);
@@ -52,5 +50,13 @@ public class  FetchCourses extends AsyncTask<Void, Void, Void> {
             info.put("prof", item.getRespLecturer());
             result.put(item.getTitleSemabh(), info);
         }
+    }
+
+    private void filterCourse() {
+
+    }
+
+    static public HashMap<String, HashMap<String, String>> getResult() {
+        return result;
     }
 }
