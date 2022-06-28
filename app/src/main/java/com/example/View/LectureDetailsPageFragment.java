@@ -138,12 +138,12 @@ public class LectureDetailsPageFragment extends Fragment {
             if(lecture.isJoined()){
                 joinButton.setText("Join Course");
                 // Further implementation needed
-                //lecture.setJoined(false);
+                lecture.setJoined(false);
             }
             else{
                 joinButton.setText("Leave Course");
                 // Further implementation needed
-                // lecture.setJoined(true);
+                lecture.setJoined(true);
             }
             //Update Firebase about the Join. Save it in List.
         }

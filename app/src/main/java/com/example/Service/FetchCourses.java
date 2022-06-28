@@ -21,7 +21,7 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
     private static final Firebase firebase = new Firebase();
     private String courseName;
     private static final HashMap<String, HashMap<String, String>> result = new HashMap<>();
-    private static final ArrayList<Lecture> info = new ArrayList<>();
+    private ArrayList<Lecture> info;
     private WeakReference<Fragment> weakReference;
 
     public FetchCourses() {
@@ -48,6 +48,7 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
                     temp.recyclerViewLecture(result);
                 }
                 else if(mode[0] == 1) {
+                    info = new ArrayList<>();
                     LectureDetailsPageFragment temp = (LectureDetailsPageFragment)weakReference.get();
                     setCourseLargeData(snapshot);
                     temp.hideProgressBar();
