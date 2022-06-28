@@ -42,6 +42,10 @@ public class MainActivity extends AppCompatActivity  {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
+                    case R.id.homePage:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
+                                new HomePageFragment()).commit();
+                        break;
                     case R.id.meineVeranstaltungen:
                         getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
                                 new LectureSearchPageFragment()).commit();
@@ -57,6 +61,10 @@ public class MainActivity extends AppCompatActivity  {
                     case R.id.RaumSuchen:
                         getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
                                 new ScrollTest()).commit();
+                        break;
+                    case R.id.signOut:
+                        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                        startActivity(intent);
                         break;
                 }
                 drawer.closeDrawer(GravityCompat.START);

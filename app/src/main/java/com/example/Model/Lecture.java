@@ -14,6 +14,7 @@ public class Lecture {
     private final String lectureContent;
     private final String lectureExam;
     private final ArrayList<Participant> lectureParticipant;
+    private boolean isJoined;
 
     // Professor Object (Interface/Inheritance)
 
@@ -79,6 +80,9 @@ public class Lecture {
         return lectureParticipant;
     }
 
+    public void setJoined(boolean joined){
+        this.isJoined = joined;
+    }
     // Further implementation needed
     public boolean isJoined() {
         return true;

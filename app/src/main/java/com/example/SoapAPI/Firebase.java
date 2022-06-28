@@ -44,7 +44,7 @@ public class Firebase {
 
                 for(DataSnapshot ds:snapshot.getChildren()){
 
-                    FirebaseItem item = ds.getValue(FirebaseItem.class);
+                    FirebaseItem item = ds.getValue(FirebaseItem.class  );
                     if (!listData.contains(item.getTitleSemabh())) {
                         List<String> values = new ArrayList<String>();
                         values.add(item.getSemester());
