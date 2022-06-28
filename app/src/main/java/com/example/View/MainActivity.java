@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity  {
                         break;
                     case R.id.RaumSuchen:
                         getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
-                                new ScrollTest()).commit();
+                                new RoomSearchPageFragment()).commit();
                         break;
                     case R.id.signOut:
                         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
