@@ -57,6 +57,15 @@
     <string name="course_period">Course Period   </string>
     <string name="course_time">Course Time</string>
     <string name="uhr">Uhr</string>
+    <string name="_08_00_10_00">08:00 - 10:00</string>
+    <string name="_10_00_12_00">10:00 - 12:00</string>
+    <string name="_12_00_14_00">12:00 - 14:00</string>
+    <string name="montag">Montag</string>
+    <string name="_14_00_16_00">14:00 - 16:00</string>
+    <string name="_16_00_18_00">16:00 - 18:00</string>
+    <string name="_18_00_20_00">18:00 - 20:00</string>
+    <string name="dienstag">Dienstag</string>
+    <string name="day">Day</string>
 
 
 </resources>
