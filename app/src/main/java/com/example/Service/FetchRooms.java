@@ -9,6 +9,8 @@ import com.example.Model.Lecture;
 import com.example.Model.Room;
 import com.example.SoapAPI.Firebase;
 import com.example.SoapAPI.FirebaseItem;
+import com.example.View.FilterFragment;
+import com.example.View.LectureDetailsPageFragment;
 import com.example.View.LectureSearchPageFragment;
 import com.example.View.RoomSearchPageFragment;
 import com.google.firebase.database.DataSnapshot;
@@ -17,11 +19,13 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class FetchRooms extends AsyncTask<Integer, Void, Void>{
         private static final Firebase firebase = new Firebase();
         private static final HashMap<String, HashMap<String, String>> result = new HashMap<>();
+        private static final ArrayList<String> resultList = new ArrayList<>(Arrays.asList(""));
         private ArrayList<Room> info;
         private WeakReference<Fragment> weakReference;
 
@@ -34,24 +38,46 @@ public class FetchRooms extends AsyncTask<Integer, Void, Void>{
         }
 
         @Override
-        protected Void doInBackground(Integer... integers) {
+        protected Void doInBackground(Integer... mode) {
                 ValueEventListener valueEventListener = new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                setCourseSmallData(snapshot);
-                                RoomSearchPageFragment temp = (RoomSearchPageFragment)weakReference.get();
-                                temp.hideProgressBar();
-                                temp.recyclerViewLecture(result);
+                                if(mode[0] == 0) {
+                                        setCourseSmallData(snapshot);
+                                        RoomSearchPageFragment temp = (RoomSearchPageFragment) weakReference.get();
+                                        temp.hideProgressBar();
+                                        temp.recyclerViewLecture(result);
+                                }
+                                else if(mode[0] == 1) {
+                                        setRoomsList(snapshot);
+                                        FilterFragment temp = (FilterFragment)weakReference.get();
+                                        temp.setSpinnerRoom(resultList);
+                                }
 
                         }
+
 
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {
 
                         }
                 };
+
                 firebase.getCourseDatabase("veranstaltungen").addValueEventListener(valueEventListener);
                 return null;
+        }
+
+        /**
+         * to get the rooms as a list from Firebase without duplicates
+         * @param snapshot
+         */
+        private void setRoomsList(DataSnapshot snapshot) {
+                for(DataSnapshot ds:snapshot.getChildren()){
+                        String room = ds.child("room").getValue(String.class);
+                        if (!resultList.contains(room)) {
+                                resultList.add(room);
+                        }
+                }
         }
 
         private void setCourseSmallData(DataSnapshot snapshot) {

@@ -38,6 +38,7 @@
     <string name="zeiten">Zeiten:</string>
     <string name="semester">Semester:</string>
     <string name="roomText">Raum:</string>
+    <string name="courseText">Titel:</string>
     <string name="className">Class Name</string>
     <string name="moreInfoText">More Info Text</string>
     <string name="contentText">Inhalt:</string>
