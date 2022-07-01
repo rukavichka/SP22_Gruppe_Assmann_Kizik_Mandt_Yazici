@@ -31,6 +31,7 @@ public class RoomSearchPageFragment extends Fragment {
     FetchRooms fetchRooms;
 
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,10 +60,8 @@ public class RoomSearchPageFragment extends Fragment {
             //String professor = data.get(key).get("prof");
             //String semester = data.get(key).get("semester");
             //String number = data.get(key).get("number");
-            //String form = data.get(key).get("form");
-            String room = data.get(key).get("roomName");
-            Room temp = new Room(room);
-            rooms.add(temp);
+            String roomName = data.get(key).get("roomName");
+            rooms.add(new Room(roomName)); //add each room given from the class "FetchRooms" to List "rooms"
         }
 
         adapter = new RoomAdapter(rooms);

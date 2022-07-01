@@ -10,7 +10,12 @@ import java.util.concurrent.Future;
 public class VerificationProcess {
 
     public String sid;
-    public int userId;
+    public int userId = 1;
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
 
     public static final VerificationProcess instance = new VerificationProcess();
 

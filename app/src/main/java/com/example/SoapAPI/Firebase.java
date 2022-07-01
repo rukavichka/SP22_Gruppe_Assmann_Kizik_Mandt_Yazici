@@ -148,7 +148,6 @@ public class Firebase {
      * FA: Mit Eingabe einer definierten Zeit kann der User leere Räume suchen
      */
     public void searchFreeRooms() {
-
     }
 
 

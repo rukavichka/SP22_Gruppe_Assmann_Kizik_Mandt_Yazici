@@ -6,7 +6,8 @@
     android:layout_marginRight="@dimen/standard"
     android:layout_marginVertical="5dp"
     android:background="@drawable/border"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/linearLayoutButton">
 
     <TextView
         android:id="@+id/roomlistelementTitle"

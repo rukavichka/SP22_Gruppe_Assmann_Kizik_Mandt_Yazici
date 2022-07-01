@@ -1,5 +1,6 @@
 package com.example.View;
 
+import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
@@ -13,8 +14,16 @@ import android.widget.PopupMenu;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import com.example.Model.Lecture;
+import com.example.Model.VerificationProcess;
+import com.example.Service.CheckMember;
 import com.example.Service.FetchCourses;
 import com.example.readdatabase.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 
 public class LectureDetailsPageFragment extends Fragment {
@@ -25,10 +34,16 @@ public class LectureDetailsPageFragment extends Fragment {
     private Lecture lecture;
     private View root;
     private ArrayList<Lecture> courseInfo;
+    private boolean isCourseMember;
+    private CheckMember checkMember;
+    private DatabaseReference databaseReference;
 
     public LectureDetailsPageFragment(String courseName) {
         this.courseName = courseName;
         fetchCourses = new FetchCourses();
+        checkMember = new CheckMember();
+        checkMember.setCourseName(courseName);
+        checkMember.setWeakReference(this);
         fetchCourses.setCourseName(courseName);
         fetchCourses.setWeakReference(this);
     }
@@ -36,12 +51,14 @@ public class LectureDetailsPageFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        databaseReference = FirebaseDatabase.getInstance().getReference("user_courses/" + VerificationProcess.getInstance().userId);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.fragment_lecture_details_page, container, false);
+        checkMember.execute();
         fetchCourses.execute(1);
         return root;
     }
@@ -116,7 +133,7 @@ public class LectureDetailsPageFragment extends Fragment {
         layout.setVisibility(View.VISIBLE);
 
         joinButton = root.findViewById(R.id.joinButton);
-        if(lecture.isJoined()){
+        if(isCourseMember){
             joinButton.setText("Leave Course");
         }
         else{
@@ -130,22 +147,53 @@ public class LectureDetailsPageFragment extends Fragment {
         progressBar.setVisibility(View.INVISIBLE);
     }
 
+    public void setIsCourseMember(boolean checkList) {
+        this.isCourseMember = checkList;
+    }
+
 
     public class JoinButtonListener implements View.OnClickListener{
 
         @Override
         public void onClick(View v) {
-            if(lecture.isJoined()){
+            if(isCourseMember){
                 joinButton.setText("Join Course");
-                // Further implementation needed
-                lecture.setJoined(false);
+                databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String temp = "test";
+                        for(DataSnapshot sn : snapshot.getChildren()){
+                            if(sn.getValue().toString().equals(courseName)){
+                                temp = sn.getKey();
+                            }
+                        }
+                        if(temp != "test"){
+                            databaseReference.child(temp).removeValue();
+                        }
+                        checkMember.execute();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
             }
             else{
                 joinButton.setText("Leave Course");
-                // Further implementation needed
-                lecture.setJoined(true);
+                databaseReference.push().setValue(courseName);
+                checkMember.execute();
             }
-            //Update Firebase about the Join. Save it in List.
         }
     }
+//    public void setButtonReference(){
+//        joinButton = root.findViewById(R.id.joinButton);
+//        if(isCourseMember){
+//            joinButton.setText("Leave Course");
+//        }
+//        else{
+//            joinButton.setText("Join Course");
+//        }
+//        joinButton.setOnClickListener(new JoinButtonListener());
+//    }
 }
