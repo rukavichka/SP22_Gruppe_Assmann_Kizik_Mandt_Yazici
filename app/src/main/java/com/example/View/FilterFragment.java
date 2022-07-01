@@ -1,16 +1,16 @@
 package com.example.View;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
 import androidx.fragment.app.Fragment;
 
-import com.example.Model.News;
 import com.example.Service.FetchCourses;
 import com.example.Service.FetchDozents;
 import com.example.Service.FetchRooms;
@@ -19,7 +19,7 @@ import com.example.readdatabase.R;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class FilterFragment extends Fragment implements AdapterView.OnItemSelectedListener {
+public class FilterFragment extends Fragment {
 
     View root;
     Spinner spinnerDozent;
@@ -27,6 +27,8 @@ public class FilterFragment extends Fragment implements AdapterView.OnItemSelect
     Spinner spinnerRoom;
     Spinner spinnerTitle;
     Spinner spinnerCourseType;
+    Button filterApplyButton;
+    Button closeButton;
     FetchDozents fetchDozents;
     FetchCourses fetchCourses;
     FetchRooms fetchRooms;
@@ -63,6 +65,17 @@ public class FilterFragment extends Fragment implements AdapterView.OnItemSelect
         fetchCourses = new FetchCourses();
         fetchCourses.setWeakReference(this);
         fetchCourses.execute(3);
+
+
+        // closeButton not runnung correctly now
+        closeButton = root.findViewById(R.id.CloseButton);
+        closeButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                //super.onBackPressed();
+                container.removeView(root);
+            }
+        });
 
         return root;
     }
@@ -105,13 +118,4 @@ public class FilterFragment extends Fragment implements AdapterView.OnItemSelect
     }
 
 
-    @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
-
-    }
 }

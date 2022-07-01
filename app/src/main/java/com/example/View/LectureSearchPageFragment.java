@@ -73,6 +73,10 @@ public class  LectureSearchPageFragment extends Fragment {
         progressBar.setVisibility(View.INVISIBLE);
     }
 
+
+    /**
+     * implementation for the Search field
+     */
     public void searchWidget() {
         searchView = root.findViewById(R.id.searchView);
 

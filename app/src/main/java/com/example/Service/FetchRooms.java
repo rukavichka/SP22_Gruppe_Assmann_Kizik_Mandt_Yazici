@@ -74,7 +74,7 @@ public class FetchRooms extends AsyncTask<Integer, Void, Void>{
         private void setRoomsList(DataSnapshot snapshot) {
                 for(DataSnapshot ds:snapshot.getChildren()){
                         String room = ds.child("room").getValue(String.class);
-                        if (!resultList.contains(room)) {
+                        if (!resultList.contains(room) && !(room == null)) {
                                 resultList.add(room);
                         }
                 }
