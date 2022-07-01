@@ -9,20 +9,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
+import android.widget.SearchView;
+
 import com.example.Adapter.LectureAdapter;
 import com.example.Model.Lecture;
 import com.example.Service.FetchCourses;
 import com.example.readdatabase.R;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Locale;
 
 public class  LectureSearchPageFragment extends Fragment {
     private ProgressBar progressBar;
     ImageButton filterButton;
+    private SearchView searchView;
     private View root;
     private RecyclerView.Adapter adapter;
     private RecyclerView recyclerViewList;
     private FetchCourses fetchCourses;
+    private ArrayList<Lecture> courses;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,6 +45,8 @@ public class  LectureSearchPageFragment extends Fragment {
         fetchCourses = new FetchCourses();
         fetchCourses.setWeakReference(this);
         fetchCourses.execute(0);
+
+        searchWidget();
         return root;
     }
 
@@ -47,7 +54,7 @@ public class  LectureSearchPageFragment extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerViewList = root.findViewById(R.id.searchListView);
         recyclerViewList.setLayoutManager(linearLayoutManager);
-        ArrayList<Lecture> courses = new ArrayList<Lecture>();
+        courses = new ArrayList<Lecture>();
         for(String key : data.keySet()) {
             String professor = data.get(key).get("prof");
             String semester = data.get(key).get("semester");
@@ -66,6 +73,35 @@ public class  LectureSearchPageFragment extends Fragment {
         progressBar.setVisibility(View.INVISIBLE);
     }
 
+
+    /**
+     * implementation for the Search field
+     */
+    public void searchWidget() {
+        searchView = root.findViewById(R.id.searchView);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+
+                ArrayList<Lecture> sortedCourses = new ArrayList<>();
+                for (Lecture lecture: courses) {
+                    if (lecture.getLectureName().toLowerCase().contains(s.toLowerCase())) {
+                        sortedCourses.add(lecture);
+                    }
+                }
+                adapter = new LectureAdapter(sortedCourses);
+                recyclerViewList.setAdapter(adapter);
+                return false;
+            }
+        });
+    }
+
     public class FilterClickListener implements View.OnClickListener{
 
         @Override
@@ -74,4 +110,6 @@ public class  LectureSearchPageFragment extends Fragment {
                     new FilterFragment()).addToBackStack("LectureSearchPageFragment").commit();
         }
     }
+
+
 }

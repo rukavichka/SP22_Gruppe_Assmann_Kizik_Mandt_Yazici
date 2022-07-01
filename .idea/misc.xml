@@ -3,13 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/EMRE/Desktop/DEV/ANDROID/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.2595" />
-        <entry key="..\:/Users/EMRE/Desktop/DEV/ANDROID/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/drawable/ic_baseline_logout_24.xml" value="0.2595" />
-        <entry key="..\:/Users/EMRE/Desktop/DEV/ANDROID/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/drawable/ic_drop_down.xml" value="0.2585" />
-        <entry key="..\:/Users/EMRE/Desktop/DEV/ANDROID/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/fragment_lecture_details_page.xml" value="0.22135416666666666" />
-        <entry key="..\:/Users/EMRE/Desktop/DEV/ANDROID/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/fragment_lecture_search_page.xml" value="0.264" />
-        <entry key="..\:/Users/EMRE/Desktop/DEV/ANDROID/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/menu/lecture_period_menu.xml" value="0.53125" />
-        <entry key="..\:/Users/EMRE/Desktop/DEV/ANDROID/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/menu/navigation_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Studium/Sowtwarepraktikum/SOAPproject/app/src/main/res/drawable/ic_room.xml" value="0.1" />
+        <entry key="..\:/Studium/Sowtwarepraktikum/SOAPproject/app/src/main/res/layout/fragment_filter.xml" value="0.22" />
+        <entry key="..\:/Studium/Sowtwarepraktikum/SOAPproject/app/src/main/res/layout/fragment_lecture_details_page.xml" value="0.1" />
+        <entry key="..\:/Studium/Sowtwarepraktikum/SOAPproject/app/src/main/res/layout/fragment_lecture_search_page.xml" value="0.14666666666666667" />
+        <entry key="..\:/Studium/Sowtwarepraktikum/SOAPproject/app/src/main/res/menu/navigation_menu.xml" value="0.1796875" />
         <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/drawable/border.xml" value="0.2545" />
         <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/activity_login2.xml" value="0.1" />
@@ -25,7 +23,6 @@
         <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/fragment_lecture_details_page.xml" value="0.264" />
         <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/fragment_lecture_search_page.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/fragment_participant_page.xml" value="0.20521590423257802" />
-        <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/fragment_room_search_page.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/fragment_scroll.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/fragment_scrolling.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/fragment_scrolllist.xml" value="0.2" />
@@ -54,31 +51,9 @@
         <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/menu/navigation_menu.xml" value="0.264" />
         <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/menu/standard_menu.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/menu/test_menu.xml" value="0.20427350427350427" />
-        <entry key="..\:/Users/adria/Desktop/SW-Praktikum/Repo/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/drawable/ic_settings.xml" value="0.3265" />
-        <entry key="..\:/Users/adria/Desktop/SW-Praktikum/Repo/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/activity_login.xml" value="0.3392210144927536" />
         <entry key="..\:/Users/adria/Desktop/SW-Praktikum/Repo/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/activity_main.xml" value="0.3392210144927536" />
-        <entry key="..\:/Users/adria/Desktop/SW-Praktikum/Repo/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/card_roomlistelement.xml" value="0.3392210144927536" />
-        <entry key="..\:/Users/adria/Desktop/SW-Praktikum/Repo/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/fragment_filter.xml" value="0.3392210144927536" />
-        <entry key="..\:/Users/adria/Desktop/SW-Praktikum/Repo/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/fragment_home_page.xml" value="0.3392210144927536" />
         <entry key="..\:/Users/adria/Desktop/SW-Praktikum/Repo/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/fragment_lecture_details_page.xml" value="0.3392210144927536" />
         <entry key="..\:/Users/adria/Desktop/SW-Praktikum/Repo/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/fragment_lecture_search_page.xml" value="0.5" />
-        <entry key="..\:/Users/adria/Desktop/SW-Praktikum/Repo/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/fragment_participant_page.xml" value="0.3392210144927536" />
-        <entry key="..\:/Users/adria/Desktop/SW-Praktikum/Repo/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/fragment_scroll.xml" value="0.3392210144927536" />
-        <entry key="..\:/Users/adria/Desktop/SW-Praktikum/Repo/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/fragment_test.xml" value="0.3392210144927536" />
-        <entry key="..\:/Users/adria/Desktop/SW-Praktikum/Repo/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/navigation_drawer.xml" value="0.3392210144927536" />
-        <entry key="..\:/Users/adria/Desktop/SW-Praktikum/Repo/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/read_layout.xml" value="0.3392210144927536" />
-        <entry key="..\:/Users/adria/Desktop/SW-Praktikum/Repo/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/room_page_detail_overview.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/adria/Desktop/SW-Praktikum/Repo/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/room_page_overview.xml" value="0.3392210144927536" />
-        <entry key="..\:/Users/adria/Desktop/SW-Praktikum/Repo/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/show_courses.xml" value="0.3392210144927536" />
-        <entry key="..\:/Users/adria/Desktop/SW-Praktikum/Repo/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/standard_toolbar_layout.xml" value="0.3392210144927536" />
-        <entry key="..\:/Users/adria/Desktop/SW-Praktikum/Repo/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/toolbar_hauptseite.xml" value="0.3392210144927536" />
-        <entry key="..\:/Users/adria/Desktop/SW-Praktikum/Repo/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/toolbar_login.xml" value="0.3392210144927536" />
-        <entry key="..\:/Users/adria/Desktop/SW-Praktikum/Repo/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/toolbar_standard.xml" value="0.3392210144927536" />
-        <entry key="..\:/Users/adria/Desktop/SW-Praktikum/Repo/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/view_card_activity.xml" value="0.3392210144927536" />
-        <entry key="..\:/Users/adria/Desktop/SW-Praktikum/Repo/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/view_card_course.xml" value="0.3392210144927536" />
-        <entry key="..\:/Users/adria/Desktop/SW-Praktikum/Repo/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/view_card_news.xml" value="0.3392210144927536" />
-        <entry key="..\:/Users/adria/Desktop/SW-Praktikum/Repo/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/view_card_participant.xml" value="0.3392210144927536" />
-        <entry key="..\:/Users/adria/Desktop/SW-Praktikum/Repo/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/view_card_roomlistelement.xml" value="0.3392210144927536" />
       </map>
     </option>
   </component>
