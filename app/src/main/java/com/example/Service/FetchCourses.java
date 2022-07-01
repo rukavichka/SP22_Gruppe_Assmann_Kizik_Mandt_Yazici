@@ -73,7 +73,7 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
             public void onCancelled(@NonNull DatabaseError error) {}
         };
         if(mode[0] == 0) {
-            firebase.getCourseDatabase("course-short-info").limitToFirst(10).addValueEventListener(vListener);
+            firebase.getCourseDatabase("course-short-info").addValueEventListener(vListener);   //.limitToFirst(10).addValueEventListener(vListener);
         }
         else if(mode[0] == 1) {
             firebase.getCourseDatabase("veranstaltungen").orderByChild("titleSemabh").equalTo(courseName).addValueEventListener(vListener);
