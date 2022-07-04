@@ -58,7 +58,7 @@ public class LectureDetailsPageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.fragment_lecture_details_page, container, false);
-        checkMember.execute();
+        checkMember.executeCheckMembership();
         fetchCourses.execute(1);
         return root;
     }
@@ -158,31 +158,31 @@ public class LectureDetailsPageFragment extends Fragment {
         public void onClick(View v) {
             if(isCourseMember){
                 joinButton.setText("Join Course");
-                databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String temp = "test";
-                        for(DataSnapshot sn : snapshot.getChildren()){
-                            if(sn.getValue().toString().equals(courseName)){
-                                temp = sn.getKey();
-                            }
-                        }
-                        if(temp != "test"){
-                            databaseReference.child(temp).removeValue();
-                        }
-                        checkMember.execute();
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
+                checkMember.executeDeleteMembership(courseName);
+//                databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+//                    @Override
+//                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                        String temp = "test";
+//                        for(DataSnapshot sn : snapshot.getChildren()){
+//                            if(sn.getValue().toString().equals(courseName)){
+//                                temp = sn.getKey();
+//                            }
+//                        }
+//                        if(temp != "test"){
+//                            databaseReference.child(temp).removeValue();
+//                        }
+//                        checkMember.executeCheckMembership();
+//                    }
+//
+//                    @Override
+//                    public void onCancelled(@NonNull DatabaseError error) {
+//
+//                    }
+//                });
             }
             else{
                 joinButton.setText("Leave Course");
-                databaseReference.push().setValue(courseName);
-                checkMember.execute();
+                checkMember.executeAddMembership(courseName);
             }
         }
     }

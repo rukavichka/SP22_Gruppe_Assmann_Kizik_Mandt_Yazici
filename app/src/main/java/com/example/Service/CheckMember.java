@@ -11,6 +11,8 @@ import com.example.SoapAPI.Firebase;
 import com.example.View.LectureDetailsPageFragment;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
@@ -25,6 +27,7 @@ public class CheckMember {
     String courseName;
     boolean inCourseList;
     private WeakReference<Fragment> weakReference;
+    private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("user_courses/" + VerificationProcess.getInstance().userId);
 
 
 
@@ -41,7 +44,7 @@ public class CheckMember {
     }
 
 
-    public void execute() {
+    public void executeCheckMembership() {
         List<String> tempList = new ArrayList<>();
         ValueEventListener valueEventListener = new ValueEventListener() {
             @Override
@@ -53,12 +56,41 @@ public class CheckMember {
                 temp.setIsCourseMember(checkList(tempList,courseName));
             }
 
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
         };
         firebase.getCourseDatabase("user_courses/" + user_ID).addListenerForSingleValueEvent(valueEventListener);
+    }
+
+    public void executeDeleteMembership(String courseName){
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String temp = "test";
+                for(DataSnapshot sn : snapshot.getChildren()){
+                    if(sn.getValue().toString().equals(courseName)){
+                        temp = sn.getKey();
+                    }
+                }
+                if(temp != "test"){
+                    databaseReference.child(temp).removeValue();
+                }
+                executeCheckMembership();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    public void executeAddMembership(String courseName){
+        databaseReference.push().setValue(courseName);
+        executeCheckMembership();
     }
 
     public void setWeakReference(Fragment fragment) {
