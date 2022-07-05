@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -45,6 +46,8 @@ public class RoomSearchPageFragment extends Fragment {
         progressBar = root.findViewById(R.id.progress_loader);
         filterButton = root.findViewById(R.id.filterButton);
         filterButton.setOnClickListener(new RoomSearchPageFragment.FilterClickListener());
+        TextView searchHeader = root.findViewById(R.id.resultTextView);
+        searchHeader.setText(R.string.rooms_little_header);
         fetchRooms = new FetchRooms();
         fetchRooms.setWeakReference(this);
         fetchRooms.execute(0);

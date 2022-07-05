@@ -5,13 +5,10 @@ import android.os.AsyncTask;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.example.Model.Lecture;
 import com.example.Model.Room;
 import com.example.SoapAPI.Firebase;
 import com.example.SoapAPI.FirebaseItem;
 import com.example.View.FilterFragment;
-import com.example.View.LectureDetailsPageFragment;
-import com.example.View.LectureSearchPageFragment;
 import com.example.View.RoomSearchPageFragment;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -43,7 +40,7 @@ public class FetchRooms extends AsyncTask<Integer, Void, Void>{
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                                 if(mode[0] == 0) {
-                                        setCourseSmallData(snapshot);
+                                        setRoomSmallData(snapshot);
                                         RoomSearchPageFragment temp = (RoomSearchPageFragment) weakReference.get();
                                         temp.hideProgressBar();
                                         temp.recyclerViewLecture(result);
@@ -80,10 +77,8 @@ public class FetchRooms extends AsyncTask<Integer, Void, Void>{
                 }
         }
 
-        private void setCourseSmallData(DataSnapshot snapshot) {
-                int counter = 0;
+        private void setRoomSmallData(DataSnapshot snapshot) {
                 for(DataSnapshot ds:snapshot.getChildren()){
-                        System.out.println(counter++);
                         HashMap<String, String> info = new HashMap<>();
                         FirebaseItem item = ds.getValue(FirebaseItem.class);
                         info.put("roomName", item.getRoom());

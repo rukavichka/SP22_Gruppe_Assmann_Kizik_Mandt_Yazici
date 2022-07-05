@@ -41,12 +41,12 @@
                     android:textSize="@dimen/standard"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView2"
+                    app:layout_constraintEnd_toStartOf="@+id/participantPic"
                     app:layout_constraintStart_toEndOf="@+id/burgerMenu"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/participantPic"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_marginEnd="20dp"

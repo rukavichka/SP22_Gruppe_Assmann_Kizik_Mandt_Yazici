@@ -1,6 +1,5 @@
 package com.example.View;
 
-import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
@@ -18,16 +17,14 @@ import com.example.Model.VerificationProcess;
 import com.example.Service.CheckMember;
 import com.example.Service.FetchCourses;
 import com.example.readdatabase.R;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
 public class LectureDetailsPageFragment extends Fragment {
     private Button joinButton;
+    private Button participantsButton;
     private final String courseName;
     private String currentPeriod;
     private FetchCourses fetchCourses;
@@ -40,12 +37,12 @@ public class LectureDetailsPageFragment extends Fragment {
 
     public LectureDetailsPageFragment(String courseName) {
         this.courseName = courseName;
-        fetchCourses = new FetchCourses();
-        checkMember = new CheckMember();
+        //fetchCourses = new FetchCourses(); //those calls need to be in onCreateView(), because AsyncTask needs to start again every time LectureDetailsPageFragment is invoked
+        checkMember = new CheckMember();       //returning from the ParticipantPageFragment would end up in a crash
         checkMember.setCourseName(courseName);
         checkMember.setWeakReference(this);
-        fetchCourses.setCourseName(courseName);
-        fetchCourses.setWeakReference(this);
+        //fetchCourses.setCourseName(courseName);
+        //fetchCourses.setWeakReference(this);
     }
 
     @Override
@@ -58,7 +55,10 @@ public class LectureDetailsPageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.fragment_lecture_details_page, container, false);
-        checkMember.executeCheckMembership();
+        fetchCourses = new FetchCourses();
+        checkMember.executeCheckUserCourses();
+        fetchCourses.setCourseName(courseName);
+        fetchCourses.setWeakReference(this);
         fetchCourses.execute(1);
         return root;
     }
@@ -116,6 +116,8 @@ public class LectureDetailsPageFragment extends Fragment {
     }
 
     public void setLayout(Lecture info) {
+        joinButton = root.findViewById(R.id.joinButton);
+        setJoinText(joinButton);
         TextView courseName = root.findViewById(R.id.courseNameTextView);
         TextView profName = root.findViewById(R.id.professorEditableTextView);
         TextView period = root.findViewById(R.id.periodMenuButton);
@@ -123,6 +125,7 @@ public class LectureDetailsPageFragment extends Fragment {
         TextView room = root.findViewById(R.id.roomEditableTextView);
         TextView hours = root.findViewById(R.id.courseHoursTextView);
         ConstraintLayout layout = root.findViewById(R.id.detailsConstrain);
+        participantsButton = root.findViewById(R.id.participantsButton);
 
         hours.setText(info.getLectureTime());
         courseName.setText(info.getLectureName());
@@ -133,14 +136,22 @@ public class LectureDetailsPageFragment extends Fragment {
         layout.setVisibility(View.VISIBLE);
 
         joinButton = root.findViewById(R.id.joinButton);
+        setJoinText(joinButton);
+        joinButton.setOnClickListener(new JoinButtonListener());
+
+        participantsButton.setOnClickListener(new ParticipantClickListener());
+
+
+    }
+    public void participantsButtonVisibility(Button participants){
         if(isCourseMember){
-            joinButton.setText("Leave Course");
+            participants.setVisibility(View.VISIBLE);
         }
         else{
-            joinButton.setText("Join Course");
+            participants.setVisibility(View.INVISIBLE);
         }
-        joinButton.setOnClickListener(new JoinButtonListener());
     }
+
 
     public void hideProgressBar() {
         ProgressBar progressBar = root.findViewById(R.id.progress_loader2);
@@ -159,41 +170,42 @@ public class LectureDetailsPageFragment extends Fragment {
             if(isCourseMember){
                 joinButton.setText("Join Course");
                 checkMember.executeDeleteMembership(courseName);
-//                databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
-//                    @Override
-//                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                        String temp = "test";
-//                        for(DataSnapshot sn : snapshot.getChildren()){
-//                            if(sn.getValue().toString().equals(courseName)){
-//                                temp = sn.getKey();
-//                            }
-//                        }
-//                        if(temp != "test"){
-//                            databaseReference.child(temp).removeValue();
-//                        }
-//                        checkMember.executeCheckMembership();
-//                    }
-//
-//                    @Override
-//                    public void onCancelled(@NonNull DatabaseError error) {
-//
-//                    }
-//                });
+                checkMember.executeDeleteUserCourses(courseName);
+                checkMember.executeCheckUserCourses();
             }
             else{
                 joinButton.setText("Leave Course");
                 checkMember.executeAddMembership(courseName);
+                checkMember.executeAddUserCourses(courseName);
+                checkMember.executeCheckUserCourses();
             }
         }
     }
-//    public void setButtonReference(){
-//        joinButton = root.findViewById(R.id.joinButton);
-//        if(isCourseMember){
-//            joinButton.setText("Leave Course");
-//        }
-//        else{
-//            joinButton.setText("Join Course");
-//        }
-//        joinButton.setOnClickListener(new JoinButtonListener());
-//    }
+
+    private void setJoinText(Button joinButton) {
+        if(isCourseMember){
+            joinButton.setText("Leave Course");
+        }
+        else{
+            joinButton.setText("Join Course");
+        }
+    }
+
+
+    public class ParticipantClickListener implements View.OnClickListener{
+
+        @Override
+        public void onClick(View v) {
+            ((MainActivity)v.getContext()).getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
+                    new ParticipantPageFragment(courseName)).addToBackStack("ParticipantPageFragment").commit();
+        }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        fetchCourses = null;
+    }
+
+
 }

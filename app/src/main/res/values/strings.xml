@@ -42,7 +42,7 @@
     <string name="className">Class Name</string>
     <string name="moreInfoText">More Info Text</string>
     <string name="contentText">Inhalt:</string>
-    <string name="examText">Klasur:</string>
+    <string name="examText">Klausur:</string>
     <string name="participantText">Participants</string>
     <string name="joinText">Join</string>
     <string name="dozentExample">Professor Mustermann</string>
@@ -67,6 +67,9 @@
     <string name="_18_00_20_00">18:00 - 20:00</string>
     <string name="dienstag">Dienstag</string>
     <string name="day">Day</string>
+    <string name="pcpt_little_header">Alle Teilnehmer</string>
+    <string name="rooms_little_header">Alle Räume</string>
+
 
 
 </resources>

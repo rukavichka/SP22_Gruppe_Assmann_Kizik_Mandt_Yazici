@@ -13,25 +13,25 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.Model.Participant;
 import com.example.readdatabase.R;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.ViewHolder> {
-    ArrayList<Participant> participants;
+    List<Participant> participants;
 
-    public ParticipantAdapter(ArrayList<Participant> participants) {
+    public ParticipantAdapter(List<Participant> participants) {
         this.participants = participants;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_card_activity, parent, false);
+        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_card_participant, parent, false);
         return new ViewHolder(inflate);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.participantName.setText(participants.get(position).getName());
+        holder.participantName.setText(participants.get(position).getUser_id());
 //        holder.participantUsername.setText(participants.get(position).getDate());
 //        holder.participantProfilePic.setText(participants.get(position).getContent());
     }
@@ -52,6 +52,7 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
             super(itemView);
             participantName = itemView.findViewById(R.id.participantNameTitleTextView);
             mainLayout = itemView.findViewById(R.id.activityLayout);
+            participantProfilePic = itemView.findViewById(R.id.participantPic);
         }
     }
 }

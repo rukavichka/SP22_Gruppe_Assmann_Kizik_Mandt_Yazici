@@ -1,11 +1,8 @@
 package com.example.Service;
 
-import android.os.AsyncTask;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.example.Model.CheckMemberItem;
 import com.example.Model.VerificationProcess;
 import com.example.SoapAPI.Firebase;
 import com.example.View.LectureDetailsPageFragment;
@@ -13,7 +10,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.lang.ref.WeakReference;
@@ -27,8 +23,7 @@ public class CheckMember {
     String courseName;
     boolean inCourseList;
     private WeakReference<Fragment> weakReference;
-    private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("user_courses/" + VerificationProcess.getInstance().userId);
-
+    private DatabaseReference databaseReferenceUserCourses = FirebaseDatabase.getInstance().getReference("user_courses/" + VerificationProcess.getInstance().userId);
 
 
     private boolean checkList(List<String> list, String courseName) {
@@ -44,7 +39,7 @@ public class CheckMember {
     }
 
 
-    public void executeCheckMembership() {
+    public void executeCheckUserCourses() {
         List<String> tempList = new ArrayList<>();
         ValueEventListener valueEventListener = new ValueEventListener() {
             @Override
@@ -65,8 +60,8 @@ public class CheckMember {
         firebase.getCourseDatabase("user_courses/" + user_ID).addListenerForSingleValueEvent(valueEventListener);
     }
 
-    public void executeDeleteMembership(String courseName){
-        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+    public void executeDeleteUserCourses(String courseName){
+        databaseReferenceUserCourses.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String temp = "test";
@@ -76,9 +71,8 @@ public class CheckMember {
                     }
                 }
                 if(temp != "test"){
-                    databaseReference.child(temp).removeValue();
+                    databaseReferenceUserCourses.child(temp).removeValue();
                 }
-                executeCheckMembership();
             }
 
             @Override
@@ -88,9 +82,36 @@ public class CheckMember {
         });
     }
 
+    public void executeAddUserCourses(String courseName){
+        databaseReferenceUserCourses.push().setValue(courseName);
+    }
+
     public void executeAddMembership(String courseName){
-        databaseReference.push().setValue(courseName);
-        executeCheckMembership();
+        DatabaseReference databaseReferenceMembership = FirebaseDatabase.getInstance().getReference("membership/" + courseName);
+        databaseReferenceMembership.push().setValue(user_ID);
+    }
+
+    public void executeDeleteMembership(String courseName){
+        DatabaseReference databaseReferenceMembership = FirebaseDatabase.getInstance().getReference("membership/" + courseName);
+        databaseReferenceMembership.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String temp = "test";
+                for(DataSnapshot sn : snapshot.getChildren()){
+                    if(sn.getValue().toString().equals(user_ID)){
+                        temp = sn.getKey();
+                    }
+                }
+                if(temp != "test"){
+                    databaseReferenceMembership.child(temp).removeValue();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     public void setWeakReference(Fragment fragment) {
