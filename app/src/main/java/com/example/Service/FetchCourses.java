@@ -12,6 +12,9 @@ import com.example.View.LectureDetailsPageFragment;
 import com.example.View.LectureSearchPageFragment;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -38,7 +41,6 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
     public void setCourseName(String courseName) {
         this.courseName = courseName;
     }
-
     @Override
     protected Void doInBackground(Integer... mode) {
         ValueEventListener vListener = new ValueEventListener() {
@@ -67,6 +69,14 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
                     FilterFragment temp = (FilterFragment)weakReference.get();
                     temp.setSpinnerCourseForm(resultCoursesForms);
                 }
+                else if(mode[0] == 4) {
+                    LectureSearchPageFragment temp = (LectureSearchPageFragment)weakReference.get();
+                    HashMap<String, String> filterparameters = temp.getFilterParameters();
+                    System.out.println("Filterparams" + filterparameters);
+                    setFilteredCourseSmallData(snapshot, filterparameters);
+                    temp.hideProgressBar();
+                    temp.recyclerViewLecture(result);
+                }
 
             }
             @Override
@@ -80,6 +90,26 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
         }
         else if(mode[0] == 2 || mode[0] == 3) {
             firebase.getCourseDatabase("veranstaltungen").addValueEventListener(vListener);
+        }
+        else if(mode[0] == 4) {
+            firebase.getCourseDatabase("veranstaltungen").addValueEventListener(vListener);
+            /**
+            LectureSearchPageFragment temp = (LectureSearchPageFragment)weakReference.get();
+            HashMap<String, String> filterparameters = temp.getFilterParameters();
+            System.out.println("Filterparams" + filterparameters);
+            DatabaseReference courseDatabase = firebase.getCourseDatabase("course-short-info");
+            //Query query = null;
+            Query query = courseDatabase.orderByChild("titleSemabh").equalTo(filterparameters.get("titleSemabh"));
+
+            for (String key : filterparameters.keySet()) {
+                if ((filterparameters.get(key) != "") && (!key.equals("titleSemabh"))) {
+                    System.out.println(key);
+                    query = query.orderByChild(key).equalTo(filterparameters.get(key));
+                }
+            }
+
+            query.addValueEventListener(vListener);
+            */
         }
         return null;
     }
@@ -111,16 +141,39 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
     }
 
     private void setCourseSmallData(DataSnapshot snapshot) {
-        int counter = 0;
+        result.clear();
         for(DataSnapshot ds:snapshot.getChildren()){
-            System.out.println(counter++);
             HashMap<String, String> info = new HashMap<>();
             FirebaseItem item = ds.getValue(FirebaseItem.class);
+            //System.out.println(item.getTitleSemabh());
             info.put("semester", item.getSemester());
             info.put("form", item.getForm());
             info.put("number", item.getLectureNum());
             info.put("prof", item.getRespLecturer());
             result.put(item.getTitleSemabh(), info);
+        }
+    }
+
+    private void setFilteredCourseSmallData(DataSnapshot snapshot, HashMap<String, String> filterparameters) {
+        result.clear();
+        for(DataSnapshot ds:snapshot.getChildren()){
+            HashMap<String, String> info = new HashMap<>();
+            FirebaseItem item = ds.getValue(FirebaseItem.class);
+
+
+            if (item.getTitleSemabh().equals(filterparameters.get("titleSemabh")) ||
+                    item.getRespLecturer().equals(filterparameters.get("respLecturer")) ||
+                    item.getSemester().equals(filterparameters.get("semester")) ||
+                    item.getRoom().equals(filterparameters.get("room")) ||
+                    item.getForm().equals(filterparameters.get("form"))) {
+
+                info.put("semester", item.getSemester());
+                info.put("form", item.getForm());
+                info.put("number", item.getLectureNum());
+                info.put("prof", item.getRespLecturer());
+                result.put(item.getTitleSemabh(), info);
+            }
+            System.out.println(result);
         }
     }
 

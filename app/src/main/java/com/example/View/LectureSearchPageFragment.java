@@ -16,6 +16,7 @@ import com.example.Model.Lecture;
 import com.example.Service.FetchCourses;
 import com.example.readdatabase.R;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Locale;
 
@@ -28,6 +29,15 @@ public class  LectureSearchPageFragment extends Fragment {
     private RecyclerView recyclerViewList;
     private FetchCourses fetchCourses;
     private ArrayList<Lecture> courses;
+    //private String[] options;                    // dozent, semester, room, title, courseType
+    private HashMap<String, String> options;
+
+    public LectureSearchPageFragment(HashMap<String, String> options) {
+        this.options = options;
+    }
+    public LectureSearchPageFragment() {
+        this(new HashMap<String, String>());
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,16 +47,27 @@ public class  LectureSearchPageFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        root = inflater.inflate(R.layout.fragment_lecture_search_page, container, false);
-        progressBar = root.findViewById(R.id.progress_loader);
-        filterButton = root.findViewById(R.id.filterButton);
-        filterButton.setOnClickListener(new FilterClickListener());
-        fetchCourses = new FetchCourses();
-        fetchCourses.setWeakReference(this);
-        fetchCourses.execute(0);
+        if (options.isEmpty()) {
+            // Inflate the layout for this fragment
+            root = inflater.inflate(R.layout.fragment_lecture_search_page, container, false);
+            progressBar = root.findViewById(R.id.progress_loader);
+            filterButton = root.findViewById(R.id.filterButton);
+            filterButton.setOnClickListener(new FilterClickListener());
+            fetchCourses = new FetchCourses();
+            fetchCourses.setWeakReference(this);
+            fetchCourses.execute(0);
+            searchWidget();
+        } else {
+            root = inflater.inflate(R.layout.fragment_lecture_search_page, container, false);
+            progressBar = root.findViewById(R.id.progress_loader);
+            filterButton = root.findViewById(R.id.filterButton);
+            filterButton.setOnClickListener(new FilterClickListener());
+            fetchCourses = new FetchCourses();
+            fetchCourses.setWeakReference(this);
 
-        searchWidget();
+            fetchCourses.execute(4);
+            searchWidget();
+        }
         return root;
     }
 
@@ -109,6 +130,10 @@ public class  LectureSearchPageFragment extends Fragment {
             ((MainActivity)v.getContext()).getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
                     new FilterFragment()).addToBackStack("LectureSearchPageFragment").commit();
         }
+    }
+
+    public HashMap<String, String> getFilterParameters(){
+        return this.options;
     }
 
 
