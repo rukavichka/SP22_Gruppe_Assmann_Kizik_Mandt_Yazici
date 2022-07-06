@@ -43,6 +43,10 @@ public class LoginActivity extends AppCompatActivity {
 //                    e.printStackTrace();
 //                }
                 startActivity(intent);
+                if(username.isEmpty()){
+                    username = "Default";
+                }
+                VerificationProcess.getInstance().setUserData(username);
                 finish();
             }
         });

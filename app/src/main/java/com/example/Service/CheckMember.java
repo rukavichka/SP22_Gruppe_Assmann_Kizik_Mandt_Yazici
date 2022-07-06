@@ -35,15 +35,10 @@ public class CheckMember {
         if(list.isEmpty()){
             return false;
         }
-        else if (list.contains(courseName)){
-            return true;
-        }
         else{
-            return false;
+            return list.contains(courseName);
         }
     }
-
-
     /**
      * checks if the current user already joined the selected course looking up if the "user_courses" entry in firebase data bank contains selected course
      */

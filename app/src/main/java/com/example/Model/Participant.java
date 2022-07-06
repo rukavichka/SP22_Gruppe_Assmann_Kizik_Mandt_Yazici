@@ -2,19 +2,28 @@ package com.example.Model;
 
 public class Participant {
     private String name;
-    private String username;
+    private String iliasUsername;
     private String profilePic;
-    private final String user_id;
+    private String user_id;
 
     public Participant(String name, String username, String profilePic, String user_id) {
         this.name = name;
-        this.username = username;
+        this.iliasUsername = username;
         this.profilePic = profilePic;
+        this.user_id = user_id;
+    }
+
+    public Participant(String name, String username, String user_id) {
+        this.name = name;
+        this.iliasUsername = username;
         this.user_id = user_id;
     }
 
     public Participant(String user_id) {
         this.user_id = user_id;
+    }
+
+    public Participant() {
     }
 
     public String getUser_id() {
@@ -25,8 +34,8 @@ public class Participant {
         return name;
     }
 
-    public String getUsername() {
-        return username;
+    public String getIliasUsername() {
+        return iliasUsername;
     }
 
     public String getProfilePic() {

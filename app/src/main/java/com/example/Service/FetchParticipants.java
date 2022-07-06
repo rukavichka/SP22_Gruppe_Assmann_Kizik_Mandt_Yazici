@@ -6,12 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.Model.Participant;
-import com.example.Model.Room;
-import com.example.Model.VerificationProcess;
-import com.example.SoapAPI.Firebase;
-import com.example.SoapAPI.FirebaseItem;
 import com.example.View.ParticipantPageFragment;
-import com.example.View.RoomSearchPageFragment;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -20,7 +15,6 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -29,6 +23,7 @@ public class FetchParticipants extends AsyncTask<Integer, Void, Void> {
     private List<Participant> info;
     private WeakReference<Fragment> weakReference;
     private String courseName;
+    private List<Participant> tempList = new ArrayList<>();
 
     public FetchParticipants(String courseName) {
         this.courseName = courseName;
@@ -40,29 +35,43 @@ public class FetchParticipants extends AsyncTask<Integer, Void, Void> {
 
     @Override
     protected Void doInBackground(Integer... integers) {
-        ValueEventListener valueEventListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                setParticipantSmallData(snapshot);
-                ParticipantPageFragment temp = (ParticipantPageFragment) weakReference.get();
-                temp.hideProgressBar();
-                temp.recyclerViewParticipants(result);
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListenerUserID());
 
-            }
-        };
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("membership/" + courseName);
-        databaseReference.addListenerForSingleValueEvent(valueEventListener);
+
         return null;
     }
 
-    private void setParticipantSmallData(DataSnapshot snapshot) {
-        for(DataSnapshot ds:snapshot.getChildren()){
-            String item = ds.getValue(String.class);
-            result.put(item, new Participant(item));
+    private void setParticipantUserIDData(DataSnapshot snapshot) {
+        for(DataSnapshot ds:snapshot.child("membership/" + courseName).getChildren()){
+            String item = ds.getValue(String.class); //every user_id
+            //result.put(item, new Participant(item));
+            tempList.add(new Participant(item));        }
+    }
+
+    private void setParticipantName(DataSnapshot snapshot){
+        for(Participant p : tempList){
+            String name = snapshot.child("users/" + p.getUser_id() + "/" + "name").getValue(String.class);
+            String iliasUsername = snapshot.child("users/" + p.getUser_id() + "/" + "iliasUsername").getValue(String.class);
+            result.put(p.getUser_id(), new Participant(name,iliasUsername, p.getUser_id()));
+        }
+    }
+
+    public class ValueEventListenerUserID implements ValueEventListener{
+
+        @Override
+        public void onDataChange(@NonNull DataSnapshot snapshot) {
+            result.clear();
+            setParticipantUserIDData(snapshot);
+            setParticipantName(snapshot);
+            ParticipantPageFragment temp = (ParticipantPageFragment) weakReference.get();
+            temp.hideProgressBar();
+            temp.recyclerViewParticipants(result);
+        }
+
+        @Override
+        public void onCancelled(@NonNull DatabaseError error) {
 
         }
     }

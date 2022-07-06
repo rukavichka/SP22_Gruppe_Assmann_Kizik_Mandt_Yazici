@@ -31,7 +31,7 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.participantName.setText(participants.get(position).getUser_id());
+        holder.participantName.setText(participants.get(position).getIliasUsername());
 //        holder.participantUsername.setText(participants.get(position).getDate());
 //        holder.participantProfilePic.setText(participants.get(position).getContent());
     }
