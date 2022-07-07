@@ -14,6 +14,8 @@ import androidx.fragment.app.Fragment;
 import com.example.Model.Room;
 import com.example.readdatabase.R;
 
+import java.util.Calendar;
+
 public class CalendarFragment extends Fragment {
 
     View root;
@@ -35,6 +37,7 @@ public class CalendarFragment extends Fragment {
         Button button = root.findViewById(R.id.buttonCalendar);
         button.setOnClickListener(new CalendarButtonClickListener());
         CalendarView calendar = root.findViewById(R.id.calendarView);
+        calendar.setOnDateChangeListener(new CalendarDaxChangeListener());
         return root;
     }
 
@@ -60,6 +63,9 @@ public class CalendarFragment extends Fragment {
             temp[1] = month;            //maybe there is a better way to commit the date?
             temp[2] = year;
             date = temp;
+            Calendar cal = Calendar.getInstance();
+            cal.set(year,month,dayOfMonth);
+            System.out.println("Der gerade ausgewählte Tag ist:"  + cal.get(Calendar.DAY_OF_WEEK));
         }
     }
 }

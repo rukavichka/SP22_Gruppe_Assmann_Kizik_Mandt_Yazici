@@ -13,7 +13,6 @@ public class Lecture {
     private final String lectureRoom;
     private final String lectureContent;
     private final String lectureExam;
-    private final ArrayList<Participant> lectureParticipant;
     private boolean isJoined;
 
     // Professor Object (Interface/Inheritance)
@@ -27,7 +26,6 @@ public class Lecture {
         this.lectureRoom = lectureRoom;
         this.lectureContent = lectureContent;
         this.lectureExam = lectureExam;
-        this.lectureParticipant = new ArrayList<>();
         this.form = form;
         this.number = number;
     }
@@ -76,9 +74,6 @@ public class Lecture {
         return number;
     }
 
-    public ArrayList<Participant> getLectureParticipant() {
-        return lectureParticipant;
-    }
 
     public void setJoined(boolean joined){
         this.isJoined = joined;
