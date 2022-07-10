@@ -34,7 +34,7 @@ public class VerificationProcess {
         this.iliasUsername = iliasUsername;
     }
 
-    public static final VerificationProcess instance = new VerificationProcess();
+    private static final VerificationProcess instance = new VerificationProcess();
 
     private VerificationProcess(){};
 

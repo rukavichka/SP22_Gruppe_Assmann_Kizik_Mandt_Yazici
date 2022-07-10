@@ -139,4 +139,11 @@ public class CheckMember {
         this.courseName = courseName;
     }
 
+    public final String getUserId(){
+        return this.user_ID;
+    }
+
+    public void setUser_ID(int id) {
+        VerificationProcess.getInstance().setUserId(id);
+    }
 }

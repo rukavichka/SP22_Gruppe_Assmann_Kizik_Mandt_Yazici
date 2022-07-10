@@ -140,7 +140,7 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
         }
     }
 
-    private void setCourseSmallData(DataSnapshot snapshot) {
+    public void setCourseSmallData(DataSnapshot snapshot) {
         result.clear();
         for(DataSnapshot ds:snapshot.getChildren()){
             HashMap<String, String> info = new HashMap<>();
@@ -154,7 +154,7 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
         }
     }
 
-    private void setFilteredCourseSmallData(DataSnapshot snapshot, HashMap<String, String> filterparameters) {
+    public void setFilteredCourseSmallData(DataSnapshot snapshot, HashMap<String, String> filterparameters) {
         result.clear();
         for(DataSnapshot ds:snapshot.getChildren()){
             HashMap<String, String> info = new HashMap<>();
@@ -177,7 +177,8 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
         }
     }
 
-    private void setCourseLargeData(DataSnapshot snapshot) {
+    public void setCourseLargeData(DataSnapshot snapshot) {
+        info = new ArrayList<>();
         for(DataSnapshot ds:snapshot.getChildren()){
             FirebaseItem item = ds.getValue(FirebaseItem.class);
             Lecture lecture = new Lecture(courseName, item.getRespLecturer(), item.getTimeFrom() + " - " + item.getTimeTill(), item.getLectureNum(), item.getForm(), item.getSemester(), item.getRoom(), "", "", item.getFrom() + " - " + item.getTill());
@@ -185,7 +186,11 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
         }
     }
 
-    static public HashMap<String, HashMap<String, String>> getResult() {
+    public HashMap<String, HashMap<String, String>> getResult() {
         return result;
+    }
+
+    public ArrayList<Lecture> getInfo() {
+        return info;
     }
 }
