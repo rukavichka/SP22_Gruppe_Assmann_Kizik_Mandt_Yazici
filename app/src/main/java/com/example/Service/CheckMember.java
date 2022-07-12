@@ -18,7 +18,7 @@ import java.util.List;
 
 public class CheckMember {
 
-    private final String user_ID = Integer.toString(VerificationProcess.getInstance().getUserId());
+    private String user_ID = Integer.toString(VerificationProcess.getInstance().getUserId());
     private static final Firebase firebase = new Firebase();
     String courseName;
     boolean inCourseList;
@@ -31,7 +31,7 @@ public class CheckMember {
      * @param courseName current course
      * @return true when the list contains the current course
      */
-    private boolean checkList(List<String> list, String courseName) {
+    public boolean checkList(List<String> list, String courseName) {
         if(list.isEmpty()){
             return false;
         }
