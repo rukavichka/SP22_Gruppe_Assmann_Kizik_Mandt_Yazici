@@ -5,6 +5,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.Model.Lecture;
+import com.example.Model.VerificationProcess;
 import com.example.SoapAPI.Firebase;
 import com.example.SoapAPI.FirebaseItem;
 import com.example.View.FilterFragment;
@@ -20,6 +21,7 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
     private static final Firebase firebase = new Firebase();
@@ -29,6 +31,7 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
     private static final ArrayList<String> resultCoursesForms = new ArrayList<>(Arrays.asList(""));
     private ArrayList<Lecture> info;
     private WeakReference<Fragment> weakReference;
+    private List<String> joinedCourses = new ArrayList<>();
 
     public FetchCourses() {
         super();
@@ -77,6 +80,19 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
                     temp.hideProgressBar();
                     temp.recyclerViewLecture(result);
                 }
+                else if(mode[0] == 5) {
+                    joinedCourses.clear();
+                    for(DataSnapshot sn : snapshot.getChildren()){
+                        joinedCourses.add(sn.getValue().toString());
+                        doInBackground(6);
+                    }
+                }
+                else if(mode[0] == 6){
+                    setJoinedCourseData(snapshot);
+                    LectureSearchPageFragment temp = (LectureSearchPageFragment)weakReference.get();
+                    temp.hideProgressBar();
+                    temp.recyclerViewLecture(result);
+                }
 
             }
             @Override
@@ -111,6 +127,12 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
             query.addValueEventListener(vListener);
             */
         }
+        else if(mode[0] == 5) {
+            firebase.getCourseDatabase("user_courses/" + VerificationProcess.getInstance().userId).addListenerForSingleValueEvent(vListener);
+        }
+        else if(mode[0] == 6) {
+            firebase.getCourseDatabase("veranstaltungen").addListenerForSingleValueEvent(vListener);
+        }
         return null;
     }
 
@@ -136,6 +158,21 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
             String form = ds.child("form").getValue(String.class);
             if (!resultCoursesForms.contains(form)) {
                 resultCoursesForms.add(form);
+            }
+        }
+    }
+
+    public void setJoinedCourseData(DataSnapshot snapshot){
+        result.clear();
+        for(DataSnapshot ds:snapshot.getChildren()){
+            HashMap<String, String> info = new HashMap<>();
+            FirebaseItem item = ds.getValue(FirebaseItem.class);
+            if(joinedCourses.contains(item.getTitleSemabh())){
+                info.put("semester", item.getSemester());
+                info.put("form", item.getForm());
+                info.put("number", item.getLectureNum());
+                info.put("prof", item.getRespLecturer());
+                result.put(item.getTitleSemabh(), info);
             }
         }
     }

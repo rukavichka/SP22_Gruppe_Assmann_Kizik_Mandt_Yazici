@@ -48,11 +48,11 @@ public class MainActivity extends AppCompatActivity  {
                         break;
                     case R.id.meineVeranstaltungen:
                         getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
-                                new LectureSearchPageFragment()).commit();
+                                new LectureSearchPageFragment(2)).commit();
                         break;
                     case R.id.alleVeranstaltungen:
                         getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
-                                new LectureSearchPageFragment()).commit();
+                                new LectureSearchPageFragment(1)).commit();
                         break;
 //                    case R.id.Settings:
 //                        getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,

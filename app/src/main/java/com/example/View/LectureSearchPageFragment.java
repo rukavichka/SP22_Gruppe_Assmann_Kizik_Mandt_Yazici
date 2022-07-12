@@ -29,6 +29,7 @@ public class  LectureSearchPageFragment extends Fragment {
     private RecyclerView recyclerViewList;
     private FetchCourses fetchCourses;
     private ArrayList<Lecture> courses;
+    private int mode;
     //private String[] options;                    // dozent, semester, room, title, courseType
     private HashMap<String, String> options;
 
@@ -37,6 +38,10 @@ public class  LectureSearchPageFragment extends Fragment {
     }
     public LectureSearchPageFragment() {
         this(new HashMap<String, String>());
+    }
+    public LectureSearchPageFragment(int mode) {
+        this.mode = mode;
+        this.options = new HashMap<String, String>();
     }
 
     @Override
@@ -47,25 +52,37 @@ public class  LectureSearchPageFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        if (options.isEmpty()) {
-            // Inflate the layout for this fragment
-            root = inflater.inflate(R.layout.fragment_lecture_search_page, container, false);
-            progressBar = root.findViewById(R.id.progress_loader);
-            filterButton = root.findViewById(R.id.filterButton);
-            filterButton.setOnClickListener(new FilterClickListener());
-            fetchCourses = new FetchCourses();
-            fetchCourses.setWeakReference(this);
-            fetchCourses.execute(0);
-            searchWidget();
-        } else {
-            root = inflater.inflate(R.layout.fragment_lecture_search_page, container, false);
-            progressBar = root.findViewById(R.id.progress_loader);
-            filterButton = root.findViewById(R.id.filterButton);
-            filterButton.setOnClickListener(new FilterClickListener());
-            fetchCourses = new FetchCourses();
-            fetchCourses.setWeakReference(this);
+        if(mode == 1) {
+            if (options.isEmpty()) {
+                // Inflate the layout for this fragment
+                root = inflater.inflate(R.layout.fragment_lecture_search_page, container, false);
+                progressBar = root.findViewById(R.id.progress_loader);
+                filterButton = root.findViewById(R.id.filterButton);
+                filterButton.setOnClickListener(new FilterClickListener());
+                fetchCourses = new FetchCourses();
+                fetchCourses.setWeakReference(this);
+                fetchCourses.execute(0);
+                searchWidget();
+            } else {
+                root = inflater.inflate(R.layout.fragment_lecture_search_page, container, false);
+                progressBar = root.findViewById(R.id.progress_loader);
+                filterButton = root.findViewById(R.id.filterButton);
+                filterButton.setOnClickListener(new FilterClickListener());
+                fetchCourses = new FetchCourses();
+                fetchCourses.setWeakReference(this);
 
-            fetchCourses.execute(4);
+                fetchCourses.execute(4);
+                searchWidget();
+            }
+        }
+        if(mode == 2){
+            root = inflater.inflate(R.layout.fragment_lecture_search_page, container, false);
+            progressBar = root.findViewById(R.id.progress_loader);
+            filterButton = root.findViewById(R.id.filterButton);
+            filterButton.setOnClickListener(new FilterClickListener());
+            fetchCourses = new FetchCourses();
+            fetchCourses.setWeakReference(this);
+            fetchCourses.execute(5);
             searchWidget();
         }
         return root;
