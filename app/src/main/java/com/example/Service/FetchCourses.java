@@ -49,47 +49,54 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
         ValueEventListener vListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(mode[0] == 0) {
+                if (mode[0] == 0) {
                     setCourseSmallData(snapshot);
-                    LectureSearchPageFragment temp = (LectureSearchPageFragment)weakReference.get();
+                    LectureSearchPageFragment temp = (LectureSearchPageFragment) weakReference.get();
                     temp.hideProgressBar();
                     temp.recyclerViewLecture(result);
-                }
-                else if(mode[0] == 1) {
+                } else if (mode[0] == 1) {
                     info = new ArrayList<>();
-                    LectureDetailsPageFragment temp = (LectureDetailsPageFragment)weakReference.get();
+                    LectureDetailsPageFragment temp = (LectureDetailsPageFragment) weakReference.get();
                     setCourseLargeData(snapshot);
                     temp.hideProgressBar();
                     temp.setCourseInfo(info);
-                }
-                else if(mode[0] == 2) {
+                } else if (mode[0] == 2) {
                     setCourseList(snapshot);
-                    FilterFragment temp = (FilterFragment)weakReference.get();
+                    FilterFragment temp = (FilterFragment) weakReference.get();
                     temp.setSpinnerCourse(resultCoursesTitles);
-                }
-                else if(mode[0] == 3) {
+                } else if (mode[0] == 3) {
                     setCourseFormsList(snapshot);
-                    FilterFragment temp = (FilterFragment)weakReference.get();
+                    FilterFragment temp = (FilterFragment) weakReference.get();
                     temp.setSpinnerCourseForm(resultCoursesForms);
-                }
-                else if(mode[0] == 4) {
-                    LectureSearchPageFragment temp = (LectureSearchPageFragment)weakReference.get();
+                } else if (mode[0] == 4) {
+                    LectureSearchPageFragment temp = (LectureSearchPageFragment) weakReference.get();
                     HashMap<String, String> filterparameters = temp.getFilterParameters();
                     System.out.println("Filterparams" + filterparameters);
                     setFilteredCourseSmallData(snapshot, filterparameters);
                     temp.hideProgressBar();
                     temp.recyclerViewLecture(result);
-                }
-                else if(mode[0] == 5) {
+                } else if (mode[0] == 5) {
                     joinedCourses.clear();
-                    for(DataSnapshot sn : snapshot.getChildren()){
+                    for (DataSnapshot sn : snapshot.getChildren()) {
                         joinedCourses.add(sn.getValue().toString());
                         doInBackground(6);
                     }
-                }
-                else if(mode[0] == 6){
+                } else if (mode[0] == 6) {
                     setJoinedCourseData(snapshot);
-                    LectureSearchPageFragment temp = (LectureSearchPageFragment)weakReference.get();
+                    LectureSearchPageFragment temp = (LectureSearchPageFragment) weakReference.get();
+                    temp.hideProgressBar();
+                    temp.recyclerViewLecture(result);
+
+                } else if (mode[0] == 7) {
+                    joinedCourses.clear();
+                    for (DataSnapshot sn : snapshot.getChildren()) {
+                        joinedCourses.add(sn.getValue().toString());
+                        doInBackground(8);
+                    }
+                } else if (mode[0] == 8) {
+                    LectureSearchPageFragment temp = (LectureSearchPageFragment) weakReference.get();
+                    HashMap<String, String> filterParameters = temp.getFilterParameters();
+                    setJoinedCourseDataFilter(snapshot, filterParameters);
                     temp.hideProgressBar();
                     temp.recyclerViewLecture(result);
                 }
@@ -107,7 +114,7 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
         else if(mode[0] == 2 || mode[0] == 3) {
             firebase.getCourseDatabase("veranstaltungen").addValueEventListener(vListener);
         }
-        else if(mode[0] == 4) {
+        else if(mode[0] == 4 || mode[0] == 8) {
             firebase.getCourseDatabase("veranstaltungen").addValueEventListener(vListener);
             /**
             LectureSearchPageFragment temp = (LectureSearchPageFragment)weakReference.get();
@@ -127,7 +134,7 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
             query.addValueEventListener(vListener);
             */
         }
-        else if(mode[0] == 5) {
+        else if(mode[0] == 5 || mode[0] == 7) {
             firebase.getCourseDatabase("user_courses/" + VerificationProcess.getInstance().userId).addListenerForSingleValueEvent(vListener);
         }
         else if(mode[0] == 6) {
@@ -149,6 +156,29 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
         }
     }
 
+    public void setJoinedCourseDataFilter(DataSnapshot snapshot, HashMap<String, String> filterparameters) {
+        result.clear();
+        for(DataSnapshot ds:snapshot.getChildren()){
+            HashMap<String, String> info = new HashMap<>();
+            FirebaseItem item = ds.getValue(FirebaseItem.class);
+
+
+            if ((item.getTitleSemabh().equals(filterparameters.get("titleSemabh")) ||
+                    item.getRespLecturer().equals(filterparameters.get("respLecturer")) ||
+                    item.getSemester().equals(filterparameters.get("semester")) ||
+                    item.getRoom().equals(filterparameters.get("room")) ||
+                    item.getForm().equals(filterparameters.get("form"))) && joinedCourses.contains(item.getTitleSemabh())) {
+
+                info.put("semester", item.getSemester());
+                info.put("form", item.getForm());
+                info.put("number", item.getLectureNum());
+                info.put("prof", item.getRespLecturer());
+                result.put(item.getTitleSemabh(), info);
+            }
+            System.out.println(result);
+        }
+    }
+
     /**
      * to get the courses forms as a list from Firebase without duplicates
      * @param snapshot
@@ -162,6 +192,9 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
         }
     }
 
+    /** gets course data from firebase from those courses which are contained in joinedCourses list
+     * @param snapshot current snapshot from firebase
+     */
     public void setJoinedCourseData(DataSnapshot snapshot){
         result.clear();
         for(DataSnapshot ds:snapshot.getChildren()){

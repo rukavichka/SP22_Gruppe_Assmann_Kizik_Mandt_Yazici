@@ -53,6 +53,7 @@ public class RoomOccupationFragment extends Fragment {
         timeSlot6 = root.findViewById(R.id.timeSlot6);
         timeSlot7 = root.findViewById(R.id.timeSlot7);
         roomTitle = root.findViewById(R.id.roomTitle);
+
         roomTitle.setText(room.getRoomNumber());
         FetchOccRooms fetchOccRooms = new FetchOccRooms(cal, room);
         fetchOccRooms.setWeakReference(this);

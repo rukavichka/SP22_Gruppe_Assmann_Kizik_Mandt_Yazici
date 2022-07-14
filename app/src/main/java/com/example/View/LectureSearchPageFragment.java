@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.SearchView;
+import android.widget.TextView;
 
 import com.example.Adapter.LectureAdapter;
 import com.example.Model.Lecture;
@@ -33,11 +34,12 @@ public class  LectureSearchPageFragment extends Fragment {
     //private String[] options;                    // dozent, semester, room, title, courseType
     private HashMap<String, String> options;
 
-    public LectureSearchPageFragment(HashMap<String, String> options) {
+    public LectureSearchPageFragment(HashMap<String, String> options, int mode) {
         this.options = options;
+        this.mode = mode;
     }
     public LectureSearchPageFragment() {
-        this(new HashMap<String, String>());
+        this(new HashMap<String, String>(),1);
     }
     public LectureSearchPageFragment(int mode) {
         this.mode = mode;
@@ -52,38 +54,33 @@ public class  LectureSearchPageFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        root = inflater.inflate(R.layout.fragment_lecture_search_page, container, false);
+        TextView mainTitle = ((MainActivity)root.getContext()).findViewById(R.id.main_title);
+        progressBar = root.findViewById(R.id.progress_loader);
+        filterButton = root.findViewById(R.id.filterButton);
+        filterButton.setOnClickListener(new FilterClickListener());
+        fetchCourses = new FetchCourses();
+        fetchCourses.setWeakReference(this);
         if(mode == 1) {
+            mainTitle.setText(R.string.main_title_all_courses);
             if (options.isEmpty()) {
                 // Inflate the layout for this fragment
-                root = inflater.inflate(R.layout.fragment_lecture_search_page, container, false);
-                progressBar = root.findViewById(R.id.progress_loader);
-                filterButton = root.findViewById(R.id.filterButton);
-                filterButton.setOnClickListener(new FilterClickListener());
-                fetchCourses = new FetchCourses();
-                fetchCourses.setWeakReference(this);
                 fetchCourses.execute(0);
                 searchWidget();
             } else {
-                root = inflater.inflate(R.layout.fragment_lecture_search_page, container, false);
-                progressBar = root.findViewById(R.id.progress_loader);
-                filterButton = root.findViewById(R.id.filterButton);
-                filterButton.setOnClickListener(new FilterClickListener());
-                fetchCourses = new FetchCourses();
-                fetchCourses.setWeakReference(this);
-
                 fetchCourses.execute(4);
                 searchWidget();
             }
         }
         if(mode == 2){
-            root = inflater.inflate(R.layout.fragment_lecture_search_page, container, false);
-            progressBar = root.findViewById(R.id.progress_loader);
-            filterButton = root.findViewById(R.id.filterButton);
-            filterButton.setOnClickListener(new FilterClickListener());
-            fetchCourses = new FetchCourses();
-            fetchCourses.setWeakReference(this);
-            fetchCourses.execute(5);
-            searchWidget();
+            mainTitle.setText(R.string.main_title_my_courses);
+            if (options.isEmpty()) {
+                fetchCourses.execute(5);
+                searchWidget();
+            }
+            else{
+                fetchCourses.execute(7);
+                searchWidget();}
         }
         return root;
     }
@@ -145,7 +142,7 @@ public class  LectureSearchPageFragment extends Fragment {
         @Override
         public void onClick(View v) {
             ((MainActivity)v.getContext()).getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
-                    new FilterFragment()).addToBackStack("LectureSearchPageFragment").commit();
+                    new FilterFragment(mode)).addToBackStack("LectureSearchPageFragment").commit();
         }
     }
 

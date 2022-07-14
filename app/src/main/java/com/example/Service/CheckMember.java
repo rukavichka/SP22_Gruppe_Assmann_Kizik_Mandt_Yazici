@@ -52,6 +52,7 @@ public class CheckMember {
                 }
                 LectureDetailsPageFragment temp = (LectureDetailsPageFragment)weakReference.get();
                 temp.setIsCourseMember(checkList(tempList,courseName));
+
             }
 
 

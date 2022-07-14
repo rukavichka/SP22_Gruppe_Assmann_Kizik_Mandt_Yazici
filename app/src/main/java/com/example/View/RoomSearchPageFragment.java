@@ -30,6 +30,7 @@ public class RoomSearchPageFragment extends Fragment {
     private RecyclerView.Adapter adapter;
     private RecyclerView recyclerViewList;
     FetchRooms fetchRooms;
+    private TextView headerTitle;
 
 
 
@@ -45,6 +46,8 @@ public class RoomSearchPageFragment extends Fragment {
         root = inflater.inflate(R.layout.fragment_lecture_search_page, container, false);
         progressBar = root.findViewById(R.id.progress_loader);
         filterButton = root.findViewById(R.id.filterButton);
+        headerTitle = ((MainActivity)root.getContext()).findViewById(R.id.main_title);
+        headerTitle.setText(R.string.main_title_search_rooms);
         filterButton.setOnClickListener(new RoomSearchPageFragment.FilterClickListener());
         TextView searchHeader = root.findViewById(R.id.resultTextView);
         searchHeader.setText(R.string.rooms_little_header);
@@ -80,7 +83,7 @@ public class RoomSearchPageFragment extends Fragment {
         @Override
         public void onClick(View v) {
             ((MainActivity)v.getContext()).getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
-                    new FilterFragment()).addToBackStack("RoomSearchPageFragment").commit();
+                    new FilterFragment(1)).addToBackStack("RoomSearchPageFragment").commit();
         }
     }
 }

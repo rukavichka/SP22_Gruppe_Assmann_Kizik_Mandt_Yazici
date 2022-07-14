@@ -34,6 +34,13 @@ public class FilterFragment extends Fragment {
     FetchCourses fetchCourses;
     FetchRooms fetchRooms;
 
+    int mode;
+
+    public FilterFragment(int mode){
+        super();
+        this.mode = mode;
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,7 +80,7 @@ public class FilterFragment extends Fragment {
             @Override
             public void onClick(View v){
                 ((MainActivity)v.getContext()).getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
-                        new LectureSearchPageFragment()).addToBackStack(null).commit();
+                        new LectureSearchPageFragment(mode)).addToBackStack(null).commit();
             }
         });
 
@@ -94,7 +101,7 @@ public class FilterFragment extends Fragment {
                 options.put("titleSemabh", title);
                 options.put("form", courseType);
                 ((MainActivity)v.getContext()).getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
-                        new LectureSearchPageFragment(options)).addToBackStack(null).commit();
+                        new LectureSearchPageFragment(options,mode)).addToBackStack(null).commit();
             }
         });
 

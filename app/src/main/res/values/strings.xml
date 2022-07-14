@@ -69,6 +69,9 @@
     <string name="day">Day</string>
     <string name="pcpt_little_header">Alle Teilnehmer</string>
     <string name="rooms_little_header">Alle Räume</string>
+    <string name="main_title_my_courses">Meine Veranstaltungen</string>
+    <string name="main_title_all_courses">Alle Veranstaltungen</string>
+    <string name="main_title_search_rooms">Raumsuche</string>
 
 
 
