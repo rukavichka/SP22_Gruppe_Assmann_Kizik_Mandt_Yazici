@@ -32,6 +32,7 @@ public class VerificationProcessTest {
     SOAP soap = new SOAP();
 
     /**
+     * Anforderung: Der User kann sich über seinen Uni Account einloggen
      * Test for Login with the existing ilias username and password
      * @throws ExecutionException
      * @throws InterruptedException
@@ -40,29 +41,10 @@ public class VerificationProcessTest {
     public void LoginCorrectDataTest() throws ExecutionException, InterruptedException {
 
         VerificationProcess vp = VerificationProcess.getInstance();
-        /**
-        try {
-            Field field = VerificationProcess.class.getDeclaredField("instance");
-            field.setAccessible(true);
-            field.set(vp, VerificationProcess.getInstance());
-        } catch (NoSuchFieldException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
-        */
 
         String client_id = "mriliastest";
-        String username = "Kizik";
-        String password = "Bogdasik19";
-        /**
-        ExecutorService executor = Executors.newSingleThreadExecutor();
-        Future<String> foo = executor.submit(() -> {
-            return soap.login(client_id, username, password);
-        });
-        String sid = foo.get();
-        executor.shutdown();
-         */
+        String username = "..";    // correct data needed
+        String password = "..";    // correct data needed
         String sid = vp.login(client_id, username, password);
         assertNotNull(sid);
 
@@ -70,6 +52,7 @@ public class VerificationProcessTest {
 
 
     /**
+     * Anforderung: Der User kann sich über seinen Uni Account einloggen
      * Test for Login with the not existing ilias username and password
      * @throws ExecutionException
      * @throws InterruptedException
@@ -81,19 +64,12 @@ public class VerificationProcessTest {
         String username = "abc";
         String password = "abc";
 
-        /**
-        ExecutorService executor = Executors.newSingleThreadExecutor();
-        Future<String> foo = executor.submit(() -> {
-            return soap.login(client_id, username, password);
-        });
-        String sid = foo.get();
-        executor.shutdown();
-        */
         String sid = vp.login(client_id, username, password);
         Assert.assertNull(sid);
     }
 
     /**
+     * Anforderung: User kann sich über seinen Uni Account ausloggen
      * Test for Logout for the correctly loggedIn user
      * @throws ExecutionException
      * @throws InterruptedException
@@ -103,32 +79,17 @@ public class VerificationProcessTest {
         VerificationProcess vp = VerificationProcess.getInstance();
         // login part with the correct login data
         String client_id = "mriliastest";
-        String username = "Kizik";
-        String password = "Bogdasik19";
-        /**
-        ExecutorService executorLogin = Executors.newSingleThreadExecutor();
-        Future<String> fooLogin = executorLogin.submit(() -> {
-            return soap.login(client_id, username, password);
-        });
-        String sid = fooLogin.get();
-        executorLogin.shutdown();
-        */
+        String username = "..";    // correct data needed
+        String password = "..";    // correct data needed
         String sid = vp.login(client_id, username, password);
 
         // logout part with the correct login data
-        /**
-        ExecutorService executorLogout = Executors.newSingleThreadExecutor();
-        Future<Boolean> fooLogout = executorLogout.submit(() -> {
-            return soap.logout(sid);
-        });
-        Boolean loggedOut = fooLogout.get();
-        executorLogout.shutdown();
-         */
         Boolean loggedOut = vp.logout(sid);
         assertTrue(loggedOut);
     }
 
     /**
+     * Anforderung: User kann sich über seinen Uni Account ausloggen
      * Test for Logout for the not loggedIn(null) user
      * @throws ExecutionException
      * @throws InterruptedException
@@ -137,14 +98,6 @@ public class VerificationProcessTest {
     public void LogoutNullUserTest() throws ExecutionException, InterruptedException {
 
         VerificationProcess vp = VerificationProcess.getInstance();
-        /**
-        ExecutorService executorLogout = Executors.newSingleThreadExecutor();
-        Future<Boolean> fooLogout = executorLogout.submit(() -> {
-            return soap.logout(null);
-        });
-        Boolean loggedOut = fooLogout.get();
-        executorLogout.shutdown();
-         */
         Boolean loggedOut = vp.logout(null);
         assertFalse(loggedOut);
     }
