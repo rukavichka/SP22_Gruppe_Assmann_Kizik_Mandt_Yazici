@@ -52,8 +52,7 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
                     temp.recyclerViewLecture(result);
                     temp.hideProgressBar();
                 }
-                else if(mode[0] == 1) {
-                } else if (mode[0] == 1) {
+                else if (mode[0] == 1) {
                     info = new ArrayList<>();
                     LectureDetailsPageFragment temp = (LectureDetailsPageFragment) weakReference.get();
                     setCourseLargeData(snapshot);
