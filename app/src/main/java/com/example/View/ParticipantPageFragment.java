@@ -11,10 +11,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
+import android.widget.SearchView;
 import android.widget.TextView;
 
+import com.example.Adapter.LectureAdapter;
 import com.example.Adapter.ParticipantAdapter;
 import com.example.Adapter.RoomAdapter;
+import com.example.Model.Lecture;
 import com.example.Model.Participant;
 import com.example.Model.Room;
 import com.example.Service.FetchParticipants;
@@ -29,11 +32,14 @@ import java.util.List;
 public class ParticipantPageFragment extends Fragment {
     private ProgressBar progressBar;
     ImageButton filterButton;
+    private SearchView searchView;
     private View root;
     private RecyclerView.Adapter adapter;
     private RecyclerView recyclerViewList;
-    FetchParticipants fetchParticipants;
+    //FetchParticipants fetchParticipants;
     String courseName;
+
+    List<Participant> participants;
 
     public ParticipantPageFragment(String courseName) {
         this.courseName = courseName;
@@ -50,11 +56,13 @@ public class ParticipantPageFragment extends Fragment {
         root = inflater.inflate(R.layout.fragment_lecture_search_page, container, false);
         progressBar = root.findViewById(R.id.progress_loader);
         filterButton = root.findViewById(R.id.filterButton);
+        filterButton.setVisibility(View.INVISIBLE);
         TextView searchHeader = root.findViewById(R.id.resultTextView);
         searchHeader.setText(R.string.pcpt_little_header);
         FetchParticipants fetchParticipants = new FetchParticipants(courseName);
         fetchParticipants.setWeakReference(this);
         fetchParticipants.execute();
+        searchWidget();
         return root;
     }
 
@@ -62,7 +70,7 @@ public class ParticipantPageFragment extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerViewList = root.findViewById(R.id.searchListView);
         recyclerViewList.setLayoutManager(linearLayoutManager);
-        List<Participant> participants = new ArrayList<Participant>();
+         participants = new ArrayList<Participant>();
 
             //String professor = data.get(key).get("prof");
             //String semester = data.get(key).get("semester");
@@ -77,4 +85,30 @@ public class ParticipantPageFragment extends Fragment {
     public void hideProgressBar() {
         progressBar.setVisibility(View.INVISIBLE);
     }
+
+    public void searchWidget() {
+        searchView = root.findViewById(R.id.searchView);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+
+                ArrayList<Participant> sortedCourses = new ArrayList<>();
+                for (Participant p: participants) {
+                    if (p.getIliasUsername().toLowerCase().contains(s.toLowerCase())) {
+                        sortedCourses.add(p);
+                    }
+                }
+                adapter = new ParticipantAdapter(sortedCourses);
+                recyclerViewList.setAdapter(adapter);
+                return false;
+            }
+        });
+    }
+
 }
