@@ -10,8 +10,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.Model.VerificationProcess;
@@ -42,21 +42,29 @@ public class MainActivity extends AppCompatActivity  {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
+                    case R.id.homePage:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
+                                new HomePageFragment()).commit();
+                        break;
                     case R.id.meineVeranstaltungen:
                         getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
-                                new LectureSearchPageFragment()).commit();
+                                new LectureSearchPageFragment(2)).commit();
                         break;
                     case R.id.alleVeranstaltungen:
                         getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
-                                new LectureSearchPageFragment()).commit();
+                                new LectureSearchPageFragment(1)).commit();
                         break;
-                    case R.id.Settings:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
-                                new ScrollTest()).commit();
-                        break;
+//                    case R.id.Settings:
+//                        getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
+//                                new ScrollTest()).commit();
+//                        break;
                     case R.id.RaumSuchen:
                         getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
-                                new ScrollTest()).commit();
+                                new RoomSearchPageFragment()).commit();
+                        break;
+                    case R.id.signOut:
+                        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                        startActivity(intent);
                         break;
                 }
                 drawer.closeDrawer(GravityCompat.START);

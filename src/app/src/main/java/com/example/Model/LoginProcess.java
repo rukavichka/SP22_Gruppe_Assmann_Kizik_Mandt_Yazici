@@ -9,7 +9,6 @@ import java.util.concurrent.Future;
 
 public class LoginProcess {
 
-
     /*
      * login implementation with SOAP
      */

@@ -44,7 +44,7 @@ public class Firebase {
 
                 for(DataSnapshot ds:snapshot.getChildren()){
 
-                    FirebaseItem item = ds.getValue(FirebaseItem.class);
+                    FirebaseItem item = ds.getValue(FirebaseItem.class  );
                     if (!listData.contains(item.getTitleSemabh())) {
                         List<String> values = new ArrayList<String>();
                         values.add(item.getSemester());
@@ -136,71 +136,6 @@ public class Firebase {
 //        Query query = courseDatabase.orderByChild("titleSemunabh").equalTo("course");
 //        query.addValueEventListener(vListener);
     }
-
-    /**
-     * FA: Der User kann den Zeitplan bzw. Belegung eines Raumes sehen
-     */
-    public void roomSchedule() {
-
-    }
-
-    /**
-     * FA: Mit Eingabe einer definierten Zeit kann der User leere Räume suchen
-     */
-    public void searchFreeRooms() {
-
-    }
-
-
-
-
-    /**
-     * FA: Der User kann die Veranstaltungen mit einem Suchterm aussortieren
-
-    public void searchCourses(String term, MyCallback myCallback) {
-        List<String> listData = new ArrayList<>();
-        Map<String, List<String>> hm = new HashMap<String, List<String>>();
-
-        //Query acoffeeQuery = courseDatabase.orderByChild("coffeeNo").equalTo(searchText + "\uf8ff");equalTo("Acoffee");
-
-        // calling add value event listener method for getting the values from database.
-        ValueEventListener vListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                for(DataSnapshot ds:snapshot.getChildren()){
-
-                    FirebaseItem item = ds.getValue(FirebaseItem.class);
-                    if (!listData.contains(item.getTitleSemabh())) {
-                        List<String> values = new ArrayList<String>();
-                        values.add(item.getSemester());
-                        values.add(item.getFrom() + " - " + item.getTill());
-                        values.add(item.getRoom());
-                        values.add(item.getRespLecturer());
-                        hm.put(item.getTitleSemabh(), values);
-                    }
-                    listData.add(item.getTitleSemabh());
-                }
-                System.out.println(hm);
-                // removing duplicates, for hashmap removed in for loop
-                Set<String> listWithoutDuplicates = new LinkedHashSet<String>(listData);
-                listData.clear();
-                listData.addAll(listWithoutDuplicates);
-                myCallback.onCallback(listData, hm);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                // calling on cancelled method when we receive
-                // any error or we are not able to get the data.
-                //Toast.makeText(MainActivity.this, "Fail to get data.", Toast.LENGTH_SHORT).show();
-            }
-        };
-        courseDatabase.addValueEventListener(vListener);
-
-
-    }
-     */
 
 
 }

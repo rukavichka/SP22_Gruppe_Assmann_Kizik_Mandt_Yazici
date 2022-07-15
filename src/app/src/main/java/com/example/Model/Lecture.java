@@ -1,38 +1,69 @@
 package com.example.Model;
 
+import android.widget.SimpleCursorAdapter;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Lecture {
-    private final String lectureName;
-    private final String form;
-    private final String number;
-    private final String professorName;
-    private final String lectureTime;
-    private final String semester;
-    private final String lecturePeriod;
-    private final String lectureRoom;
-    private final String lectureContent;
-    private final String lectureExam;
-    private final ArrayList<Participant> lectureParticipant;
+    private String lectureName;
+    private String form;
+    private String number;
+    private String semester;
+    private String professorName;
+    private String lectureRoom;
+    private String lectureContent;
+    private String lectureExam;
+    private boolean isJoined;
+    private Schedule schedule;
 
     // Professor Object (Interface/Inheritance)
+
+    public Lecture(String lectureName, String lecturePeriod, String lectureRoom, ArrayList<String> times){
+        this.lectureName = lectureName;
+        this.schedule = new Schedule(lecturePeriod);
+        this.lectureRoom = lectureRoom;
+        String[] temp;
+
+        for(String time: times) {
+            temp = time.split(" ");
+            this.schedule.addTime(temp[0], temp[1]);
+        }
+    }
+
+    public Lecture(String name, String professor, String semester, String number, String form, String room) {
+        this.lectureName = name;
+        this.professorName = professor;
+        this.semester = semester;
+        this.number = number;
+        this.form = form;
+        this.lectureRoom = room;
+    }
 
     public Lecture(String lectureName, String professorName, String lectureTime, String number, String form, String semester, String lectureRoom, String lectureContent, String lectureExam, String lecturePeriod) {
         this.lectureName = lectureName;
         this.professorName = professorName;
-        this.lectureTime = lectureTime;
-        this.lecturePeriod = lecturePeriod;
+        this.schedule = new Schedule(lecturePeriod);
+        String temp[] = lectureTime.split(" ");
+        this.schedule.addTime(temp[0], temp[1]);
         this.semester = semester;
         this.lectureRoom = lectureRoom;
         this.lectureContent = lectureContent;
         this.lectureExam = lectureExam;
-        this.lectureParticipant = new ArrayList<>();
         this.form = form;
         this.number = number;
     }
 
     public String getLecturePeriod() {
-        return lecturePeriod;
+        return this.schedule.getPeriod();
+    }
+
+    public Schedule getSchedule() {
+        return this.schedule;
+    }
+
+    public String getLectureTime() {
+        return this.schedule.getHours();
     }
 
     public String getLectureName() {
@@ -41,10 +72,6 @@ public class Lecture {
 
     public String getProfessorName() {
         return professorName;
-    }
-
-    public String getLectureTime() {
-        return lectureTime;
     }
 
     public String getLectureDate() {
@@ -75,10 +102,23 @@ public class Lecture {
         return number;
     }
 
-    public ArrayList<Participant> getLectureParticipant() {
-        return lectureParticipant;
+    public boolean isBusy(Date date) {
+        if(this.schedule.isInPeriod(date)) {
+            if(this.schedule.isBusy(date.getDay(), date.getTime())) {
+                return true;
+            }
+        }
+        return false;
     }
 
+    public void addTime(String time) {
+        String[] temp = time.split(" ");
+        this.schedule.addTime(temp[0], temp[1]);
+    }
+
+    public void setJoined(boolean joined){
+        this.isJoined = joined;
+    }
     // Further implementation needed
     public boolean isJoined() {
         return true;

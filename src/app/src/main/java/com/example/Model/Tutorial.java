@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Tutorial extends Course{
 
-    private List<Person> tutorList;
+    private List<User> tutorList;
 
     @Override
     public String getLecture_ID() {

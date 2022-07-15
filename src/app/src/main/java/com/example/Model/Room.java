@@ -1,10 +1,45 @@
 package com.example.Model;
 
-import android.location.Location;
+import java.util.ArrayList;
+import java.util.List;
 
-public abstract class Room {
-    protected String roomNumber;
-    protected double longitudeGEO;
-    protected double latitudeGEO;
-    protected String building;
+public class Room {
+    private String roomNumber;
+    private String building;
+    private List<Lecture> lectureList;
+
+    public Room(String roomNumber) {
+        this.roomNumber = roomNumber;
+        this.lectureList = new ArrayList<>();
+    }
+
+    public String getRoomNumber() {
+        return roomNumber;
+    }
+
+    public String getBuilding() {
+        return building;
+    }
+
+    public void addLecture(Lecture lecture) {
+        lectureList.add(lecture);
+    }
+
+    public Lecture getLecture(Date date) {
+        for(Lecture lecture : lectureList) {
+            if(lecture.isBusy(date)) {
+                return lecture;
+            }
+        }
+        return null;
+    }
+
+    public boolean isFree(Date date) {
+        for(Lecture lecture:lectureList) {
+            if(lecture.isBusy(date)) {
+               return false;
+            }
+        }
+        return true;
+    }
 }

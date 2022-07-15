@@ -1,6 +1,14 @@
 package com.example.Model;
 
+import androidx.annotation.NonNull;
+
 import com.example.SoapAPI.SOAP;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
@@ -11,8 +19,22 @@ public class VerificationProcess {
 
     public String sid;
     public int userId;
+    private String iliasUsername;
+    private String name;
 
-    public static final VerificationProcess instance = new VerificationProcess();
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public void setIliasUsername(String iliasUsername) {
+        this.iliasUsername = iliasUsername;
+    }
+
+    private static final VerificationProcess instance = new VerificationProcess();
 
     private VerificationProcess(){};
 
@@ -130,5 +152,42 @@ public class VerificationProcess {
     public void setSid(String sid) {
         this.sid = sid;
     }
+
+    public void setUserData(String iliasUsername){
+        Query databaseReferenceUsers = FirebaseDatabase.getInstance().getReference("users")
+                .orderByChild("iliasUsername").equalTo(iliasUsername);
+        databaseReferenceUsers.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot sn : snapshot.getChildren()){
+                    for(DataSnapshot sn1 : sn.getChildren()){
+                        if(sn1.getKey().equals("user_id")){
+                            setUserId(Integer.parseInt(sn1.getValue().toString()));
+                        }
+                        else if(sn1.getKey().equals("name")){
+                            setName(sn1.getValue().toString());
+                        }
+                        else if(sn1.getKey().equals("iliasUsername")){
+                            setIliasUsername(sn1.getValue().toString());
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    public String getIliasUsername() {
+        return iliasUsername;
+    }
+
+    public String getName() {
+        return name;
+    }
+
 
 }

@@ -12,47 +12,62 @@ import android.widget.Button;
 import android.widget.PopupMenu;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import com.example.Model.Data;
 import com.example.Model.Lecture;
+import com.example.Model.VerificationProcess;
+import com.example.Service.CheckMember;
 import com.example.Service.FetchCourses;
 import com.example.readdatabase.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 
 public class LectureDetailsPageFragment extends Fragment {
     private Button joinButton;
+    private Button participantsButton;
     private final String courseName;
     private String currentPeriod;
     private FetchCourses fetchCourses;
     private Lecture lecture;
     private View root;
     private ArrayList<Lecture> courseInfo;
+    private boolean isCourseMember;
+    private CheckMember checkMember;
+    private DatabaseReference databaseReference;
 
     public LectureDetailsPageFragment(String courseName) {
         this.courseName = courseName;
-        fetchCourses = new FetchCourses();
-        fetchCourses.setCourseName(courseName);
-        fetchCourses.setWeakReference(this);
+        checkMember = new CheckMember();
+        checkMember.setCourseName(courseName);
+        checkMember.setWeakReference(this);
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        databaseReference = FirebaseDatabase.getInstance().getReference("user_courses/" + VerificationProcess.getInstance().userId);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.fragment_lecture_details_page, container, false);
+        fetchCourses = new FetchCourses();
+        checkMember.executeCheckUserCourses();
+        fetchCourses.setCourseName(courseName);
+        fetchCourses.setWeakReference(this);
         fetchCourses.execute(1);
         return root;
     }
 
-    public void setCourseInfo(ArrayList<Lecture> courses) {
-        this.courseInfo = courses;
+    public void setCourseInfo(ArrayList<Lecture> data) {
+        this.courseInfo = data;
         this.lecture =courseInfo.get(0);
         this.currentPeriod = lecture.getLecturePeriod();
         setLayout(lecture);
         createMenu();
-        hideProgressBar();
     }
 
     private void createMenu() {
@@ -64,15 +79,14 @@ public class LectureDetailsPageFragment extends Fragment {
         PopupMenu popupMenu = new PopupMenu(getContext(), button);
         popupMenu.getMenu().clear();
         for(Lecture lecture: courseInfo) {
-            System.out.println(lecture.getLecturePeriod());
-            if(!lecture.getLecturePeriod().equals(currentPeriod)) {
+            if(!lecture.getSchedule().equals(currentPeriod)) {
                 popupMenu.getMenu().add(lecture.getLecturePeriod());
             }
-
         }
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                popupMenu.show();
                 popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem menuItem) {
@@ -81,31 +95,33 @@ public class LectureDetailsPageFragment extends Fragment {
                         return true;
                     }
                 });
-                popupMenu.show();
             }
         });
     }
 
     private void changeLayout(String period) {
         for(Lecture lecture: courseInfo) {
-            if(period.equals(lecture.getLecturePeriod())) {
-                setLayout(lecture);
-                this.lecture = lecture;
-                break;
-            }
+//            if(period.equals(lecture.getLecturePeriod())) {
+//                setLayout(lecture);
+//                this.lecture = lecture;
+//                break;
+//            }
         }
         this.currentPeriod = period;
         createMenu();
     }
 
     public void setLayout(Lecture info) {
+        joinButton = root.findViewById(R.id.joinButton);
+        setJoinText(joinButton);
         TextView courseName = root.findViewById(R.id.courseNameTextView);
         TextView profName = root.findViewById(R.id.professorEditableTextView);
         TextView period = root.findViewById(R.id.periodMenuButton);
         TextView semester = root.findViewById(R.id.semesterEditableTextView);
         TextView room = root.findViewById(R.id.roomEditableTextView);
         TextView hours = root.findViewById(R.id.courseHoursTextView);
-        ConstraintLayout layout = root.findViewById(R.id.detailsConstrain);
+        ConstraintLayout layout = root.findViewById(R.id.detailsConstraint);
+        participantsButton = root.findViewById(R.id.participantsButton);
 
         hours.setText(info.getLectureTime());
         courseName.setText(info.getLectureName());
@@ -116,18 +132,32 @@ public class LectureDetailsPageFragment extends Fragment {
         layout.setVisibility(View.VISIBLE);
 
         joinButton = root.findViewById(R.id.joinButton);
-        if(lecture.isJoined()){
-            joinButton.setText("Leave Course");
+        setJoinText(joinButton);
+        joinButton.setOnClickListener(new JoinButtonListener());
+
+        participantsButton.setOnClickListener(new ParticipantClickListener());
+
+
+    }
+    public void participantsButtonVisibility(Button participants){
+        if(isCourseMember){
+            participants.setVisibility(View.VISIBLE);
         }
         else{
-            joinButton.setText("Join Course");
+            participants.setVisibility(View.INVISIBLE);
         }
-        joinButton.setOnClickListener(new JoinButtonListener());
     }
 
+
     public void hideProgressBar() {
+        ConstraintLayout layout = root.findViewById(R.id.detailsConstraint);
         ProgressBar progressBar = root.findViewById(R.id.progress_loader2);
         progressBar.setVisibility(View.INVISIBLE);
+        layout.setVisibility(View.VISIBLE);
+    }
+
+    public void setIsCourseMember(boolean checkList) {
+        this.isCourseMember = checkList;
     }
 
 
@@ -135,17 +165,45 @@ public class LectureDetailsPageFragment extends Fragment {
 
         @Override
         public void onClick(View v) {
-            if(lecture.isJoined()){
+            if(isCourseMember){
                 joinButton.setText("Join Course");
-                // Further implementation needed
-                //lecture.setJoined(false);
+                checkMember.executeDeleteMembership(courseName);
+                checkMember.executeDeleteUserCourses(courseName);
+                checkMember.executeCheckUserCourses();
             }
             else{
                 joinButton.setText("Leave Course");
-                // Further implementation needed
-                // lecture.setJoined(true);
+                checkMember.executeAddMembership(courseName);
+                checkMember.executeAddUserCourses(courseName);
+                checkMember.executeCheckUserCourses();
             }
-            //Update Firebase about the Join. Save it in List.
         }
     }
+
+    private void setJoinText(Button joinButton) {
+        if(isCourseMember){
+            joinButton.setText("Leave Course");
+        }
+        else{
+            joinButton.setText("Join Course");
+        }
+    }
+
+
+    public class ParticipantClickListener implements View.OnClickListener{
+
+        @Override
+        public void onClick(View v) {
+            ((MainActivity)v.getContext()).getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
+                    new ParticipantPageFragment(courseName)).addToBackStack("ParticipantPageFragment").commit();
+        }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        fetchCourses = null;
+    }
+
+
 }

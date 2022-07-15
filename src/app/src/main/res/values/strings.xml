@@ -38,10 +38,11 @@
     <string name="zeiten">Zeiten:</string>
     <string name="semester">Semester:</string>
     <string name="roomText">Raum:</string>
+    <string name="courseText">Titel:</string>
     <string name="className">Class Name</string>
     <string name="moreInfoText">More Info Text</string>
     <string name="contentText">Inhalt:</string>
-    <string name="examText">Klasur:</string>
+    <string name="examText">Klausur:</string>
     <string name="participantText">Participants</string>
     <string name="joinText">Join</string>
     <string name="dozentExample">Professor Mustermann</string>
@@ -57,6 +58,24 @@
     <string name="course_period">Course Period   </string>
     <string name="course_time">Course Time</string>
     <string name="uhr">Uhr</string>
+    <string name="_08_00_10_00">08:00 - 10:00</string>
+    <string name="_10_00_12_00">10:00 - 12:00</string>
+    <string name="_12_00_14_00">12:00 - 14:00</string>
+    <string name="montag">Montag</string>
+    <string name="_14_00_16_00">14:00 - 16:00</string>
+    <string name="_16_00_18_00">16:00 - 18:00</string>
+    <string name="_18_00_20_00">18:00 - 20:00</string>
+    <string name="dienstag">Dienstag</string>
+    <string name="day">Day</string>
+    <string name="pcpt_little_header">Alle Teilnehmer</string>
+    <string name="rooms_little_header">Alle Räume</string>
+    <string name="main_title_my_courses">Meine Veranstaltungen</string>
+    <string name="main_title_all_courses">Alle Veranstaltungen</string>
+    <string name="main_title_search_rooms">Raumsuche</string>
+
+    <string name="rooms_free_header">Nur Freie Räume</string>
+    <string name="apply">Apply</string>
+    <string name="cancel">Cancel</string>
 
 
 </resources>

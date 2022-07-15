@@ -3,64 +3,112 @@ package com.example.View;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.ProgressBar;
+import android.widget.SearchView;
+import android.widget.TextView;
 
+import com.example.Adapter.LectureAdapter;
+import com.example.Adapter.ParticipantAdapter;
+import com.example.Adapter.RoomAdapter;
+import com.example.Model.Lecture;
+import com.example.Model.Participant;
+import com.example.Model.Room;
+import com.example.Service.FetchParticipants;
+import com.example.Service.FetchRooms;
 import com.example.readdatabase.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ParticipantPageFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+
 public class ParticipantPageFragment extends Fragment {
+    private ProgressBar progressBar;
+    ImageButton filterButton;
+    private SearchView searchView;
+    private View root;
+    private RecyclerView.Adapter adapter;
+    private RecyclerView recyclerViewList;
+    //FetchParticipants fetchParticipants;
+    String courseName;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    List<Participant> participants;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public ParticipantPageFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ParticipantPageFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ParticipantPageFragment newInstance(String param1, String param2) {
-        ParticipantPageFragment fragment = new ParticipantPageFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+    public ParticipantPageFragment(String courseName) {
+        this.courseName = courseName;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_participant_page, container, false);
+        root = inflater.inflate(R.layout.fragment_lecture_search_page, container, false);
+        progressBar = root.findViewById(R.id.progress_loader);
+        filterButton = root.findViewById(R.id.filterButton);
+        filterButton.setVisibility(View.INVISIBLE);
+        TextView searchHeader = root.findViewById(R.id.resultTextView);
+        searchHeader.setText(R.string.pcpt_little_header);
+        FetchParticipants fetchParticipants = new FetchParticipants(courseName);
+        fetchParticipants.setWeakReference(this);
+        fetchParticipants.execute();
+        searchWidget();
+        return root;
     }
+
+    public void recyclerViewParticipants(HashMap<String, Participant> data) {
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
+        recyclerViewList = root.findViewById(R.id.searchListView);
+        recyclerViewList.setLayoutManager(linearLayoutManager);
+         participants = new ArrayList<Participant>();
+
+            //String professor = data.get(key).get("prof");
+            //String semester = data.get(key).get("semester");
+            //String number = data.get(key).get("number");
+        participants.addAll(data.values());
+
+
+        adapter = new ParticipantAdapter(participants);
+        recyclerViewList.setAdapter(adapter);
+    }
+
+    public void hideProgressBar() {
+        progressBar.setVisibility(View.INVISIBLE);
+    }
+
+    public void searchWidget() {
+        searchView = root.findViewById(R.id.searchView);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+
+                ArrayList<Participant> sortedCourses = new ArrayList<>();
+                for (Participant p: participants) {
+                    if (p.getIliasUsername().toLowerCase().contains(s.toLowerCase())) {
+                        sortedCourses.add(p);
+                    }
+                }
+                adapter = new ParticipantAdapter(sortedCourses);
+                recyclerViewList.setAdapter(adapter);
+                return false;
+            }
+        });
+    }
+
 }

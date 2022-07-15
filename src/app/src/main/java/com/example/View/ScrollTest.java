@@ -7,7 +7,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import com.example.Model.Room;
 import com.example.readdatabase.R;
 
 /**
@@ -17,10 +19,18 @@ import com.example.readdatabase.R;
  */
 public class ScrollTest extends Fragment {
 
+    View root;
+    Room room;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_test, container, false);
+        root = inflater.inflate(R.layout.fragment_lecture_details_page, container, false);
+        return root;
+    }
+
+    public ScrollTest(Room room) {
+        this.room = room;
     }
 }
