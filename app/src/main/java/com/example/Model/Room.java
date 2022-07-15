@@ -1,22 +1,16 @@
 package com.example.Model;
 
-import android.location.Location;
-
+import java.util.ArrayList;
 import java.util.List;
 
 public class Room {
-
-
-    protected String roomNumber;
-    protected double longitudeGEO;
-    protected double latitudeGEO;
-    protected String building;
-
-    protected List<Lecture> lectureList;
-    protected List<String> lectureStringList;
+    private String roomNumber;
+    private String building;
+    private List<Lecture> lectureList;
 
     public Room(String roomNumber) {
         this.roomNumber = roomNumber;
+        this.lectureList = new ArrayList<>();
     }
 
     public String getRoomNumber() {
@@ -27,11 +21,25 @@ public class Room {
         return building;
     }
 
-    public void setLectureList(List<Lecture> list){
-        this.lectureList = list;
+    public void addLecture(Lecture lecture) {
+        lectureList.add(lecture);
     }
 
-    public void setLectureStringList(List<String> list){
-        this.lectureStringList = list;
+    public Lecture getLecture(Date date) {
+        for(Lecture lecture : lectureList) {
+            if(lecture.isBusy(date)) {
+                return lecture;
+            }
+        }
+        return null;
+    }
+
+    public boolean isFree(Date date) {
+        for(Lecture lecture:lectureList) {
+            if(lecture.isBusy(date)) {
+               return false;
+            }
+        }
+        return true;
     }
 }

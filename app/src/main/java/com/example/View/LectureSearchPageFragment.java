@@ -1,6 +1,8 @@
 package com.example.View;
 
 import android.os.Bundle;
+
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -68,7 +70,7 @@ public class  LectureSearchPageFragment extends Fragment {
                 fetchCourses.execute(0);
                 searchWidget();
             } else {
-                fetchCourses.execute(4);
+                fetchCourses.execute(2);
                 searchWidget();
             }
         }
@@ -96,7 +98,7 @@ public class  LectureSearchPageFragment extends Fragment {
             String number = data.get(key).get("number");
             String form = data.get(key).get("form");
             String room = data.get(key).get("room");
-            Lecture temp = new Lecture(key, professor, "", number, form, semester, room, "", "", "");
+            Lecture temp = new Lecture(key, professor, semester, number, form, room);
             courses.add(temp);
         }
 

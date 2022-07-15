@@ -19,12 +19,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
-public class FetchDozents  extends AsyncTask<Integer, Void, Void> {
+public class FetchProfessors extends AsyncTask<Integer, Void, Void> {
     private static final Firebase firebase = new Firebase();
     private static final ArrayList<String> result = new ArrayList<>(Arrays.asList(""));
     private WeakReference<Fragment> weakReference;
 
-    public FetchDozents() {
+    public FetchProfessors() {
         super();
     }
 

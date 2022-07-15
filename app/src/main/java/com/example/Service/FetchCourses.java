@@ -3,7 +3,6 @@ package com.example.Service;
 import android.os.AsyncTask;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-
 import com.example.Model.Lecture;
 import com.example.Model.VerificationProcess;
 import com.example.SoapAPI.Firebase;
@@ -13,9 +12,6 @@ import com.example.View.LectureDetailsPageFragment;
 import com.example.View.LectureSearchPageFragment;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -44,6 +40,7 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
     public void setCourseName(String courseName) {
         this.courseName = courseName;
     }
+
     @Override
     protected Void doInBackground(Integer... mode) {
         ValueEventListener vListener = new ValueEventListener() {
@@ -52,16 +49,21 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
                 if (mode[0] == 0) {
                     setCourseSmallData(snapshot);
                     LectureSearchPageFragment temp = (LectureSearchPageFragment) weakReference.get();
-                    temp.hideProgressBar();
                     temp.recyclerViewLecture(result);
+                    temp.hideProgressBar();
+                }
+                else if(mode[0] == 1) {
                 } else if (mode[0] == 1) {
                     info = new ArrayList<>();
                     LectureDetailsPageFragment temp = (LectureDetailsPageFragment) weakReference.get();
                     setCourseLargeData(snapshot);
                     temp.hideProgressBar();
                     temp.setCourseInfo(info);
+                }
+                else if(mode[0] == 2) {
+                    LectureSearchPageFragment temp = (LectureSearchPageFragment)weakReference.get();
                 } else if (mode[0] == 2) {
-                    setCourseList(snapshot);
+                    //setCourseList(snapshot);
                     FilterFragment temp = (FilterFragment) weakReference.get();
                     temp.setSpinnerCourse(resultCoursesTitles);
                 } else if (mode[0] == 3) {
@@ -116,23 +118,6 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
         }
         else if(mode[0] == 4 || mode[0] == 8) {
             firebase.getCourseDatabase("veranstaltungen").addValueEventListener(vListener);
-            /**
-            LectureSearchPageFragment temp = (LectureSearchPageFragment)weakReference.get();
-            HashMap<String, String> filterparameters = temp.getFilterParameters();
-            System.out.println("Filterparams" + filterparameters);
-            DatabaseReference courseDatabase = firebase.getCourseDatabase("course-short-info");
-            //Query query = null;
-            Query query = courseDatabase.orderByChild("titleSemabh").equalTo(filterparameters.get("titleSemabh"));
-
-            for (String key : filterparameters.keySet()) {
-                if ((filterparameters.get(key) != "") && (!key.equals("titleSemabh"))) {
-                    System.out.println(key);
-                    query = query.orderByChild(key).equalTo(filterparameters.get(key));
-                }
-            }
-
-            query.addValueEventListener(vListener);
-            */
         }
         else if(mode[0] == 5 || mode[0] == 7) {
             firebase.getCourseDatabase("user_courses/" + VerificationProcess.getInstance().userId).addListenerForSingleValueEvent(vListener);
@@ -143,18 +128,6 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
         return null;
     }
 
-    /**
-     * to get the courses titles as a list from Firebase without duplicates
-     * @param snapshot
-     */
-    private void setCourseList(DataSnapshot snapshot) {
-        for(DataSnapshot ds:snapshot.getChildren()){
-            String title = ds.child("titleSemabh").getValue(String.class);
-            if (!resultCoursesTitles.contains(title)) {
-                resultCoursesTitles.add(title);
-            }
-        }
-    }
 
     public void setJoinedCourseDataFilter(DataSnapshot snapshot, HashMap<String, String> filterparameters) {
         result.clear();
@@ -248,10 +221,9 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
     }
 
     public void setCourseLargeData(DataSnapshot snapshot) {
-        info = new ArrayList<>();
         for(DataSnapshot ds:snapshot.getChildren()){
             FirebaseItem item = ds.getValue(FirebaseItem.class);
-            Lecture lecture = new Lecture(courseName, item.getRespLecturer(), item.getTimeFrom() + " - " + item.getTimeTill(), item.getLectureNum(), item.getForm(), item.getSemester(), item.getRoom(), "", "", item.getFrom() + " - " + item.getTill());
+            Lecture lecture = new Lecture(courseName, item.getRespLecturer(), item.getWeekDay() + " " + item.getTimeFrom() + "-" + item.getTimeTill(), item.getLectureNum(), item.getForm(), item.getSemester(), item.getRoom(), "", "", item.getFrom() + "-" + item.getTill());
             info.add(lecture);
         }
     }

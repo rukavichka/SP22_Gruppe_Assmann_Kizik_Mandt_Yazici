@@ -24,10 +24,10 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/detailsConstrain"
+            android:id="@+id/detailsConstraint"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="visible"
+            android:visibility="invisible"
             tools:context=".LectureDetails"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="0dp">

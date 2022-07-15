@@ -26,7 +26,7 @@ public class ScrollTest extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        root = inflater.inflate(R.layout.fragment_calendar_room, container, false);
+        root = inflater.inflate(R.layout.fragment_lecture_details_page, container, false);
         return root;
     }
 

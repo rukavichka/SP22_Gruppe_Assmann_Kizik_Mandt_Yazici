@@ -73,6 +73,9 @@
     <string name="main_title_all_courses">Alle Veranstaltungen</string>
     <string name="main_title_search_rooms">Raumsuche</string>
 
+    <string name="rooms_free_header">Nur Freie Räume</string>
+    <string name="apply">Apply</string>
+    <string name="cancel">Cancel</string>
 
 
 </resources>

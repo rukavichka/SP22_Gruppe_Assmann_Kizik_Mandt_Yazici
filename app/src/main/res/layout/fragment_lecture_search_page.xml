@@ -50,10 +50,10 @@
             android:id="@+id/searchListView"
             android:layout_width="409dp"
             android:layout_height="610dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/resultTextView">
+            app:layout_constraintTop_toBottomOf="@+id/selectedDateTextView">
 
         </androidx.recyclerview.widget.RecyclerView>
 
@@ -79,6 +79,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/selectedDateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/resultTextView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
