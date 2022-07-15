@@ -1,6 +1,8 @@
 package com.example.View;
 
 import android.os.Bundle;
+
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -47,26 +49,17 @@ public class  LectureSearchPageFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        root = inflater.inflate(R.layout.fragment_lecture_search_page, container, false);
+        progressBar = root.findViewById(R.id.progress_loader);
+        filterButton = root.findViewById(R.id.filterButton);
+        filterButton.setOnClickListener(new FilterClickListener());
+        fetchCourses = new FetchCourses();
+        fetchCourses.setWeakReference(this);
+        searchWidget();
         if (options.isEmpty()) {
-            // Inflate the layout for this fragment
-            root = inflater.inflate(R.layout.fragment_lecture_search_page, container, false);
-            progressBar = root.findViewById(R.id.progress_loader);
-            filterButton = root.findViewById(R.id.filterButton);
-            filterButton.setOnClickListener(new FilterClickListener());
-            fetchCourses = new FetchCourses();
-            fetchCourses.setWeakReference(this);
             fetchCourses.execute(0);
-            searchWidget();
         } else {
-            root = inflater.inflate(R.layout.fragment_lecture_search_page, container, false);
-            progressBar = root.findViewById(R.id.progress_loader);
-            filterButton = root.findViewById(R.id.filterButton);
-            filterButton.setOnClickListener(new FilterClickListener());
-            fetchCourses = new FetchCourses();
-            fetchCourses.setWeakReference(this);
-
-            fetchCourses.execute(4);
-            searchWidget();
+            fetchCourses.execute(2);
         }
         return root;
     }
@@ -82,7 +75,7 @@ public class  LectureSearchPageFragment extends Fragment {
             String number = data.get(key).get("number");
             String form = data.get(key).get("form");
             String room = data.get(key).get("room");
-            Lecture temp = new Lecture(key, professor, "", number, form, semester, room, "", "", "");
+            Lecture temp = new Lecture(key, professor, semester, number, form, room);
             courses.add(temp);
         }
 

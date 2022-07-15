@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.PopupMenu;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import com.example.Model.Data;
 import com.example.Model.Lecture;
 import com.example.Model.VerificationProcess;
 import com.example.Service.CheckMember;
@@ -37,12 +39,9 @@ public class LectureDetailsPageFragment extends Fragment {
 
     public LectureDetailsPageFragment(String courseName) {
         this.courseName = courseName;
-        //fetchCourses = new FetchCourses(); //those calls need to be in onCreateView(), because AsyncTask needs to start again every time LectureDetailsPageFragment is invoked
-        checkMember = new CheckMember();       //returning from the ParticipantPageFragment would end up in a crash
+        checkMember = new CheckMember();
         checkMember.setCourseName(courseName);
         checkMember.setWeakReference(this);
-        //fetchCourses.setCourseName(courseName);
-        //fetchCourses.setWeakReference(this);
     }
 
     @Override
@@ -63,13 +62,12 @@ public class LectureDetailsPageFragment extends Fragment {
         return root;
     }
 
-    public void setCourseInfo(ArrayList<Lecture> courses) {
-        this.courseInfo = courses;
+    public void setCourseInfo(ArrayList<Lecture> data) {
+        this.courseInfo = data;
         this.lecture =courseInfo.get(0);
         this.currentPeriod = lecture.getLecturePeriod();
         setLayout(lecture);
         createMenu();
-        hideProgressBar();
     }
 
     private void createMenu() {
@@ -81,15 +79,14 @@ public class LectureDetailsPageFragment extends Fragment {
         PopupMenu popupMenu = new PopupMenu(getContext(), button);
         popupMenu.getMenu().clear();
         for(Lecture lecture: courseInfo) {
-            System.out.println(lecture.getLecturePeriod());
-            if(!lecture.getLecturePeriod().equals(currentPeriod)) {
+            if(!lecture.getSchedule().equals(currentPeriod)) {
                 popupMenu.getMenu().add(lecture.getLecturePeriod());
             }
-
         }
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                popupMenu.show();
                 popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem menuItem) {
@@ -98,18 +95,17 @@ public class LectureDetailsPageFragment extends Fragment {
                         return true;
                     }
                 });
-                popupMenu.show();
             }
         });
     }
 
     private void changeLayout(String period) {
         for(Lecture lecture: courseInfo) {
-            if(period.equals(lecture.getLecturePeriod())) {
-                setLayout(lecture);
-                this.lecture = lecture;
-                break;
-            }
+//            if(period.equals(lecture.getLecturePeriod())) {
+//                setLayout(lecture);
+//                this.lecture = lecture;
+//                break;
+//            }
         }
         this.currentPeriod = period;
         createMenu();
@@ -124,7 +120,7 @@ public class LectureDetailsPageFragment extends Fragment {
         TextView semester = root.findViewById(R.id.semesterEditableTextView);
         TextView room = root.findViewById(R.id.roomEditableTextView);
         TextView hours = root.findViewById(R.id.courseHoursTextView);
-        ConstraintLayout layout = root.findViewById(R.id.detailsConstrain);
+        ConstraintLayout layout = root.findViewById(R.id.detailsConstraint);
         participantsButton = root.findViewById(R.id.participantsButton);
 
         hours.setText(info.getLectureTime());
@@ -154,8 +150,10 @@ public class LectureDetailsPageFragment extends Fragment {
 
 
     public void hideProgressBar() {
+        ConstraintLayout layout = root.findViewById(R.id.detailsConstraint);
         ProgressBar progressBar = root.findViewById(R.id.progress_loader2);
         progressBar.setVisibility(View.INVISIBLE);
+        layout.setVisibility(View.VISIBLE);
     }
 
     public void setIsCourseMember(boolean checkList) {

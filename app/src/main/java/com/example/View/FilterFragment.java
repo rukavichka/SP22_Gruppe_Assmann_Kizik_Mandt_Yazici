@@ -1,6 +1,5 @@
 package com.example.View;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +11,8 @@ import android.widget.Spinner;
 import androidx.fragment.app.Fragment;
 
 import com.example.Service.FetchCourses;
-import com.example.Service.FetchDozents;
+import com.example.Service.FetchFilters;
+import com.example.Service.FetchProfessors;
 import com.example.Service.FetchRooms;
 import com.example.readdatabase.R;
 
@@ -30,9 +30,7 @@ public class FilterFragment extends Fragment {
     Spinner spinnerCourseType;
     Button filterApplyButton;
     Button closeButton;
-    FetchDozents fetchDozents;
-    FetchCourses fetchCourses;
-    FetchRooms fetchRooms;
+    FetchFilters fetchFilters;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,28 +42,9 @@ public class FilterFragment extends Fragment {
         // Inflate the layout for this fragment
         root = inflater.inflate(R.layout.fragment_filter, container, false);
 
-        // Spinner for dozents
-        fetchDozents = new FetchDozents();
-        fetchDozents.setWeakReference(this);
-        fetchDozents.execute(0);
-
-        // Spinner for semesters
-        setSpinnerSemester();
-
-        // Spinner for rooms
-        fetchRooms = new FetchRooms();
-        fetchRooms.setWeakReference(this);
-        fetchRooms.execute(1);
-
-        // Spinner for courses titles
-        fetchCourses = new FetchCourses();
-        fetchCourses.setWeakReference(this);
-        fetchCourses.execute(2);
-
-        // Spinner for course type
-        fetchCourses = new FetchCourses();
-        fetchCourses.setWeakReference(this);
-        fetchCourses.execute(3);
+        fetchFilters = new FetchFilters();
+        fetchFilters.setWeakReference(this);
+        fetchFilters.execute();
 
         // Listener for the Close Button
         closeButton = root.findViewById(R.id.CloseButton);
@@ -159,6 +138,4 @@ public class FilterFragment extends Fragment {
         formsAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerCourseType.setAdapter(formsAdapter);
     }
-
-
 }

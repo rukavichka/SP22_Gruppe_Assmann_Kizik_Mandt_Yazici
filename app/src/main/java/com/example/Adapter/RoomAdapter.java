@@ -1,28 +1,33 @@
 package com.example.Adapter;
 
+import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.Model.Date;
+import com.example.Model.Lecture;
 import com.example.Model.Room;
-import com.example.View.CalendarFragment;
-import com.example.View.FilterFragment;
+import com.example.View.LectureDetailsPageFragment;
 import com.example.View.MainActivity;
-import com.example.View.ScrollTest;
 import com.example.readdatabase.R;
 
 import java.util.List;
 
 public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.ViewHolder>{
 
-    List<Room> roomList;
+    private final List<Room> roomList;
+    private Date date;
+
+    public RoomAdapter(List<Room> roomList, Date date) {
+        this.roomList = roomList;
+        this.date = date;
+    }
 
     public RoomAdapter(List<Room> roomList) {
         this.roomList = roomList;
@@ -30,15 +35,22 @@ public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.ViewHolder>{
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_card_roomlistelement, parent, false);
+        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_card_room, parent, false);
         return new RoomAdapter.ViewHolder(inflate);
 
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.roomlistelementTitle.setText(roomList.get(position).getRoomNumber());
-        holder.roomlistelementSubtitle.setText(roomList.get(position).getBuilding());
+        holder.room.setText(roomList.get(position).getRoomNumber());
+        holder.building.setText(roomList.get(position).getBuilding());
+        holder.setBackgroundColor(roomList.get(position).isFree(date));
+        Lecture course = roomList.get(position).getLecture(date);
+        if(course != null) {
+            holder.courseName.setText(course.getLectureName());
+            holder.courseName.setVisibility(View.VISIBLE);
+            holder.setListener(course.getLectureName());
+        }
     }
 
     @Override
@@ -47,28 +59,35 @@ public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.ViewHolder>{
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView roomlistelementTitle;
-        TextView roomlistelementSubtitle;
-
-
+        TextView room;
+        TextView building;
+        TextView courseName;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            roomlistelementTitle = itemView.findViewById(R.id.roomlistelementTitle);
-            roomlistelementSubtitle = itemView.findViewById(R.id.roomlistelementSubtitle);
+            room = itemView.findViewById(R.id.roomName);
+            building = itemView.findViewById(R.id.roomBuilding);
+            courseName = itemView.findViewById(R.id.busyCourseName);
+        }
+
+        public void setListener(String courseName) {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View v) {
-                    Room room = new Room("testraum");
-                    for (Room r : roomList){
-                        if(r.getRoomNumber().equals(roomlistelementTitle.getText())){
-                            room = r;
-                        }
-                    }
-                    ((MainActivity)v.getContext()).getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
-                            new CalendarFragment(room)).addToBackStack("RoomSearchPageFragment").commit();
+                public void onClick(View view) {
+                    ((MainActivity)view.getContext()).getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
+                            new LectureDetailsPageFragment(courseName)).addToBackStack(null).commit();
                 }
             });
+        }
+
+        public void setBackgroundColor(boolean isFree) {
+            GradientDrawable temp = (GradientDrawable) itemView.getBackground().mutate();
+            if (isFree) {
+                temp.setColor(ContextCompat.getColor(itemView.getContext(), R.color.light_green));
+            }
+            else {
+                temp.setColor(ContextCompat.getColor(itemView.getContext(), R.color.red));
+            }
         }
     }
 }

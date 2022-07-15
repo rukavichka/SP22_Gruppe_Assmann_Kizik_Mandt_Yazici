@@ -69,7 +69,9 @@
     <string name="day">Day</string>
     <string name="pcpt_little_header">Alle Teilnehmer</string>
     <string name="rooms_little_header">Alle Räume</string>
-
+    <string name="rooms_free_header">Nur Freie Räume</string>
+    <string name="apply">Apply</string>
+    <string name="cancel">Cancel</string>
 
 
 </resources>
