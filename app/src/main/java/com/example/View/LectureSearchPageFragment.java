@@ -70,7 +70,7 @@ public class  LectureSearchPageFragment extends Fragment {
                 fetchCourses.execute(0);
                 searchWidget();
             } else {
-                fetchCourses.execute(2);
+                fetchCourses.execute(4);
                 searchWidget();
             }
         }

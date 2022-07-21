@@ -11,6 +11,9 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.Model.Participant;
+import com.example.View.ChatFragment;
+import com.example.View.LectureDetailsPageFragment;
+import com.example.View.MainActivity;
 import com.example.readdatabase.R;
 
 import java.util.List;
@@ -32,6 +35,7 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.participantName.setText(participants.get(position).getIliasUsername());
+        holder.setListener();
 //        holder.participantUsername.setText(participants.get(position).getDate());
 //        holder.participantProfilePic.setText(participants.get(position).getContent());
     }
@@ -53,6 +57,16 @@ public class ParticipantAdapter extends RecyclerView.Adapter<ParticipantAdapter.
             participantName = itemView.findViewById(R.id.participantNameTitleTextView);
             mainLayout = itemView.findViewById(R.id.activityLayout);
             participantProfilePic = itemView.findViewById(R.id.participantPic);
+        }
+
+        public void setListener(){
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    ((MainActivity)view.getContext()).getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
+                            new ChatFragment()).addToBackStack(null).commit();
+                }
+            });
         }
     }
 }

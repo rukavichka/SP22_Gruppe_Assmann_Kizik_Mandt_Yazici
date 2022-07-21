@@ -59,9 +59,7 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
                     temp.hideProgressBar();
                     temp.setCourseInfo(info);
                 }
-                else if(mode[0] == 2) {
-                    LectureSearchPageFragment temp = (LectureSearchPageFragment)weakReference.get();
-                } else if (mode[0] == 2) {
+                else if (mode[0] == 2) {
                     //setCourseList(snapshot);
                     FilterFragment temp = (FilterFragment) weakReference.get();
                     temp.setSpinnerCourse(resultCoursesTitles);

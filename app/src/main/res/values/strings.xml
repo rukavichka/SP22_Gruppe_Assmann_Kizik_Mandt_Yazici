@@ -76,6 +76,7 @@
     <string name="rooms_free_header">Nur Freie Räume</string>
     <string name="apply">Apply</string>
     <string name="cancel">Cancel</string>
+    <string name="chat">Chat</string>
 
 
 </resources>
