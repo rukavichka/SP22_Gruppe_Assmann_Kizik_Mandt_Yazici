@@ -43,14 +43,14 @@ public class FetchParticipants extends AsyncTask<Integer, Void, Void> {
         return null;
     }
 
-    private void setParticipantUserIDData(DataSnapshot snapshot) {
+    public void setParticipantUserIDData(DataSnapshot snapshot) {
         for(DataSnapshot ds:snapshot.child("membership/" + courseName).getChildren()){
             String item = ds.getValue(String.class); //every user_id
             //result.put(item, new Participant(item));
             tempList.add(new Participant(item));        }
     }
 
-    private void setParticipantName(DataSnapshot snapshot){
+    public void setParticipantName(DataSnapshot snapshot){
         for(Participant p : tempList){
             String name = snapshot.child("users/" + p.getUser_id() + "/" + "name").getValue(String.class);
             String iliasUsername = snapshot.child("users/" + p.getUser_id() + "/" + "iliasUsername").getValue(String.class);
@@ -74,5 +74,12 @@ public class FetchParticipants extends AsyncTask<Integer, Void, Void> {
         public void onCancelled(@NonNull DatabaseError error) {
 
         }
+    }
+    public List<Participant> getParticipantList(){
+        return this.tempList;
+    }
+
+    public HashMap<String,Participant> getResult(){
+        return this.result;
     }
 }
