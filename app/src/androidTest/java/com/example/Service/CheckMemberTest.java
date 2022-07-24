@@ -108,7 +108,7 @@ public class CheckMemberTest {
             e.printStackTrace();
         }
 
-        // if it's not, we aasgn a user to the course
+        // if it's not, we assign a user to the course
         if (! isCourseMember) {
             // 1. we assign a user to the Course
             Thread t2 = new Thread(new Runnable(){

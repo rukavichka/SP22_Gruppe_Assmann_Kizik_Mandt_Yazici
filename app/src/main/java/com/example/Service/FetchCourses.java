@@ -229,6 +229,10 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
         return result;
     }
 
+    public void setJoinedCourses(List<String> joinedCourses){
+        this.joinedCourses = joinedCourses;
+    }
+
     public ArrayList<Lecture> getInfo() {
         return info;
     }
