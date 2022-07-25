@@ -47,7 +47,7 @@ public class FetchRooms extends AsyncTask<Void, Void, Void>{
         }
 
 
-        private void setRoomsList(DataSnapshot snapshot) {
+        public void setRoomsList(DataSnapshot snapshot) {
                 for(DataSnapshot ds:snapshot.getChildren()){
                         HashMap<String, Object> info = (HashMap<String, Object>) ds.getValue();
 
@@ -74,5 +74,8 @@ public class FetchRooms extends AsyncTask<Void, Void, Void>{
                         }
                         result.add(room);
                 }
+        }
+        public ArrayList<Room> getResult() {
+                return result;
         }
 }
