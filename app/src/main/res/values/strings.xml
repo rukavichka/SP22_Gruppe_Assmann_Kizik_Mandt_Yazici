@@ -77,6 +77,9 @@
     <string name="apply">Apply</string>
     <string name="cancel">Cancel</string>
     <string name="chat">Chat</string>
+    <string name="content_detail_example">pdf, 1.1 MB, 11. Apr 2022, 13:41</string>
+    <string name="content_detail_title">00-orga</string>
+    <string name="button_text">Button Text</string>
 
 
 </resources>

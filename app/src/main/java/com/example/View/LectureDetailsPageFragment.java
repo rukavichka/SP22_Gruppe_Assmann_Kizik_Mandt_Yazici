@@ -166,13 +166,11 @@ public class LectureDetailsPageFragment extends Fragment {
         @Override
         public void onClick(View v) {
             if(isCourseMember){
-                joinButton.setText("Join Course");
-                checkMember.executeDeleteMembership(courseName);
-                checkMember.executeDeleteUserCourses(courseName);
-                checkMember.executeCheckUserCourses();
+                ((MainActivity)v.getContext()).getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
+                        new LectureContentsFragment()).addToBackStack("LectureContentsFragment").commit();
             }
             else{
-                joinButton.setText("Leave Course");
+                joinButton.setText("Inhalt");
                 checkMember.executeAddMembership(courseName);
                 checkMember.executeAddUserCourses(courseName);
                 checkMember.executeCheckUserCourses();
