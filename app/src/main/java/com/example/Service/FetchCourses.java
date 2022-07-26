@@ -218,6 +218,7 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
     }
 
     public void setCourseLargeData(DataSnapshot snapshot) {
+        info = new ArrayList<>();
         for(DataSnapshot ds:snapshot.getChildren()){
             FirebaseItem item = ds.getValue(FirebaseItem.class);
             Lecture lecture = new Lecture(courseName, item.getRespLecturer(), item.getWeekDay() + " " + item.getTimeFrom() + "-" + item.getTimeTill(), item.getLectureNum(), item.getForm(), item.getSemester(), item.getRoom(), "", "", item.getFrom() + "-" + item.getTill());
