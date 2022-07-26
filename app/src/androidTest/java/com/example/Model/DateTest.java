@@ -11,7 +11,7 @@ public class DateTest {
      * Test for compare method. The method Return -1 if the given object is after the current object
      */
     @Test
-    public void ComapreDatesTest(){
+    public void CompareDatesTest(){
         String[] dateArray1 =  {"1", "12", "2021"};
         Date date1 = new Date(dateArray1);
 
