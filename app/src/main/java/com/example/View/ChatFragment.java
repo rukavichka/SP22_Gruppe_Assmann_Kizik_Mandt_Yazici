@@ -10,6 +10,9 @@ import androidx.fragment.app.Fragment;
 
 import com.example.readdatabase.R;
 
+/**
+ * placeholder class to implement chat function in future
+ */
 public class ChatFragment extends Fragment {
 
     View root;

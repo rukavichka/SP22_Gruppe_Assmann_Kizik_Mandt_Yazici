@@ -20,6 +20,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
+/**
+ * view class for the filter
+ */
 public class FilterFragment extends Fragment {
 
     View root;

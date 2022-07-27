@@ -19,6 +19,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
+/**
+ * class to load professor data from Firebase
+ * @field weakReference: lightweight reference to view object which created this class
+ */
 public class FetchProfessors extends AsyncTask<Integer, Void, Void> {
     private static final Firebase firebase = new Firebase();
     private static final ArrayList<String> result = new ArrayList<>(Arrays.asList(""));
@@ -34,7 +38,12 @@ public class FetchProfessors extends AsyncTask<Integer, Void, Void> {
 
     @Override
     protected Void doInBackground(Integer... integers) {
+
         ValueEventListener valueEventListener = new ValueEventListener() {
+
+            /** gets invoked when attached or when data changes within Firebase
+             * @param snapshot current state of Firebase
+             */
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 setDozentsList(snapshot);
@@ -52,6 +61,9 @@ public class FetchProfessors extends AsyncTask<Integer, Void, Void> {
         return null;
     }
 
+    /** gets all Lecturers which offer courses from Firebase and eliminates duplicates
+     * @param snapshot current stare of Firebase
+     */
     private void setDozentsList(DataSnapshot snapshot) {
         for(DataSnapshot ds:snapshot.getChildren()){
             String dozent = ds.child("respLecturer").getValue(String.class);

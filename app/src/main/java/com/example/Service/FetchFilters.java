@@ -32,6 +32,10 @@ public class FetchFilters extends AsyncTask<Void, Void, Void> {
     @Override
     protected Void doInBackground(Void... voids) {
         ValueEventListener vListener = new ValueEventListener() {
+
+            /** gets invoked when attached or when data changes within Firebase
+             * @param snapshot current state of Firebase
+             */
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 setFilters(snapshot);
@@ -49,6 +53,9 @@ public class FetchFilters extends AsyncTask<Void, Void, Void> {
         return null;
     }
 
+    /** loads data from "filters" entry in Firebase to later set the spinner
+     * @param snapshot current state of Firebase
+     */
     private void setFilters(DataSnapshot snapshot) {
         professors = (ArrayList<String>) snapshot.child("professors").getValue();
         semesters = (ArrayList<String>) snapshot.child("semesters").getValue();

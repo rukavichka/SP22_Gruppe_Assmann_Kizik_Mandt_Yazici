@@ -16,6 +16,9 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * class to check delete and add members to courses
+ */
 public class CheckMember {
 
     private String user_ID = Integer.toString(VerificationProcess.getInstance().getUserId());

@@ -24,6 +24,9 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
+/**
+ * view class which shows details of courses/lectures and enables join and leave interactions
+ */
 public class LectureDetailsPageFragment extends Fragment {
     private Button joinButton;
     private Button participantsButton;
@@ -111,6 +114,9 @@ public class LectureDetailsPageFragment extends Fragment {
         createMenu();
     }
 
+    /**
+     * @param info lecture object to display
+     */
     public void setLayout(Lecture info) {
         joinButton = root.findViewById(R.id.joinButton);
         setJoinText(joinButton);

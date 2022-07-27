@@ -44,14 +44,19 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
     @Override
     protected Void doInBackground(Integer... mode) {
         ValueEventListener vListener = new ValueEventListener() {
+            /** gets invoked when attached or when data changes within Firebase
+             * @param snapshot current state of Firebase
+             */
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                //is being invoked to load course data from Firebase
                 if (mode[0] == 0) {
                     setCourseSmallData(snapshot);
                     LectureSearchPageFragment temp = (LectureSearchPageFragment) weakReference.get();
                     temp.recyclerViewLecture(result);
                     temp.hideProgressBar();
                 }
+                //is being invoked to load detailed course data from Firebase
                 else if (mode[0] == 1) {
                     info = new ArrayList<>();
                     LectureDetailsPageFragment temp = (LectureDetailsPageFragment) weakReference.get();
@@ -74,25 +79,33 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
                     setFilteredCourseSmallData(snapshot, filterparameters);
                     temp.hideProgressBar();
                     temp.recyclerViewLecture(result);
-                } else if (mode[0] == 5) {
+                }
+                // gets the names of joined courses from the user_courses entry in Firebase
+                else if (mode[0] == 5) {
                     joinedCourses.clear();
                     for (DataSnapshot sn : snapshot.getChildren()) {
                         joinedCourses.add(sn.getValue().toString());
                         doInBackground(6);
                     }
-                } else if (mode[0] == 6) {
+                }
+                // is being invoked to display joined user courses cards
+                else if (mode[0] == 6) {
                     setJoinedCourseData(snapshot);
                     LectureSearchPageFragment temp = (LectureSearchPageFragment) weakReference.get();
                     temp.hideProgressBar();
                     temp.recyclerViewLecture(result);
 
-                } else if (mode[0] == 7) {
+                }
+                // gets the names of joined courses from the user_courses entry in Firebase
+                else if (mode[0] == 7) {
                     joinedCourses.clear();
                     for (DataSnapshot sn : snapshot.getChildren()) {
                         joinedCourses.add(sn.getValue().toString());
                         doInBackground(8);
                     }
-                } else if (mode[0] == 8) {
+                }
+                // is being invoked to realize the filter functionality.
+                else if (mode[0] == 8) {
                     LectureSearchPageFragment temp = (LectureSearchPageFragment) weakReference.get();
                     HashMap<String, String> filterParameters = temp.getFilterParameters();
                     setJoinedCourseDataFilter(snapshot, filterParameters);
@@ -126,6 +139,10 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
     }
 
 
+    /** implements the filter function on joined courses
+     * @param snapshot current state of Firebase
+     * @param filterparameters
+     */
     public void setJoinedCourseDataFilter(DataSnapshot snapshot, HashMap<String, String> filterparameters) {
         result.clear();
         for(DataSnapshot ds:snapshot.getChildren()){
@@ -145,7 +162,6 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
                 info.put("prof", item.getRespLecturer());
                 result.put(item.getTitleSemabh(), info);
             }
-            System.out.println(result);
         }
     }
 
@@ -163,7 +179,7 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
     }
 
     /** gets course data from firebase from those courses which are contained in joinedCourses list
-     * @param snapshot current snapshot from firebase
+     * @param snapshot current stae of Firebase
      */
     public void setJoinedCourseData(DataSnapshot snapshot){
         result.clear();
@@ -180,6 +196,9 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
         }
     }
 
+    /** gets the relevant course data from the snapshot
+     * @param snapshot current state of Firebase
+     */
     public void setCourseSmallData(DataSnapshot snapshot) {
         result.clear();
         for(DataSnapshot ds:snapshot.getChildren()){
@@ -217,6 +236,9 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
         }
     }
 
+    /** gets more detailed information about te courses from the snapshot
+     * @param snapshot current state of Firebase
+     */
     public void setCourseLargeData(DataSnapshot snapshot) {
         info = new ArrayList<>();
         for(DataSnapshot ds:snapshot.getChildren()){

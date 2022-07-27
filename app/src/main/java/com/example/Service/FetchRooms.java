@@ -15,6 +15,10 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * class to load room data from Firebase
+ * @field weakReference: lightweight reference to view object which created this class
+ */
 public class FetchRooms extends AsyncTask<Void, Void, Void>{
         private final Firebase firebase = new Firebase();
         private final ArrayList<Room> result = new ArrayList<>();
@@ -31,6 +35,10 @@ public class FetchRooms extends AsyncTask<Void, Void, Void>{
         @Override
         protected Void doInBackground(Void... voids) {
                 ValueEventListener valueEventListener = new ValueEventListener() {
+
+                        /** gets invoked when attached or when data changes within Firebase
+                         * @param snapshot current state of Firebase
+                         */
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                                 setRoomsList(snapshot);
