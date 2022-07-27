@@ -104,11 +104,11 @@ public class LectureDetailsPageFragment extends Fragment {
 
     private void changeLayout(String period) {
         for(Lecture lecture: courseInfo) {
-//            if(period.equals(lecture.getLecturePeriod())) {
-//                setLayout(lecture);
-//                this.lecture = lecture;
-//                break;
-//            }
+            if(period.equals(lecture.getLecturePeriod())) {
+                setLayout(lecture);
+                this.lecture = lecture;
+                break;
+            }
         }
         this.currentPeriod = period;
         createMenu();
@@ -173,7 +173,7 @@ public class LectureDetailsPageFragment extends Fragment {
         public void onClick(View v) {
             if(isCourseMember){
                 ((MainActivity)v.getContext()).getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
-                        new LectureContentsFragment()).addToBackStack("LectureContentsFragment").commit();
+                        new LectureContentsFragment(lecture)).addToBackStack("LectureContentsFragment").commit();
             }
             else{
                 joinButton.setText("Inhalt");
@@ -186,7 +186,7 @@ public class LectureDetailsPageFragment extends Fragment {
 
     private void setJoinText(Button joinButton) {
         if(isCourseMember){
-            joinButton.setText("Leave Course");
+            joinButton.setText("Inhalt");
         }
         else{
             joinButton.setText("Join Course");

@@ -16,6 +16,7 @@ public class Lecture {
     private String lectureExam;
     private boolean isJoined;
     private Schedule schedule;
+    private String[] content;
 
     // Professor Object (Interface/Inheritance)
 
@@ -86,8 +87,9 @@ public class Lecture {
         return lectureRoom;
     }
 
-    public String getLectureContent() {
-        return lectureContent;
+    public ArrayList<String[]> getLectureContent() {
+        // Type implementation needed
+        return null;
     }
 
     public String getLectureExam() {
