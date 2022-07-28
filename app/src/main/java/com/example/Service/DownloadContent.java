@@ -14,7 +14,7 @@ public class DownloadContent extends AsyncTask<String, Void, Void> {
     @Override
     protected Void doInBackground(String... strings) {
         StorageReference storageRef = FirebaseStorage.getInstance().getReference();
-        storageRef.child(strings[0] + "/" + strings[1] + "/" + strings[2]).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+        storageRef.child(strings[0] + "/" + strings[2]).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
                 // Got the download URL for 'users/me/profile.png'

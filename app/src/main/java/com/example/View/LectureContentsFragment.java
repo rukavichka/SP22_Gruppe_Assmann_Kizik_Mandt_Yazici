@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.Model.Lecture;
@@ -48,6 +49,8 @@ public class LectureContentsFragment extends Fragment {
         layout = root.findViewById(R.id.forum);
         title = layout.findViewById(R.id.contentTitle);
         details = layout.findViewById(R.id.contentDetail);
+        ImageView icon = layout.findViewById(R.id.contentIcon);
+        icon.setImageResource(R.drawable.ic_forum);
         title.setText("Kollaborations-Forum");
         details.setText("Forum zur Organisation der Zusammenarbeit in den Übungen etc.");
         createOnClick("forum", R.id.forum);
@@ -61,10 +64,14 @@ public class LectureContentsFragment extends Fragment {
 
         layout = root.findViewById(R.id.participants);
         title = layout.findViewById(R.id.contentButton);
+        icon = layout.findViewById(R.id.contentButtonIcon);
+        icon.setImageResource(R.drawable.ic_participants);
         title.setText("Mitglieder");
 
         layout = root.findViewById(R.id.leaveCourseButton);
         title = layout.findViewById(R.id.contentButton);
+        icon = layout.findViewById(R.id.contentButtonIcon);
+        icon.setImageResource(R.drawable.ic_baseline_logout_24);
         title.setText("Kursmitgliedschaft beenden");
         return root;
     }
