@@ -3,6 +3,9 @@ package com.example.Model;
 import java.time.LocalDate;
 import java.util.HashMap;
 
+/**
+ *
+ */
 public class Date {
     private String date;
     private int month;
@@ -85,7 +88,7 @@ public class Date {
         }
     }
 
-    /*
+    /**
      * Compares 2 Date objects
      * Returns 1 if the current object is after the given object
      * Return 0 if 2 objects have the same date

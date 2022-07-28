@@ -2,6 +2,9 @@ package com.example.SoapAPI;
 
 import java.util.ArrayList;
 
+/**
+ * is being used to store course data from Firebase
+ */
 public class FirebaseItem {
 
     private String till;              // Date

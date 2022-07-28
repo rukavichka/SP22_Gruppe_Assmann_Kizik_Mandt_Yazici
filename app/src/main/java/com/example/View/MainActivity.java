@@ -54,10 +54,6 @@ public class MainActivity extends AppCompatActivity  {
                         getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
                                 new LectureSearchPageFragment(1)).commit();
                         break;
-//                    case R.id.Settings:
-//                        getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
-//                                new ScrollTest()).commit();
-//                        break;
                     case R.id.RaumSuchen:
                         getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
                                 new RoomSearchPageFragment()).addToBackStack(null).commit();

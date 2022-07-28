@@ -27,7 +27,6 @@
             android:name="com.example.View.MainActivity"
             android:exported="true">
         </activity>
-        <activity android:name="com.example.View.ShowCoursesActivity" />
 
     </application>
 
