@@ -3,7 +3,7 @@ package com.example.Service;
 import android.os.AsyncTask;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import com.example.Model.Data;
+
 import com.example.Model.Lecture;
 import com.example.Model.Room;
 import com.example.SoapAPI.Firebase;

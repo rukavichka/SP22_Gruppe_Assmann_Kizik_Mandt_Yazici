@@ -2,10 +2,8 @@ package com.example.Service;
 
 import androidx.annotation.NonNull;
 
-import com.example.Model.Lecture;
 import com.example.Model.VerificationProcess;
 import com.example.SoapAPI.Firebase;
-import com.example.View.LectureDetailsPageFragment;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -17,7 +15,6 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.concurrent.CountDownLatch;
 
 public class CheckMemberTest {
 

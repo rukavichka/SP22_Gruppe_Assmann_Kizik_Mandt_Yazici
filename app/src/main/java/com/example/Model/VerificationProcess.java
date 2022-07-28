@@ -78,6 +78,7 @@ public class VerificationProcess {
     }
 
     /*
+    For further working with SOAP - was not used
     get user id
     */
     public Integer lookupUser(String sid, String username) throws ExecutionException, InterruptedException {
@@ -112,6 +113,7 @@ public class VerificationProcess {
     }
 
     /*
+    For further working with SOAP - was not used
     assign a user to course, possible roles from {"Admin", "Tutor", "Member"}
     */
     public Boolean assignCourseMember(String sid, int course_id, int user_id, String role) throws ExecutionException, InterruptedException {
@@ -127,6 +129,7 @@ public class VerificationProcess {
     }
 
     /*
+    For further working with SOAP - was not used
     exclude course member
     */
     public Boolean excludeCourseMember(String sid, int course_id, int user_id) throws ExecutionException, InterruptedException {

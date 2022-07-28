@@ -213,6 +213,10 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
         }
     }
 
+    /** puts the information about the courses into result-field according to the filter terms
+     * @param snapshot
+     * @param filterparameters
+     */
     public void setFilteredCourseSmallData(DataSnapshot snapshot, HashMap<String, String> filterparameters) {
         result.clear();
         for(DataSnapshot ds:snapshot.getChildren()){
@@ -232,7 +236,6 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
                 info.put("prof", item.getRespLecturer());
                 result.put(item.getTitleSemabh(), info);
             }
-            System.out.println(result);
         }
     }
 

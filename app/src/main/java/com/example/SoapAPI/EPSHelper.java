@@ -9,6 +9,13 @@ package com.example.SoapAPI;
 //
 //----------------------------------------------------
 
+/**
+ * This class was generated with EasyWSDL plugin,
+ * SOAP was already used in the project for login/logout functionalities
+ * (some other functions were written in the SOAP class but not used finally)
+ * the other functions can be further used for working with SOAP
+ */
+
 import java.util.*;
 import org.ksoap2.serialization.*;
 import org.kxml2.kdom.Element;

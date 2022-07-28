@@ -9,6 +9,13 @@ package com.example.SoapAPI;
 //
 //----------------------------------------------------
 
+/**
+ * This interface was generated with EasyWSDL plugin,
+ * SOAP was already used in the project for login/logout functionalities
+ * (some other functions were written in the SOAP class but not used finally)
+ * the other functions can be further used for working with SOAP
+ */
+
 import java.util.Date;
 
 

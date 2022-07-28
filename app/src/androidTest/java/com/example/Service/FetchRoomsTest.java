@@ -26,7 +26,7 @@ public class FetchRoomsTest {
     ArrayList<Room> result = new ArrayList<>();
 
     /**
-     * Anforderung: Der User kann den Zeitplan bzw. Belegung eines Raumes sehen
+     * Anforderungen: Der User kann den Zeitplan bzw. Belegung eines Raumes sehen
      *              Mit Eingabe einer definierten Zeit kann der User leere Räume suchen
      */
     @Test
