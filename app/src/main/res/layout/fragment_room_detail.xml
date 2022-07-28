@@ -1,13 +1,80 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.View.RoomDetailFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+
+    <include
+        android:id="@+id/deneme3"
+        layout="@layout/view_card_room_time_table"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/deneme2"
+        app:time_table_hour="01:00"
+        android:layout_marginTop="60dp"
+        />
+
+    <include layout="@layout/view_card_room_time_table"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/deneme"
+        android:layout_below="@+id/deneme3"
+        android:layout_marginTop="60dp"/>
+
+    <include
+        android:id="@+id/deneme2"
+        layout="@layout/view_card_room_time_table"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <include
+        android:id="@+id/deneme5"
+        layout="@layout/view_card_room_time_table"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/deneme"
+        android:layout_marginTop="60dp"
+        />
+
+    <include
+        android:id="@+id/deneme6"
+        layout="@layout/view_card_room_time_table"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/deneme5"
+        android:layout_marginTop="60dp"/>
+
+    <include
+        android:id="@+id/deneme7"
+        layout="@layout/view_card_room_time_table"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/deneme6"
+        android:layout_marginTop="60dp"/>
+
+
+    <include
+        android:id="@+id/deneme8"
+        layout="@layout/view_card_room_time_table"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/deneme7"
+        android:layout_marginTop="60dp"/>
+
+    <View
+        android:id="@+id/verticalBlackLine"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginStart="94dp"
+
+        android:layout_marginTop="4dp"
+        android:background="@android:color/darker_gray"
+        tools:layout_editor_absoluteX="0dp" />
+
+</RelativeLayout>
