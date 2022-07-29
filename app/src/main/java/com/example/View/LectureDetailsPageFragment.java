@@ -29,7 +29,6 @@ import java.util.ArrayList;
  */
 public class LectureDetailsPageFragment extends Fragment {
     private Button joinButton;
-    private Button participantsButton;
     private final String courseName;
     private String currentPeriod;
     private FetchCourses fetchCourses;
@@ -127,7 +126,6 @@ public class LectureDetailsPageFragment extends Fragment {
         TextView room = root.findViewById(R.id.roomEditableTextView);
         TextView hours = root.findViewById(R.id.courseHoursTextView);
         ConstraintLayout layout = root.findViewById(R.id.detailsConstraint);
-        participantsButton = root.findViewById(R.id.participantsButton);
 
         hours.setText(info.getLectureTime());
         courseName.setText(info.getLectureName());
@@ -140,8 +138,6 @@ public class LectureDetailsPageFragment extends Fragment {
         joinButton = root.findViewById(R.id.joinButton);
         setJoinText(joinButton);
         joinButton.setOnClickListener(new JoinButtonListener());
-
-        participantsButton.setOnClickListener(new ParticipantClickListener());
 
 
     }

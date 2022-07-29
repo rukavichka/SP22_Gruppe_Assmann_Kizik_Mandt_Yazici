@@ -13,12 +13,12 @@ import com.example.readdatabase.R;
 import java.util.ArrayList;
 
 public class ContentItemAdapter extends RecyclerView.Adapter<ContentItemAdapter.ViewHolder> {
-    ArrayList<String[]> contents;
-    String type;
+    ArrayList<ArrayList<String>> contents;
+    String courseName;
 
-    public ContentItemAdapter(String type, ArrayList<String[]> contents) {
+    public ContentItemAdapter(String courseName, ArrayList<ArrayList<String>> contents) {
         this.contents = contents;
-        this.type = type;
+        this.courseName = courseName;
     }
 
     @NonNull
@@ -30,10 +30,10 @@ public class ContentItemAdapter extends RecyclerView.Adapter<ContentItemAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ContentItemAdapter.ViewHolder holder, int position) {
-        holder.title.setText(contents.get(position)[0]);
-        holder.details.setText(contents.get(position)[1]);
-        // holder.icon.setImageDrawable(R.drawable.ic_homework);
-        holder.onClick(type, contents.get(position)[0], contents.get(position)[2]);
+        holder.title.setText(contents.get(position).get(1));
+        holder.details.setText("pdf, " + contents.get(position).get(0));
+        holder.icon.setImageResource(R.drawable.ic_presentation);
+        holder.onClick(courseName, contents.get(position).get(0));
     }
 
 
@@ -57,12 +57,12 @@ public class ContentItemAdapter extends RecyclerView.Adapter<ContentItemAdapter.
             icon = itemView.findViewById(R.id.contentIcon);
         }
 
-        public void onClick(String type, String lectureName, String fileName) {
+        public void onClick(String lectureName, String fileName) {
             mainLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    DownloadContent contentDownloader = new DownloadContent();
-                    contentDownloader.execute(lectureName, type, fileName);
+                    DownloadContent contentDownloader = new DownloadContent(mainLayout.getContext());
+                    contentDownloader.execute(lectureName, fileName);
                 }
             });
         }

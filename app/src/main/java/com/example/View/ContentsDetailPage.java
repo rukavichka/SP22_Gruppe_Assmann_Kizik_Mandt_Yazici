@@ -10,16 +10,15 @@ import android.view.ViewGroup;
 import com.example.Adapter.ContentItemAdapter;
 import com.example.readdatabase.R;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class ContentsDetailPage extends Fragment {
     private View root;
-    private String type;
-    private RecyclerView.Adapter adapter;
-    private RecyclerView recyclerViewList;
-    private ArrayList<String[]> content;
+    private final String courseName;
+    private final ArrayList<ArrayList<String>> content;
 
-    public ContentsDetailPage(String type, ArrayList<String[]> content) {
-        this.type = type;
+    public ContentsDetailPage(String courseName, ArrayList<ArrayList<String>> content) {
+        this.courseName = courseName;
         this.content = content;
     }
 
@@ -39,9 +38,9 @@ public class ContentsDetailPage extends Fragment {
 
     public void recyclerViewContent() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
-        recyclerViewList = root.findViewById(R.id.searchListView);
+        RecyclerView recyclerViewList = root.findViewById(R.id.contentItemsList);
         recyclerViewList.setLayoutManager(linearLayoutManager);
-        adapter = new ContentItemAdapter(type, content);
+        RecyclerView.Adapter adapter = new ContentItemAdapter(courseName, content);
         recyclerViewList.setAdapter(adapter);
     }
 }

@@ -82,7 +82,7 @@ public class LectureContentsFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 ((MainActivity)root.getContext()).getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
-                        new ContentsDetailPage(type, lecture.getLectureContent())).addToBackStack("ContentsDetailPage").commit();
+                        new ContentsDetailPage(lecture.getLectureName(), lecture.getLectureContent().get(type))).addToBackStack("ContentsDetailPage").commit();
             }
         });
     }

@@ -1,6 +1,7 @@
 package com.example.SoapAPI;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * is being used to store course data from Firebase
@@ -23,15 +24,52 @@ public class FirebaseItem {
     private String lectureNum;
     private String respLecturer;
     private String timeFrom;          // LocalTime
-    private String timeTill;          // LocalTime
+    private String timeTill;    // LocalTime
+    private ArrayList<ArrayList<String>> exams;
+    private ArrayList<ArrayList<String>> forum;
+    private ArrayList<ArrayList<String>> lectures;
+    private ArrayList<ArrayList<String>> exercises;
 
     public FirebaseItem(){}
+
+    public ArrayList<ArrayList<String>> getExams() {
+        return exams;
+    }
+
+    public void setExams(ArrayList<ArrayList<String>> exams) {
+        this.exams = exams;
+    }
+
+    public ArrayList<ArrayList<String>> getForum() {
+        return forum;
+    }
+
+    public void setForum(ArrayList<ArrayList<String>> forum) {
+        this.forum = forum;
+    }
+
+    public ArrayList<ArrayList<String>> getLectures() {
+        return lectures;
+    }
+
+    public void setLectures(ArrayList<ArrayList<String>> lectures) {
+        this.lectures = lectures;
+    }
+
+    public ArrayList<ArrayList<String>> getExercises() {
+        return exercises;
+    }
+
+    public void setExercises(ArrayList<ArrayList<String>> exercises) {
+        this.exercises = exercises;
+    }
 
     public FirebaseItem(String till, String from, String form, ArrayList<String> abbrevNumber,
                         ArrayList<String> abbrevCode, String pg, String room, String rhythm, String semester,
                         ArrayList<String> stg, String weekDay, String titleSemabh, String titleSemunabh,
                         String lectureNum, String respLecturer, String timeFrom,
-                        String timeTill) {
+                        String timeTill, ArrayList<ArrayList<String>> exams, ArrayList<ArrayList<String>> forum,
+                        ArrayList<ArrayList<String>> lectures, ArrayList<ArrayList<String>> exercises) {
         this.till = till;
         this.from = from;
         this.form = form;
@@ -49,6 +87,10 @@ public class FirebaseItem {
         this.respLecturer = respLecturer;
         this.timeFrom = timeFrom;
         this.timeTill = timeTill;
+        this.exams = exams;
+        this.exercises = exercises;
+        this.forum = forum;
+        this.lectures = lectures;
     }
 
 

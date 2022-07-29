@@ -1,6 +1,7 @@
 package com.example.Model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Lecture {
     private String lectureName;
@@ -9,11 +10,10 @@ public class Lecture {
     private String semester;
     private String professorName;
     private String lectureRoom;
-    private String lectureContent;
     private String lectureExam;
     private boolean isJoined;
     private Schedule schedule;
-    private String[] content;
+    private HashMap<String, ArrayList<ArrayList<String>>> content;
 
     // Professor Object (Interface/Inheritance)
 
@@ -38,7 +38,7 @@ public class Lecture {
         this.lectureRoom = room;
     }
 
-    public Lecture(String lectureName, String professorName, String lectureTime, String number, String form, String semester, String lectureRoom, String lectureContent, String lectureExam, String lecturePeriod) {
+    public Lecture(String lectureName, String professorName, String lectureTime, String number, String form, String semester, String lectureRoom, HashMap<String, ArrayList<ArrayList<String>>> content, String lectureExam, String lecturePeriod) {
         this.lectureName = lectureName;
         this.professorName = professorName;
         this.schedule = new Schedule(lecturePeriod);
@@ -46,10 +46,10 @@ public class Lecture {
         this.schedule.addTime(temp[0], temp[1]);
         this.semester = semester;
         this.lectureRoom = lectureRoom;
-        this.lectureContent = lectureContent;
         this.lectureExam = lectureExam;
         this.form = form;
         this.number = number;
+        this.content = content;
     }
 
     public String getLecturePeriod() {
@@ -84,9 +84,9 @@ public class Lecture {
         return lectureRoom;
     }
 
-    public ArrayList<String[]> getLectureContent() {
+    public HashMap<String, ArrayList<ArrayList<String>>> getLectureContent() {
         // Type implementation needed
-        return null;
+        return content;
     }
 
     public String getLectureExam() {

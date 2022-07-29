@@ -124,16 +124,6 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/participantsButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginBottom="32dp"
-                android:text="@string/participantText"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <Button
                 android:id="@+id/joinButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -142,34 +132,6 @@
                 android:text="@string/Login"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
-
-            <TextView
-                android:id="@+id/inhaltTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginBottom="32dp"
-                android:text="@string/contentText"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/examTextView"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView10"
-                app:layout_constraintVertical_bias="0.49" />
-
-            <TextView
-                android:id="@+id/examTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:text="@string/examText"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/participantsButton"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
             <TextView
                 android:id="@+id/professorEditableTextView"
