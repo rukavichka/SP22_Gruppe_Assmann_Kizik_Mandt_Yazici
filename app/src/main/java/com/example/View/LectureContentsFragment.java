@@ -21,9 +21,11 @@ public class LectureContentsFragment extends Fragment {
     private final Lecture lecture;
     private CheckMember checkMember;
     ProgressBar prgB;
+    LectureDetailsPageFragment detailPage;
     public LectureContentsFragment(Lecture lecture) {
         this.lecture = lecture;
     }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -134,4 +136,5 @@ public class LectureContentsFragment extends Fragment {
             }
         });
     }
+
 }

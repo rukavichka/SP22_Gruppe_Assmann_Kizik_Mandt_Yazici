@@ -59,8 +59,15 @@ public class MainActivity extends AppCompatActivity  {
                                 new RoomSearchPageFragment()).addToBackStack(null).commit();
                         break;
                     case R.id.signOut:
-                        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                        startActivity(intent);
+                        VerificationProcess verificationProcess = VerificationProcess.getInstance();
+                        try {
+                            verificationProcess.logout(verificationProcess.getSid());
+                            Toast.makeText(getApplicationContext(),"logged out",Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+                            startActivity(intent);
+                        } catch (ExecutionException | InterruptedException e) {
+                            e.printStackTrace();
+                        }
                         break;
                 }
                 drawer.closeDrawer(GravityCompat.START);

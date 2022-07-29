@@ -127,7 +127,7 @@ public class  LectureSearchPageFragment extends Fragment {
         @Override
         public void onClick(View v) {
             ((MainActivity)v.getContext()).getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
-                    new FilterFragment(mode, courses)).addToBackStack("LectureSearchPageFragment").commit();
+                    new FilterFragment(mode, courses)).addToBackStack(null).commit();
         }
     }
 
