@@ -169,7 +169,7 @@ public class LectureDetailsPageFragment extends Fragment {
         public void onClick(View v) {
             if(isCourseMember){
                 ((MainActivity)v.getContext()).getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
-                        new LectureContentsFragment(lecture)).addToBackStack("LectureContentsFragment").commit();
+                        new LectureContentsFragment(lecture)).commit();
             }
             else{
                 joinButton.setText("Inhalt");
@@ -188,22 +188,4 @@ public class LectureDetailsPageFragment extends Fragment {
             joinButton.setText("Join Course");
         }
     }
-
-
-    public class ParticipantClickListener implements View.OnClickListener{
-
-        @Override
-        public void onClick(View v) {
-            ((MainActivity)v.getContext()).getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
-                    new ParticipantPageFragment(courseName)).addToBackStack("ParticipantPageFragment").commit();
-        }
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        fetchCourses = null;
-    }
-
-
 }

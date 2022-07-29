@@ -71,7 +71,7 @@ public class LectureAdapter extends RecyclerView.Adapter<LectureAdapter.ViewHold
         @Override
         public void onClick(View view) {
             ((MainActivity)view.getContext()).getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
-                    new LectureDetailsPageFragment(courseName.getText().toString())).addToBackStack(null).commit();
+                    new LectureDetailsPageFragment(courseName.getText().toString())).commit();
         }
     }
 }

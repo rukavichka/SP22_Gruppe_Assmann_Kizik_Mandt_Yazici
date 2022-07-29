@@ -26,7 +26,6 @@ public class DownloadContent extends AsyncTask<String, Void, Void> {
         }).addOnFailureListener(e -> {
             System.out.println("Failed");
         });;
-
         return null;
     }
 

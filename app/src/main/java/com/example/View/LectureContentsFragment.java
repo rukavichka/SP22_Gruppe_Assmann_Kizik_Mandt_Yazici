@@ -12,11 +12,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.Model.Lecture;
+import com.example.Service.CheckMember;
 import com.example.readdatabase.R;
 
 public class LectureContentsFragment extends Fragment {
-    View root;
-    Lecture lecture;
+    private View root;
+    private final Lecture lecture;
+    private CheckMember checkMember;
     public LectureContentsFragment(Lecture lecture) {
         // Required empty public constructor
         this.lecture = lecture;
@@ -31,7 +33,7 @@ public class LectureContentsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.fragment_lecture_contents, container, false);
-
+        checkMember = new CheckMember();
         ConstraintLayout layout = root.findViewById(R.id.courseContent);
         TextView title = layout.findViewById(R.id.contentTitle);
         TextView details = layout.findViewById(R.id.contentDetail);
@@ -67,13 +69,40 @@ public class LectureContentsFragment extends Fragment {
         icon = layout.findViewById(R.id.contentButtonIcon);
         icon.setImageResource(R.drawable.ic_participants);
         title.setText("Mitglieder");
+        setParticipantButton();
 
         layout = root.findViewById(R.id.leaveCourseButton);
         title = layout.findViewById(R.id.contentButton);
         icon = layout.findViewById(R.id.contentButtonIcon);
         icon.setImageResource(R.drawable.ic_baseline_logout_24);
         title.setText("Kursmitgliedschaft beenden");
+        setLeaveButton();
         return root;
+    }
+
+    public void setParticipantButton() {
+        ConstraintLayout layout = root.findViewById(R.id.participants);
+        layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((MainActivity)root.getContext()).getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
+                        new ParticipantPageFragment(lecture.getLectureName())).addToBackStack("ContentsDetailPage").commit();
+            }
+        });
+    }
+
+    public void setLeaveButton() {
+        checkMember = new CheckMember();
+        ConstraintLayout layout = root.findViewById(R.id.leaveCourseButton);
+        layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                checkMember.executeDeleteMembership(lecture.getLectureName());
+                checkMember.executeDeleteUserCourses(lecture.getLectureName());
+                ((MainActivity)root.getContext()).getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
+                        new LectureDetailsPageFragment(lecture.getLectureName())).commit();
+            }
+        });
     }
 
     private void createOnClick(String type, int id) {
@@ -81,8 +110,9 @@ public class LectureContentsFragment extends Fragment {
         layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ((MainActivity)root.getContext()).getSupportFragmentManager().popBackStack();
                 ((MainActivity)root.getContext()).getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
-                        new ContentsDetailPage(lecture.getLectureName(), lecture.getLectureContent().get(type))).addToBackStack("ContentsDetailPage").commit();
+                        new ContentsDetailPage(type, lecture.getLectureName(), lecture.getLectureContent().get(type))).commit();
             }
         });
     }

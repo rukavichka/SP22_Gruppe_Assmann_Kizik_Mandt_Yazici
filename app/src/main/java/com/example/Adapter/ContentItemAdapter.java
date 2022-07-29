@@ -15,8 +15,10 @@ import java.util.ArrayList;
 public class ContentItemAdapter extends RecyclerView.Adapter<ContentItemAdapter.ViewHolder> {
     ArrayList<ArrayList<String>> contents;
     String courseName;
+    String type;
 
-    public ContentItemAdapter(String courseName, ArrayList<ArrayList<String>> contents) {
+    public ContentItemAdapter(String type, String courseName, ArrayList<ArrayList<String>> contents) {
+        this.type = type;
         this.contents = contents;
         this.courseName = courseName;
     }
@@ -31,8 +33,11 @@ public class ContentItemAdapter extends RecyclerView.Adapter<ContentItemAdapter.
     @Override
     public void onBindViewHolder(@NonNull ContentItemAdapter.ViewHolder holder, int position) {
         holder.title.setText(contents.get(position).get(1));
-        holder.details.setText("pdf, " + contents.get(position).get(0));
-        holder.icon.setImageResource(R.drawable.ic_presentation);
+        holder.details.setText(contents.get(position).get(0));
+        if(type.equals("vorlesungen") || type.equals("klausur")) holder.icon.setImageResource(R.drawable.ic_presentation);
+        else if(type.equals("übungen")) holder.icon.setImageResource(R.drawable.ic_homework);
+        else if(type.equals("forum")) holder.icon.setImageResource(R.drawable.ic_forum);
+
         holder.onClick(courseName, contents.get(position).get(0));
     }
 
