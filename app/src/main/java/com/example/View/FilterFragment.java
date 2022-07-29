@@ -10,6 +10,7 @@ import android.widget.Spinner;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.Model.Lecture;
 import com.example.Service.FetchCourses;
 import com.example.Service.FetchFilters;
 import com.example.Service.FetchProfessors;
@@ -34,11 +35,12 @@ public class FilterFragment extends Fragment {
     Button filterApplyButton;
     Button closeButton;
     FetchFilters fetchFilters;
-
+    ArrayList<Lecture> courses;
     int mode;
 
-    public FilterFragment(int mode){
+    public FilterFragment(int mode, ArrayList<Lecture> courses){
         super();
+        this.courses = courses;
         this.mode = mode;
     }
 
@@ -51,11 +53,7 @@ public class FilterFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         root = inflater.inflate(R.layout.fragment_filter, container, false);
-
-        fetchFilters = new FetchFilters();
-        fetchFilters.setWeakReference(this);
-        fetchFilters.execute();
-
+        setFilters();
         // Listener for the Close Button
         closeButton = root.findViewById(R.id.CloseButton);
         closeButton.setOnClickListener(new View.OnClickListener(){
@@ -73,13 +71,11 @@ public class FilterFragment extends Fragment {
             public void onClick(View v){
                 String dozent = spinnerDozent.getSelectedItem().toString();
                 String semester = spinnerSemester.getSelectedItem().toString();
-                String room = spinnerRoom.getSelectedItem().toString();
                 String title = spinnerTitle.getSelectedItem().toString();
                 String courseType = spinnerCourseType.getSelectedItem().toString();
                 HashMap<String, String> options = new HashMap<String,String>();
                 options.put("respLecturer", dozent);
                 options.put("semester", semester);
-                options.put("room", room);
                 options.put("titleSemabh", title);
                 options.put("form", courseType);
                 ((MainActivity)v.getContext()).getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
@@ -88,6 +84,20 @@ public class FilterFragment extends Fragment {
         });
 
         return root;
+    }
+
+    public void setFilters() {
+        if(mode == 1) {
+            fetchFilters = new FetchFilters();
+            fetchFilters.setWeakReference(this);
+            fetchFilters.execute();
+        }
+        else {
+            for(Lecture lecture: courses) {
+
+            }
+        }
+
     }
 
     /**
@@ -111,18 +121,6 @@ public class FilterFragment extends Fragment {
         ArrayAdapter<CharSequence> semesterAdapter =  new ArrayAdapter(root.getContext(), android.R.layout.simple_list_item_1, semesterList);
         semesterAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerSemester.setAdapter(semesterAdapter);
-    }
-
-    /**
-     * The method takes a list of rooms and sets it as a DropDown Menu
-     * for rooms in the filter fragment
-     * @param rooms
-     */
-    public void setSpinnerRoom(ArrayList<String> rooms){
-        spinnerRoom = root.findViewById(R.id.spinnerRoom);
-        ArrayAdapter<CharSequence> roomAdapter =  new ArrayAdapter(root.getContext(), android.R.layout.simple_list_item_1, rooms);
-        roomAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerRoom.setAdapter(roomAdapter);
     }
 
     /**

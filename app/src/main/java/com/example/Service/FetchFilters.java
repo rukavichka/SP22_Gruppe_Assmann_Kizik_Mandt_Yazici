@@ -16,15 +16,12 @@ import java.util.ArrayList;
 public class FetchFilters extends AsyncTask<Void, Void, Void> {
     private final Firebase firebase = new Firebase();
     private ArrayList<String> professors;
-    private ArrayList<String> rooms;
     private ArrayList<String> semesters;
     private ArrayList<String> types;
     private ArrayList<String> titles;
     private WeakReference<Fragment> weakReference;
-
     public FetchFilters() {
         professors = new ArrayList<>();
-        rooms = new ArrayList<>();
         semesters = new ArrayList<>();
         types = new ArrayList<>();
         titles = new ArrayList<>();
@@ -44,7 +41,6 @@ public class FetchFilters extends AsyncTask<Void, Void, Void> {
                 temp.setSpinnerCourse(titles);
                 temp.setSpinnerCourseForm(types);
                 temp.setSpinnerDozent(professors);
-                temp.setSpinnerRoom(rooms);
                 temp.setSpinnerSemester();
             }
             @Override
@@ -60,12 +56,11 @@ public class FetchFilters extends AsyncTask<Void, Void, Void> {
     private void setFilters(DataSnapshot snapshot) {
         professors = (ArrayList<String>) snapshot.child("professors").getValue();
         semesters = (ArrayList<String>) snapshot.child("semesters").getValue();
-        rooms = (ArrayList<String>) snapshot.child("rooms").getValue();
+//        rooms = (ArrayList<String>) snapshot.child("rooms").getValue();
         titles = (ArrayList<String>) snapshot.child("titles").getValue();
         types = (ArrayList<String>) snapshot.child("types").getValue();
 
         professors.add(0, "");
-        rooms.add(0, "");
         types.add(0, "");
         titles.add(0, "");
         semesters.add(0, "");
