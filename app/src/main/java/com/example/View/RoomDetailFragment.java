@@ -100,6 +100,14 @@ public class RoomDetailFragment extends Fragment {
                     params.width = width;
                     params.height = height * heightMultiplier;
 
+                    inflate.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            ((MainActivity)view.getContext()).getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
+                                    new LectureDetailsPageFragment(lecture.getLectureName())).addToBackStack(null).commit();
+                        }
+                    });
+
                     relativeLayout.addView(inflate, params);
                 }
             }
