@@ -1,13 +1,16 @@
 package com.example.Model;
 
 import java.time.LocalDate;
+import java.time.format.TextStyle;
 import java.util.HashMap;
+import java.util.Locale;
 
 /**
  *
  */
 public class Date {
     private String date;
+    private String dayOfWeek;
     private int month;
     private int day;
     private int year;
@@ -15,6 +18,14 @@ public class Date {
     private int minute;
     private static HashMap<String, Integer> months;
     private static HashMap<String, String> days;
+    static {
+        days = new HashMap<>();
+        days.put("Monday", "Mo");
+        days.put("Tuesday", "Di");
+        days.put("Wednesday", "Mi");
+        days.put("Thursday", "Do");
+        days.put("Friday", "Fr");
+    }
     static {
         months = new HashMap<>();
         months.put("Jan", 1);
@@ -53,13 +64,15 @@ public class Date {
         this.minute = minute;
     }
 
-    public String getTime() {
-        return this.hour + ":" + this.minute;
+    public String getDayOfWeek() {
+        LocalDate localDate = LocalDate.of(year, month, day);
+        String deneme = localDate.getDayOfWeek().getDisplayName(TextStyle.FULL, Locale.ENGLISH);
+        String result =days.get(deneme);
+        return result;
     }
 
-    public String getDay() {
-        LocalDate localDate = LocalDate.of(year, month, day);
-        return localDate.getDayOfWeek().toString().substring(0, 3);
+    public String getTime() {
+        return this.hour + ":" + this.minute;
     }
 
     private void convert() {

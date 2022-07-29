@@ -32,7 +32,7 @@
         <entry key="..\:/Users/EMRE/Desktop/DEV/ANDROID/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/fragment_lecture_contents.xml" value="0.2" />
         <entry key="..\:/Users/EMRE/Desktop/DEV/ANDROID/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/fragment_lecture_details_page.xml" value="0.2536231884057971" />
         <entry key="..\:/Users/EMRE/Desktop/DEV/ANDROID/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/fragment_lecture_search_page.xml" value="0.2484375" />
-        <entry key="..\:/Users/EMRE/Desktop/DEV/ANDROID/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/fragment_room_detail.xml" value="0.3119533527696793" />
+        <entry key="..\:/Users/EMRE/Desktop/DEV/ANDROID/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/fragment_room_detail.xml" value="0.5840092699884125" />
         <entry key="..\:/Users/EMRE/Desktop/DEV/ANDROID/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/fragment_room_search_page.xml" value="0.2484375" />
         <entry key="..\:/Users/EMRE/Desktop/DEV/ANDROID/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/fragment_test2.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/EMRE/Desktop/DEV/ANDROID/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/room_page_detail_overview.xml" value="0.12360688956433637" />
@@ -42,6 +42,7 @@
         <entry key="..\:/Users/EMRE/Desktop/DEV/ANDROID/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/view_card_content_button.xml" value="0.536" />
         <entry key="..\:/Users/EMRE/Desktop/DEV/ANDROID/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/view_card_content_item.xml" value="0.6" />
         <entry key="..\:/Users/EMRE/Desktop/DEV/ANDROID/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/view_card_course.xml" value="0.2269021739130435" />
+        <entry key="..\:/Users/EMRE/Desktop/DEV/ANDROID/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/view_card_event.xml" value="0.536" />
         <entry key="..\:/Users/EMRE/Desktop/DEV/ANDROID/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/view_card_room.xml" value="0.1671875" />
         <entry key="..\:/Users/EMRE/Desktop/DEV/ANDROID/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/view_card_room_free.xml" value="0.536" />
         <entry key="..\:/Users/EMRE/Desktop/DEV/ANDROID/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/view_card_room_time_table.xml" value="0.536" />
@@ -89,7 +90,6 @@
         <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/view_card_filter.xml" value="0.176" />
         <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/view_card_news.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/view_card_participant.xml" value="0.15775972637879435" />
-        <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/view_card_room.xml" value="0.25" />
         <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/view_card_roomlistelement.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/view_card_veranstaltung.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/Niklas/StudioProjects/Software-Praktikum/SP22_Gruppe_Assmann_Kizik_Mandt_Yazici/app/src/main/res/layout/view_card_veranstaltung2.xml" value="0.20521590423257802" />

@@ -1,9 +1,6 @@
 package com.example.Model;
 
-import android.widget.SimpleCursorAdapter;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Lecture {
     private String lectureName;
@@ -106,7 +103,7 @@ public class Lecture {
 
     public boolean isBusy(Date date) {
         if(this.schedule.isInPeriod(date)) {
-            if(this.schedule.isBusy(date.getDay(), date.getTime())) {
+            if(this.schedule.isBusy(date.getDayOfWeek(), date.getTime())) {
                 return true;
             }
         }
