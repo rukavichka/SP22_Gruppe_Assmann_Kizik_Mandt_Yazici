@@ -20,4 +20,16 @@ public class DateTest {
 
         Assert.assertEquals(-1, date1.compare(date2));
     }
+
+    /**Related to:
+     * Anforderungen: Der User kann den Zeitplan bzw. Belegung eines Raumes sehen
+     *              Mit Eingabe einer definierten Zeit kann der User leere Räume suchen
+     */
+    @Test
+    public void GetDayOfWeekTest(){
+        String[] dateArray1 =  {"1", "12", "2021"};
+        Date date1 = new Date(dateArray1);
+
+        Assert.assertEquals("Mi", date1.getDayOfWeek());
+    }
 }

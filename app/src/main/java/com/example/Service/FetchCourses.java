@@ -90,7 +90,7 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
     /** gets the relevant course data from the snapshot
      * @param snapshot current state of Firebase
      */
-    private void setCourseSmallData(DataSnapshot snapshot) {
+    public void setCourseSmallData(DataSnapshot snapshot) {
         info = new ArrayList<>();
         for(DataSnapshot ds:snapshot.getChildren()){
             FirebaseItem item = ds.getValue(FirebaseItem.class);
@@ -134,11 +134,29 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
         }
     }
 
-    private void filterResult() {
-        ArrayList<Lecture> filteredResult = new ArrayList<>();
+    /**
+     * the function for creating weakReference and filtering the courses
+     */
+    public void filterResult() {
+
         LectureSearchPageFragment temp = (LectureSearchPageFragment) weakReference.get();
         HashMap<String, String> filterparameters = temp.getFilterParameters();
+
+        filterFunction(filterparameters);
+    }
+
+    /**
+     * the function for filtering the courses according to the filterparameters
+     * @param filterparameters current state of Firebase
+     */
+    public void filterFunction(HashMap<String, String> filterparameters) {
+
+        ArrayList<Lecture> filteredResult = new ArrayList<>();
+
         for(Lecture lecture : info) {
+            if (lecture.getProfessorName().equals("")){
+                lecture.setProfessorName();     // will be "unknown"
+            }
             if ((lecture.getLectureName().equals(filterparameters.get("titleSemabh")) ||
                     lecture.getProfessorName().equals(filterparameters.get("respLecturer")) ||
                     lecture.getSemester().equals(filterparameters.get("semester")) ||
@@ -160,7 +178,16 @@ public final class  FetchCourses extends AsyncTask<Integer, Void, Void> {
         this.isFiltered = isFiltered;
     }
 
-    public void setJoinedCourses(List<String> joinedCourses){
+    public void setIsJoined(boolean isJoined){
+        this.isJoined = isJoined;
+    }
+
+    public ArrayList<Lecture> getInfo(){
+        return this.info;
+    }
+
+    public void setJoinedCourses(List<String> joinedCourses) {
         this.joinedCourses = joinedCourses;
     }
+
 }

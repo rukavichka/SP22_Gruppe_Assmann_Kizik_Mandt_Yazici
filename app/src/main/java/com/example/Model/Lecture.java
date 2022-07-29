@@ -101,6 +101,10 @@ public class Lecture {
         return number;
     }
 
+    public void setProfessorName() {
+        this.professorName = "unlnown";
+    }
+
     public boolean isBusy(Date date) {
         if(this.schedule.isInPeriod(date)) {
             if(this.schedule.isBusy(date.getDayOfWeek(), date.getTime())) {
