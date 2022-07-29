@@ -60,7 +60,7 @@ public class Lecture {
         return this.schedule;
     }
 
-    public String getLectureTime() {
+    public ArrayList<String> getLectureTime() {
         return this.schedule.getHours();
     }
 

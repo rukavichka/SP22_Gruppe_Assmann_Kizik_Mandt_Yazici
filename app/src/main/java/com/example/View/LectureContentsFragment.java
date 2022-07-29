@@ -20,7 +20,6 @@ public class LectureContentsFragment extends Fragment {
     private final Lecture lecture;
     private CheckMember checkMember;
     public LectureContentsFragment(Lecture lecture) {
-        // Required empty public constructor
         this.lecture = lecture;
     }
 
@@ -100,7 +99,7 @@ public class LectureContentsFragment extends Fragment {
                 checkMember.executeDeleteMembership(lecture.getLectureName());
                 checkMember.executeDeleteUserCourses(lecture.getLectureName());
                 ((MainActivity)root.getContext()).getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
-                        new LectureDetailsPageFragment(lecture.getLectureName())).commit();
+                        new LectureDetailsPageFragment(lecture.getLectureName())).addToBackStack(null).commit();
             }
         });
     }

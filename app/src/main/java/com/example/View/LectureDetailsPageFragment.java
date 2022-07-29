@@ -2,6 +2,8 @@ package com.example.View;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,6 +15,8 @@ import android.widget.PopupMenu;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.example.Adapter.LectureAdapter;
+import com.example.Adapter.LectureTimeTableAdapter;
 import com.example.Model.Data;
 import com.example.Model.Lecture;
 import com.example.Model.VerificationProcess;
@@ -117,39 +121,25 @@ public class LectureDetailsPageFragment extends Fragment {
      * @param info lecture object to display
      */
     public void setLayout(Lecture info) {
-        joinButton = root.findViewById(R.id.joinButton);
-        setJoinText(joinButton);
         TextView courseName = root.findViewById(R.id.courseNameTextView);
         TextView profName = root.findViewById(R.id.professorEditableTextView);
         TextView period = root.findViewById(R.id.periodMenuButton);
         TextView semester = root.findViewById(R.id.semesterEditableTextView);
         TextView room = root.findViewById(R.id.roomEditableTextView);
-        TextView hours = root.findViewById(R.id.courseHoursTextView);
         ConstraintLayout layout = root.findViewById(R.id.detailsConstraint);
 
-        hours.setText(info.getLectureTime());
         courseName.setText(info.getLectureName());
         room.setText(info.getLectureRoom());
         semester.setText(info.getSemester());
         period.setText(info.getLecturePeriod());
         profName.setText(info.getProfessorName());
         layout.setVisibility(View.VISIBLE);
+        recyclerViewTime();
 
         joinButton = root.findViewById(R.id.joinButton);
         setJoinText(joinButton);
         joinButton.setOnClickListener(new JoinButtonListener());
-
-
     }
-    public void participantsButtonVisibility(Button participants){
-        if(isCourseMember){
-            participants.setVisibility(View.VISIBLE);
-        }
-        else{
-            participants.setVisibility(View.INVISIBLE);
-        }
-    }
-
 
     public void hideProgressBar() {
         ConstraintLayout layout = root.findViewById(R.id.detailsConstraint);
@@ -162,6 +152,13 @@ public class LectureDetailsPageFragment extends Fragment {
         this.isCourseMember = checkList;
     }
 
+    public void recyclerViewTime() {
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
+        RecyclerView recyclerViewList = root.findViewById(R.id.courseTimeTable);
+        recyclerViewList.setLayoutManager(linearLayoutManager);
+        RecyclerView.Adapter adapter = new LectureTimeTableAdapter(lecture.getLectureTime());
+        recyclerViewList.setAdapter(adapter);
+    }
 
     public class JoinButtonListener implements View.OnClickListener{
 
@@ -169,7 +166,7 @@ public class LectureDetailsPageFragment extends Fragment {
         public void onClick(View v) {
             if(isCourseMember){
                 ((MainActivity)v.getContext()).getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
-                        new LectureContentsFragment(lecture)).commit();
+                        new LectureContentsFragment(lecture)).addToBackStack(null).commit();
             }
             else{
                 joinButton.setText("Inhalt");

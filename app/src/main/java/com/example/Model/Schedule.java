@@ -1,5 +1,6 @@
 package com.example.Model;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Objects;
 
@@ -73,13 +74,12 @@ public class Schedule {
         return startPeriod.toString() + "-" + endPeriod.toString();
     }
 
-    public String getHours() {
-        if(times.isEmpty()) {
-            return "Not specified";
-        }
-        String result = "";
-        for(String key : times.keySet()){
-            result += key + times.get(key)[0] + "-" + times.get(key)[1];
+    public ArrayList<String> getHours() {
+        ArrayList<String> result = new ArrayList<>();
+        if(!times.isEmpty()) {
+            for(String key : times.keySet()){
+                result.add(key + " " + times.get(key)[0] + "-" + times.get(key)[1]);
+            }
         }
         return result;
     }

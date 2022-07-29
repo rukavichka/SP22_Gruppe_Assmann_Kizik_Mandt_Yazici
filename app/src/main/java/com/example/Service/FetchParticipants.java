@@ -56,7 +56,6 @@ public class FetchParticipants extends AsyncTask<Integer, Void, Void> {
     public void setParticipantUserIDData(DataSnapshot snapshot) {
         for(DataSnapshot ds:snapshot.child("membership/" + courseName).getChildren()){
             String item = ds.getValue(String.class); //every user_id
-            //result.put(item, new Participant(item));
             tempList.add(new Participant(item));        }
     }
 
