@@ -40,9 +40,7 @@ public class  LectureSearchPageFragment extends Fragment {
         this.options = options;
         this.mode = mode;
     }
-    public LectureSearchPageFragment() {
-        this(new HashMap<String, String>(),1);
-    }
+
     public LectureSearchPageFragment(int mode) {
         this.mode = mode;
         this.options = new HashMap<String, String>();
@@ -65,43 +63,28 @@ public class  LectureSearchPageFragment extends Fragment {
         fetchCourses.setWeakReference(this);
         if(mode == 1) {
             mainTitle.setText(R.string.main_title_all_courses);
-            if (options.isEmpty()) {
-                // Inflate the layout for this fragment
-                fetchCourses.execute(0);
-                searchWidget();
-            } else {
-                fetchCourses.execute(2);
-                searchWidget();
+            if (!options.isEmpty()) {
+                fetchCourses.setIsFiltered(true);
             }
+            fetchCourses.execute(0);
+            searchWidget();
         }
         if(mode == 2){
             mainTitle.setText(R.string.main_title_my_courses);
-            if (options.isEmpty()) {
-                fetchCourses.execute(5);
-                searchWidget();
+            if (!options.isEmpty()) {
+                fetchCourses.setIsFiltered(true);
             }
-            else{
-                fetchCourses.execute(7);
-                searchWidget();}
+            fetchCourses.execute(2);
+            searchWidget();
         }
         return root;
     }
 
-    public void recyclerViewLecture(HashMap<String, HashMap<String, String>> data) {
+    public void recyclerViewLecture(ArrayList<Lecture> courses) {
+        this.courses = courses;
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerViewList = root.findViewById(R.id.searchListView);
         recyclerViewList.setLayoutManager(linearLayoutManager);
-        courses = new ArrayList<Lecture>();
-        for(String key : data.keySet()) {
-            String professor = data.get(key).get("prof");
-            String semester = data.get(key).get("semester");
-            String number = data.get(key).get("number");
-            String form = data.get(key).get("form");
-            String room = data.get(key).get("room");
-            Lecture temp = new Lecture(key, professor, semester, number, form, room);
-            courses.add(temp);
-        }
-
         adapter = new LectureAdapter(courses);
         recyclerViewList.setAdapter(adapter);
     }
@@ -144,7 +127,7 @@ public class  LectureSearchPageFragment extends Fragment {
         @Override
         public void onClick(View v) {
             ((MainActivity)v.getContext()).getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
-                    new FilterFragment(mode)).addToBackStack("LectureSearchPageFragment").commit();
+                    new FilterFragment(mode, courses)).addToBackStack(null).commit();
         }
     }
 

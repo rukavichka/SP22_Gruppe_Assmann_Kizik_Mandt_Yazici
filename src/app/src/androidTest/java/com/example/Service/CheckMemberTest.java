@@ -2,10 +2,8 @@ package com.example.Service;
 
 import androidx.annotation.NonNull;
 
-import com.example.Model.Lecture;
 import com.example.Model.VerificationProcess;
 import com.example.SoapAPI.Firebase;
-import com.example.View.LectureDetailsPageFragment;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -17,7 +15,6 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.concurrent.CountDownLatch;
 
 public class CheckMemberTest {
 
@@ -108,7 +105,7 @@ public class CheckMemberTest {
             e.printStackTrace();
         }
 
-        // if it's not, we aasgn a user to the course
+        // if it's not, we assign a user to the course
         if (! isCourseMember) {
             // 1. we assign a user to the Course
             Thread t2 = new Thread(new Runnable(){

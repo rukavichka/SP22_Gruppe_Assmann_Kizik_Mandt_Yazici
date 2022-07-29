@@ -19,6 +19,9 @@ import com.example.readdatabase.R;
 import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ * view class to be the initial page after login. Has no functionality. Can be used for future implementations of features.
+ */
 public class HomePageFragment extends Fragment {
     private View root;
     private RecyclerView.Adapter adapterNews, adapterActivity;

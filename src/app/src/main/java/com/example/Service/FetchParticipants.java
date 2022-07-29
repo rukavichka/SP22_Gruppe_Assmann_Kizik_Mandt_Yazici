@@ -18,6 +18,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * class to load participant data from database
+ * @field weakReference: lightweight reference to view object which created this class
+ * @field result:
+ */
 public class FetchParticipants extends AsyncTask<Integer, Void, Void> {
     private static final HashMap<String,Participant> result = new HashMap<>();
     private List<Participant> info;
@@ -33,24 +38,31 @@ public class FetchParticipants extends AsyncTask<Integer, Void, Void> {
         this.weakReference = new WeakReference<>(fragment);
     }
 
+    /** doInBAckground is being invoked by the execute method which comes with AsyncTask
+     * @param integers not used here
+     */
     @Override
     protected Void doInBackground(Integer... integers) {
 
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
         databaseReference.addListenerForSingleValueEvent(new ValueEventListenerUserID());
-
-
         return null;
     }
 
-    private void setParticipantUserIDData(DataSnapshot snapshot) {
+    /** gets all the user_ID's of the correspondent course from the membership entry in firebase
+     * and adds it to tempList
+     * @param snapshot the current state of Firebase
+     */
+    public void setParticipantUserIDData(DataSnapshot snapshot) {
         for(DataSnapshot ds:snapshot.child("membership/" + courseName).getChildren()){
             String item = ds.getValue(String.class); //every user_id
-            //result.put(item, new Participant(item));
             tempList.add(new Participant(item));        }
     }
 
-    private void setParticipantName(DataSnapshot snapshot){
+    /** gets the participant's name and username and maps it in result by using user_ID
+     * @param snapshot the current state of Firebase
+     */
+    public void setParticipantName(DataSnapshot snapshot){
         for(Participant p : tempList){
             String name = snapshot.child("users/" + p.getUser_id() + "/" + "name").getValue(String.class);
             String iliasUsername = snapshot.child("users/" + p.getUser_id() + "/" + "iliasUsername").getValue(String.class);
@@ -60,6 +72,9 @@ public class FetchParticipants extends AsyncTask<Integer, Void, Void> {
 
     public class ValueEventListenerUserID implements ValueEventListener{
 
+        /** gets invoked when attached or when data changes within Firebase
+         * @param snapshot current state of Firebase
+         */
         @Override
         public void onDataChange(@NonNull DataSnapshot snapshot) {
             result.clear();
@@ -74,5 +89,12 @@ public class FetchParticipants extends AsyncTask<Integer, Void, Void> {
         public void onCancelled(@NonNull DatabaseError error) {
 
         }
+    }
+    public List<Participant> getParticipantList(){
+        return this.tempList;
+    }
+
+    public HashMap<String,Participant> getResult(){
+        return this.result;
     }
 }

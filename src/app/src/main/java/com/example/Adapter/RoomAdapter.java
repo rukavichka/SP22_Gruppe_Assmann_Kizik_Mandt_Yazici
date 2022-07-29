@@ -15,8 +15,10 @@ import com.example.Model.Lecture;
 import com.example.Model.Room;
 import com.example.View.LectureDetailsPageFragment;
 import com.example.View.MainActivity;
+import com.example.View.RoomDetailFragment;
 import com.example.readdatabase.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.ViewHolder>{
@@ -49,7 +51,7 @@ public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.ViewHolder>{
         if(course != null) {
             holder.courseName.setText(course.getLectureName());
             holder.courseName.setVisibility(View.VISIBLE);
-            holder.setListener(course.getLectureName());
+            holder.setListener(date, roomList.get(position).getLectureList());
         }
     }
 
@@ -70,12 +72,14 @@ public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.ViewHolder>{
             courseName = itemView.findViewById(R.id.busyCourseName);
         }
 
-        public void setListener(String courseName) {
+        public void setListener(Date date, ArrayList<Lecture> lectures) {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    // ((MainActivity)view.getContext()).getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
+                //            new LectureDetailsPageFragment(courseName)).addToBackStack(null).commit();
                     ((MainActivity)view.getContext()).getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
-                            new LectureDetailsPageFragment(courseName)).addToBackStack(null).commit();
+                            new RoomDetailFragment(lectures, date)).addToBackStack(null).commit();
                 }
             });
         }

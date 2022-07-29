@@ -32,22 +32,13 @@
             app:layout_constraintTop_toBottomOf="@+id/spinnerDozent" />
 
         <Spinner
-            android:id="@+id/spinnerRoom"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinnerSemester"
-            android:background="@drawable/border"/>
-
-        <Spinner
             android:id="@+id/spinnerTitle"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_marginTop="5dp"
+            android:background="@drawable/border"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinnerRoom"
-            android:background="@drawable/border"/>
+            app:layout_constraintTop_toBottomOf="@+id/spinnerSemester" />
 
         <Spinner
             android:id="@+id/spinnerCourseType"
@@ -94,17 +85,6 @@
             app:layout_constraintEnd_toStartOf="@+id/spinnerSemester"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/spinnerSemester"
-            android:textColor="@color/black"/>
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="109dp"
-            android:layout_height="wrap_content"
-            android:text="@string/Raum"
-            app:layout_constraintBottom_toBottomOf="@+id/spinnerRoom"
-            app:layout_constraintEnd_toStartOf="@+id/spinnerRoom"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/spinnerRoom"
             android:textColor="@color/black"/>
 
         <TextView

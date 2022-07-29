@@ -44,27 +44,30 @@ public class MainActivity extends AppCompatActivity  {
                 switch (item.getItemId()){
                     case R.id.homePage:
                         getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
-                                new HomePageFragment()).commit();
+                                new HomePageFragment()).addToBackStack(null).commit();
                         break;
                     case R.id.meineVeranstaltungen:
                         getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
-                                new LectureSearchPageFragment(2)).commit();
+                                new LectureSearchPageFragment(2)).addToBackStack(null).commit();
                         break;
                     case R.id.alleVeranstaltungen:
                         getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
-                                new LectureSearchPageFragment(1)).commit();
+                                new LectureSearchPageFragment(1)).addToBackStack(null).commit();
                         break;
-//                    case R.id.Settings:
-//                        getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
-//                                new ScrollTest()).commit();
-//                        break;
                     case R.id.RaumSuchen:
                         getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
-                                new RoomSearchPageFragment()).commit();
+                                new RoomSearchPageFragment()).addToBackStack(null).commit();
                         break;
                     case R.id.signOut:
-                        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                        startActivity(intent);
+                        VerificationProcess verificationProcess = VerificationProcess.getInstance();
+                        try {
+                            verificationProcess.logout(verificationProcess.getSid());
+                            Toast.makeText(getApplicationContext(),"logged out",Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+                            startActivity(intent);
+                        } catch (ExecutionException | InterruptedException e) {
+                            e.printStackTrace();
+                        }
                         break;
                 }
                 drawer.closeDrawer(GravityCompat.START);

@@ -32,22 +32,24 @@ public class LoginActivity extends AppCompatActivity {
                 String password = ((EditText) findViewById(R.id.login_password)).getText().toString();
                 VerificationProcess loginProcess = VerificationProcess.getInstance();
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-
-//                try {
-//                    if (loginProcess.login("mriliastest", username, password) == null) {
-//                        Toast.makeText(getApplicationContext(), "Username or Password wrong!", Toast.LENGTH_SHORT).show();
-//                    } else {
-//                        startActivity(intent);
-//                    }
-//                } catch (ExecutionException | InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-                startActivity(intent);
-                if(username.isEmpty()){
+                if(username.equals("Default")){
                     username = "Default";
+                    startActivity(intent);
+                    VerificationProcess.getInstance().setUserData(username);
                 }
-                VerificationProcess.getInstance().setUserData(username);
-                finish();
+                else {
+                    try {
+                        if (loginProcess.login("mriliastest", username, password) == null) {
+                            Toast.makeText(getApplicationContext(), "Username or Password wrong!", Toast.LENGTH_SHORT).show();
+                        } else {
+                            startActivity(intent);
+                        }
+                    } catch (ExecutionException | InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    VerificationProcess.getInstance().setUserData(username);
+                    finish();
+                }
             }
         });
 

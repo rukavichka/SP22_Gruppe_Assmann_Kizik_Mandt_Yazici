@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ReadDatabase</string>
+    <string name="app_name">CampusApp</string>
     <string name="DozentTutor">Dozent/Tutor</string>
     <string name="Semester">Semester</string>
     <string name="Raum">Raum</string>
@@ -10,13 +10,13 @@
     <string name="Hauptseite">Hauptseite</string>
     <string name="Login">Login</string>
     <string name="prompt_username">Username</string>
-    <string name="prompt_password">Password</string>
+    <string name="prompt_password">Passwort</string>
     <string name="action_ENTER">ENTER</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
-    <string name="invalid_username">Not a valid username</string>
+    <string name="action_sign_in_short">Login</string>
+    <string name="welcome">"Wilkommen !"</string>
+    <string name="invalid_username">Kein gültiger Username</string>
     <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
+    <string name="login_failed">"Login fehlgeschlagen"</string>
     <string name="UniLogo">UniLogo</string>
     <string name="search">Search</string>
     <string name="string_search">Search</string>
@@ -43,8 +43,8 @@
     <string name="moreInfoText">More Info Text</string>
     <string name="contentText">Inhalt:</string>
     <string name="examText">Klausur:</string>
-    <string name="participantText">Participants</string>
-    <string name="joinText">Join</string>
+    <string name="participantText">Mitglieder</string>
+    <string name="joinText">Beitreten</string>
     <string name="dozentExample">Professor Mustermann</string>
     <string name="timeExample">12/02/2022</string>
     <string name="semesterExample">Sommersemester</string>
@@ -54,9 +54,9 @@
     <string name="Semester1">Semester:</string>
     <string name="Filter">Filter:</string>
     <string name="home">Home</string>
-    <string name="sign_out">Sign Out</string>
-    <string name="course_period">Course Period   </string>
-    <string name="course_time">Course Time</string>
+    <string name="sign_out">Logout</string>
+    <string name="course_period">Kurszeitraum   </string>
+    <string name="course_time">Kurszeiten</string>
     <string name="uhr">Uhr</string>
     <string name="_08_00_10_00">08:00 - 10:00</string>
     <string name="_10_00_12_00">10:00 - 12:00</string>
@@ -66,16 +66,21 @@
     <string name="_16_00_18_00">16:00 - 18:00</string>
     <string name="_18_00_20_00">18:00 - 20:00</string>
     <string name="dienstag">Dienstag</string>
-    <string name="day">Day</string>
+    <string name="day">Tag</string>
     <string name="pcpt_little_header">Alle Teilnehmer</string>
     <string name="rooms_little_header">Alle Räume</string>
     <string name="main_title_my_courses">Meine Veranstaltungen</string>
     <string name="main_title_all_courses">Alle Veranstaltungen</string>
     <string name="main_title_search_rooms">Raumsuche</string>
-
     <string name="rooms_free_header">Nur Freie Räume</string>
     <string name="apply">Apply</string>
     <string name="cancel">Cancel</string>
+    <string name="chat">Chat</string>
+    <string name="content_detail_example">pdf, 1.1 MB, 11. Apr 2022, 13:41</string>
+    <string name="content_detail_title">00-orga</string>
+    <string name="button_text">Button Text</string>
+    <string name="example_time">00:00</string>
+    <string name="event">Event</string>
 
 
 </resources>

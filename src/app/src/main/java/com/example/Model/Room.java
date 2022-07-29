@@ -6,7 +6,7 @@ import java.util.List;
 public class Room {
     private String roomNumber;
     private String building;
-    private List<Lecture> lectureList;
+    private ArrayList<Lecture> lectureList;
 
     public Room(String roomNumber) {
         this.roomNumber = roomNumber;
@@ -32,6 +32,10 @@ public class Room {
             }
         }
         return null;
+    }
+
+    public ArrayList<Lecture> getLectureList() {
+        return lectureList;
     }
 
     public boolean isFree(Date date) {

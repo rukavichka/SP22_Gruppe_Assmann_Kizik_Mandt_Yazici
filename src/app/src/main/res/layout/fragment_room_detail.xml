@@ -1,0 +1,81 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/roomDetailLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.View.RoomDetailFragment">
+
+
+    <include
+        android:id="@+id/clock8"
+        layout="@layout/view_card_room_time_table"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <include
+        android:id="@+id/clock10"
+        layout="@layout/view_card_room_time_table"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/clock8"
+        android:layout_marginTop="60dp" />
+
+    <include
+        android:id="@+id/clock12"
+        layout="@layout/view_card_room_time_table"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/clock10"
+        android:layout_marginTop="60dp"
+        />
+
+    <include
+        android:id="@+id/clock14"
+        layout="@layout/view_card_room_time_table"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/clock12"
+        android:layout_marginTop="60dp"
+        />
+
+    <include
+        android:id="@+id/clock16"
+        layout="@layout/view_card_room_time_table"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/clock14"
+        android:layout_marginTop="60dp"
+        />
+
+    <include
+        android:id="@+id/clock18"
+        layout="@layout/view_card_room_time_table"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/clock16"
+        android:layout_marginTop="60dp"
+        />
+
+
+    <include
+        android:id="@+id/clock20"
+        layout="@layout/view_card_room_time_table"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/clock18"
+        android:layout_marginTop="60dp"
+        />
+
+    <View
+        android:id="@+id/verticalBlackLine"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginStart="94dp"
+        android:layout_marginTop="4dp"
+        android:background="@android:color/darker_gray"
+        tools:layout_editor_absoluteX="0dp" />
+
+</RelativeLayout>

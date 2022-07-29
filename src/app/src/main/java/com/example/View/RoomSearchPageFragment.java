@@ -80,6 +80,7 @@ public class RoomSearchPageFragment extends Fragment {
         selectedDate = new Date(LocalDate.now());
         dateHeader = root.findViewById(R.id.selectedDateTextView);
         dateHeader.setText(selectedDate.toString());
+        dateHeader.setVisibility(View.VISIBLE);
         searchWidget();
         return root;
     }
@@ -97,7 +98,8 @@ public class RoomSearchPageFragment extends Fragment {
                         switch (menuItem.getItemId()){
                             case R.id.filter_free_rooms:
                                 boolean flag = menuItem.isChecked();
-                                searchHeader.setText(R.string.rooms_free_header);
+                                if (flag) searchHeader.setText(R.string.rooms_little_header);
+                                else searchHeader.setText(R.string.rooms_free_header);
                                 showOnlyFreeRooms(!flag);
                                 menuItem.setChecked(!flag);
                                 break;

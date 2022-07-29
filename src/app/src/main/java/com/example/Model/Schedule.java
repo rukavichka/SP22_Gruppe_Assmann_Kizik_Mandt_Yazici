@@ -1,5 +1,6 @@
 package com.example.Model;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Objects;
 
@@ -45,9 +46,9 @@ public class Schedule {
         String[] temp = cTime.split(":");
         String[] startTime;
         String[] endTime;
-        if(times.containsKey("Di")) {
-            startTime = Objects.requireNonNull(times.get("Di"))[0].split(":");
-            endTime = Objects.requireNonNull(times.get("Di"))[1].split(":");
+        if(times.containsKey(day)) {
+            startTime = Objects.requireNonNull(times.get(day))[0].split(":");
+            endTime = Objects.requireNonNull(times.get(day))[1].split(":");
         }
         else {
             return false;
@@ -73,15 +74,18 @@ public class Schedule {
         return startPeriod.toString() + "-" + endPeriod.toString();
     }
 
-    public String getHours() {
-        if(times.isEmpty()) {
-            return "Not specified";
-        }
-        String result = "";
-        for(String key : times.keySet()){
-            result += key + times.get(key)[0] + "-" + times.get(key)[1];
+    public ArrayList<String> getHours() {
+        ArrayList<String> result = new ArrayList<>();
+        if(!times.isEmpty()) {
+            for(String key : times.keySet()){
+                result.add(key + " " + times.get(key)[0] + "-" + times.get(key)[1]);
+            }
         }
         return result;
+    }
+
+    public HashMap<String, String[]> getTimes() {
+        return this.times;
     }
 
     public boolean equals(String period) {
