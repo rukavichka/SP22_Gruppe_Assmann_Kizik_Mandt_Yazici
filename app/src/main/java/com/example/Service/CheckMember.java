@@ -54,6 +54,7 @@ public class CheckMember {
                     tempList.add(sn.getValue().toString());
                 }
                 LectureDetailsPageFragment temp = (LectureDetailsPageFragment)weakReference.get();
+                temp.setJoinText(checkList(tempList,courseName));
                 temp.setIsCourseMember(checkList(tempList,courseName));
 
             }

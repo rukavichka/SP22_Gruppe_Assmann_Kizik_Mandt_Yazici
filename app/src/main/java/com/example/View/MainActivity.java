@@ -44,15 +44,15 @@ public class MainActivity extends AppCompatActivity  {
                 switch (item.getItemId()){
                     case R.id.homePage:
                         getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
-                                new HomePageFragment()).commit();
+                                new HomePageFragment()).addToBackStack(null).commit();
                         break;
                     case R.id.meineVeranstaltungen:
                         getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
-                                new LectureSearchPageFragment(2)).commit();
+                                new LectureSearchPageFragment(2)).addToBackStack(null).commit();
                         break;
                     case R.id.alleVeranstaltungen:
                         getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
-                                new LectureSearchPageFragment(1)).commit();
+                                new LectureSearchPageFragment(1)).addToBackStack(null).commit();
                         break;
                     case R.id.RaumSuchen:
                         getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,

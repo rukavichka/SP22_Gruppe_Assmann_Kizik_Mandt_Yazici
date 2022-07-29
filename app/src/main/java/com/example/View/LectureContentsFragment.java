@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.Model.Lecture;
@@ -19,6 +20,7 @@ public class LectureContentsFragment extends Fragment {
     private View root;
     private final Lecture lecture;
     private CheckMember checkMember;
+    ProgressBar prgB;
     public LectureContentsFragment(Lecture lecture) {
         this.lecture = lecture;
     }
@@ -76,6 +78,9 @@ public class LectureContentsFragment extends Fragment {
         icon.setImageResource(R.drawable.ic_baseline_logout_24);
         title.setText("Kursmitgliedschaft beenden");
         setLeaveButton();
+
+        prgB = root.findViewById(R.id.progress_loader3);
+        prgB.setVisibility(View.INVISIBLE);
         return root;
     }
 
@@ -98,10 +103,24 @@ public class LectureContentsFragment extends Fragment {
             public void onClick(View view) {
                 checkMember.executeDeleteMembership(lecture.getLectureName());
                 checkMember.executeDeleteUserCourses(lecture.getLectureName());
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                turnOffProgressbar();
                 ((MainActivity)root.getContext()).getSupportFragmentManager().beginTransaction().replace(R.id.constraint_container,
                         new LectureDetailsPageFragment(lecture.getLectureName())).addToBackStack(null).commit();
             }
         });
+    }
+
+    private void turnOffProgressbar() {
+        prgB.setVisibility(View.INVISIBLE);
+    }
+
+    private void setProgressbar() {
+        prgB.setVisibility(View.VISIBLE);
     }
 
     private void createOnClick(String type, int id) {

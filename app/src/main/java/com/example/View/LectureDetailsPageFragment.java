@@ -43,6 +43,7 @@ public class LectureDetailsPageFragment extends Fragment {
     private CheckMember checkMember;
     private DatabaseReference databaseReference;
 
+
     public LectureDetailsPageFragment(String courseName) {
         this.courseName = courseName;
         checkMember = new CheckMember();
@@ -61,16 +62,16 @@ public class LectureDetailsPageFragment extends Fragment {
                              Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.fragment_lecture_details_page, container, false);
         fetchCourses = new FetchCourses();
-        checkMember.executeCheckUserCourses();
         fetchCourses.setCourseName(courseName);
         fetchCourses.setWeakReference(this);
         fetchCourses.execute(1);
+        //checkMember.executeCheckUserCourses();
         return root;
     }
 
     public void setCourseInfo(ArrayList<Lecture> data) {
         this.courseInfo = data;
-        this.lecture =courseInfo.get(0);
+        this.lecture = courseInfo.get(0);
         this.currentPeriod = lecture.getLecturePeriod();
         setLayout(lecture);
         createMenu();
@@ -121,6 +122,7 @@ public class LectureDetailsPageFragment extends Fragment {
      * @param info lecture object to display
      */
     public void setLayout(Lecture info) {
+
         TextView courseName = root.findViewById(R.id.courseNameTextView);
         TextView profName = root.findViewById(R.id.professorEditableTextView);
         TextView period = root.findViewById(R.id.periodMenuButton);
@@ -137,7 +139,7 @@ public class LectureDetailsPageFragment extends Fragment {
         recyclerViewTime();
 
         joinButton = root.findViewById(R.id.joinButton);
-        setJoinText(joinButton);
+        checkMember.executeCheckUserCourses();
         joinButton.setOnClickListener(new JoinButtonListener());
     }
 
@@ -169,7 +171,7 @@ public class LectureDetailsPageFragment extends Fragment {
                         new LectureContentsFragment(lecture)).addToBackStack(null).commit();
             }
             else{
-                joinButton.setText("Inhalt");
+                //joinButton.setText("Inhalt");
                 checkMember.executeAddMembership(courseName);
                 checkMember.executeAddUserCourses(courseName);
                 checkMember.executeCheckUserCourses();
@@ -177,8 +179,11 @@ public class LectureDetailsPageFragment extends Fragment {
         }
     }
 
-    private void setJoinText(Button joinButton) {
-        if(isCourseMember){
+    public void setJoinText(boolean isJoined) {
+//        if(joinButton == null){
+//            joinButton = root.findViewById(R.id.joinButton);
+//        }
+        if(isJoined){
             joinButton.setText("Inhalt");
         }
         else{

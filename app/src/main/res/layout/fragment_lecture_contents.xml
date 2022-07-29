@@ -6,6 +6,19 @@
     android:layout_height="match_parent"
     tools:context="com.example.View.LectureContentsFragment" >
 
+    <ProgressBar
+        android:id="@+id/progress_loader3"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="58dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <include
         android:id="@+id/courseContent"
         layout="@layout/view_card_content_item"

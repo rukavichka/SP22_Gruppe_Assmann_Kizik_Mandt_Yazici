@@ -17,6 +17,9 @@ import java.util.Map;
 import java.util.Set;
 
 
+/**
+ * creates a DatabaseReference to access the database
+ */
 public class Firebase {
 
     private FirebaseDatabase courseDatabase;
