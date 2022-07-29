@@ -11,12 +11,8 @@ import android.widget.Spinner;
 import androidx.fragment.app.Fragment;
 
 import com.example.Model.Lecture;
-import com.example.Service.FetchCourses;
 import com.example.Service.FetchFilters;
-import com.example.Service.FetchProfessors;
-import com.example.Service.FetchRooms;
 import com.example.readdatabase.R;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -29,7 +25,6 @@ public class FilterFragment extends Fragment {
     View root;
     Spinner spinnerDozent;
     Spinner spinnerSemester;
-    Spinner spinnerRoom;
     Spinner spinnerTitle;
     Spinner spinnerCourseType;
     Button filterApplyButton;
@@ -87,17 +82,12 @@ public class FilterFragment extends Fragment {
     }
 
     public void setFilters() {
-        if(mode == 1) {
-            fetchFilters = new FetchFilters();
-            fetchFilters.setWeakReference(this);
-            fetchFilters.execute();
+        fetchFilters = new FetchFilters();
+        if(mode == 2) {
+            fetchFilters.setLectures(courses);
         }
-        else {
-            for(Lecture lecture: courses) {
-
-            }
-        }
-
+        fetchFilters.setWeakReference(this);
+        fetchFilters.execute();
     }
 
     /**
